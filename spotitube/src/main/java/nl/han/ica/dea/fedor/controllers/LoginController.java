@@ -15,7 +15,7 @@ public class LoginController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response Login(LoginRequestDTO loginRequestDTO) {
 
-        if (loginRequestDTO.user.equals("fedor") && loginRequestDTO.password.equals("koekje")) {
+        if (loginRequestDTO.user.equals("meron") && loginRequestDTO.password.equals("koekje")) {
 
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO("1234-1234-1234", "Meron Brouwer");
 
