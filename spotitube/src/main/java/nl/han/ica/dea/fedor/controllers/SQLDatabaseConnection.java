@@ -20,10 +20,9 @@ public class SQLDatabaseConnection {
 
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("USE Spotitube SELECT * FROM test");
-            System.out.print(rs);
 
             while (rs.next()) {
-                System.out.println(rs.getInt(2) + " " + rs.getInt(3));
+                System.out.println(rs.getInt("testtest"));
             }
         }
         // Handle any errors that may have occurred.
