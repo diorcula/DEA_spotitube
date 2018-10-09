@@ -1,10 +1,7 @@
 package nl.han.ica.dea.fedor.datasources;
 
 import javax.inject.Inject;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class UserDAO {
 
@@ -13,11 +10,22 @@ public class UserDAO {
     public String getPasswordForUser(String username) {
         Connection connection = null;
         String gebruikersnaam = username;
+
+        // Prepared statement
+        String query = "USE Spotitube SELECT password FROM users WHERE username = '" + gebruikersnaam + "'";
+
         try {
             connection = dBconnection.createConnection();
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("USE Spotitube SELECT * FROM users WHERE username ="+gebruikersnaam);
-            return rs.toString();
+            ResultSet rs = statement.executeQuery(query);
+
+//          connection.prepareStatement(query).execute();
+
+            String a = null;
+            while (rs.next()) {
+                a = rs.getString("password");
+            }
+            return a;
 
         } catch (SQLException e) {
             e.printStackTrace();

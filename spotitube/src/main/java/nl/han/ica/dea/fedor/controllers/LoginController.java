@@ -22,8 +22,8 @@ public class LoginController {
 
 //        if (loginRequestDTO.user.equals("meron") && loginRequestDTO.password.equals("koekje")) {
 
-        if (userService.isValidLogin(loginRequestDTO.user, loginRequestDTO.password)) {
-
+//               if (userService.isValidLogin(loginRequestDTO.user, loginRequestDTO.password) ) {
+        if (userService.isValidLogin(loginRequestDTO.user, loginRequestDTO.password) == true) {
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO("1234-1234-1234", "Meron Brouwer");
 
             return Response.ok(loginResponseDTO).build();
