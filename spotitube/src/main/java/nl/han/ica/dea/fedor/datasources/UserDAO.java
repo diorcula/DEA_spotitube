@@ -18,9 +18,6 @@ public class UserDAO {
         String query = "USE Spotitube SELECT password FROM users WHERE username = '" + gebruikersnaam + "'";
 
         try {
-//            connection = dBconnection.createConnection();
-//            Statement statement = connection.createStatement();
-//            ResultSet rs = statement.executeQuery(query);   //moet natuurlijk een prepared statement zijn, dit tegen injection
             connection = dBconnection.createConnection();
             preparedStatement = connection.prepareStatement(query);
             rs = preparedStatement.executeQuery();

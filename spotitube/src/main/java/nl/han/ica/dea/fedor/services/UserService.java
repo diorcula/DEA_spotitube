@@ -10,12 +10,6 @@ public class UserService {
     @Inject
     UserDAO userDAO;
 
-//    public boolean isValidLogin(String userName, String password) {
-//        String passwordForUser = userDAO.getPasswordForUser(userName);
-//
-//        return password.equals(passwordForUser);
-//    }
-
     public boolean isValidLogin(String userName, String password) {
         String passwordForUser = userDAO.getPasswordForUser(userName);
 

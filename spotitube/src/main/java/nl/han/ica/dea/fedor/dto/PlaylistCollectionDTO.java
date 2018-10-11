@@ -3,7 +3,7 @@ package nl.han.ica.dea.fedor.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaylistsResponseDTO {
+public class PlaylistCollectionDTO {
     private int length;
 
     private List<PlaylistBuilderDTO> playlists = new ArrayList<>();

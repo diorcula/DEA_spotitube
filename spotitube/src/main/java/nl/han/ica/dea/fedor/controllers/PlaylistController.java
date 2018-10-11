@@ -1,6 +1,6 @@
 package nl.han.ica.dea.fedor.controllers;
 
-import nl.han.ica.dea.fedor.services.PlaylistService;
+import nl.han.ica.dea.fedor.datasources.PlaylistDAO;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -11,11 +11,19 @@ import javax.ws.rs.core.Response;
 public class PlaylistController {
 
     @Inject
-    private PlaylistService playlistService;
+    private PlaylistDAO playlistDAO;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response Playlists() {
-        return Response.ok(playlistService.getAllPlaylists()).build();
+        return Response.ok(playlistDAO.findAll()).build();
     }
+
+//    @PUT
+//    @Path("{id}")
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response EditPlaylist(PlaylistBuilderDTO playlistBuilderDTO, @PathParam("id") int id){
+//        return Response.ok(playlistService.editPlaylist(id, playlistBuilderDTO)).build();
+//    }
 }
