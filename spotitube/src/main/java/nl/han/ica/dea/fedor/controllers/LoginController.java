@@ -1,7 +1,6 @@
 package nl.han.ica.dea.fedor.controllers;
 
-import nl.han.ica.dea.fedor.datasources.UserDAO;
-import nl.han.ica.dea.fedor.dto.LoginRequestDTO;
+import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.dto.LoginResponseDTO;
 import nl.han.ica.dea.fedor.services.UserService;
 
@@ -18,12 +17,9 @@ public class LoginController {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response Login(LoginRequestDTO loginRequestDTO) {
+    public Response Login(UserDTO userDTO) {
 
-//        if (loginRequestDTO.user.equals("meron") && loginRequestDTO.password.equals("koekje")) {
-
-//               if (userService.isValidLogin(loginRequestDTO.user, loginRequestDTO.password) ) {
-        if (userService.isValidLogin(loginRequestDTO.user, loginRequestDTO.password) == true) {
+        if (userService.isValidLogin(userDTO.user, userDTO.password)) {
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO("1234-1234-1234", "Meron Brouwer");
 
             return Response.ok(loginResponseDTO).build();

@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.datasources;
 
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.PlaylistBuilderDTO;
+import nl.han.ica.dea.fedor.dto.TrackBuilderDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,19 +10,13 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class PlaylistDAO {
+public class TrackDAO {
     private Logger logger = Logger.getLogger(getClass().getName());
     private DatabaseProperties databaseProperties;
 
-    public PlaylistDAO() {
+    public TrackDAO() {
         databaseProperties = new DatabaseProperties();
         tryLoadJdbcDriver(databaseProperties);
-    }
-
-    public List<PlaylistBuilderDTO> findAll() {
-        List<PlaylistBuilderDTO> playlists = new ArrayList<>();
-        tryFindAll(playlists);
-        return playlists;
     }
 
     private void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
@@ -32,11 +27,23 @@ public class PlaylistDAO {
         }
     }
 
-    private void tryFindAll(List<PlaylistBuilderDTO> playlists) {
+    public List<TrackBuilderDTO> findAll() {
+        List<TrackBuilderDTO> tracks = new ArrayList<>();
+        tryFindAll(tracks, "SELECT * from tracks");
+        return tracks;
+    }
+
+    public List<TrackBuilderDTO> findTracksFromPlaylist(int id){
+        List<TrackBuilderDTO> tracks = new ArrayList<>();
+        tryFindAll(tracks, "SELECT * from tracks ietsjes anders");
+        return tracks;
+    }
+
+    private void tryFindAll(List<TrackBuilderDTO> tracks, String query) {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(),databaseProperties.connectionUSER(),databaseProperties.connectionPASS());
-            PreparedStatement statement = connection.prepareStatement("SELECT * from playlists");
-            addNewItemsFromDatabase(playlists, statement);
+            PreparedStatement statement = connection.prepareStatement(query);
+            addNewItemsFromDatabase(tracks, statement);
             statement.close();
             connection.close();
         } catch (SQLException e) {
@@ -44,19 +51,19 @@ public class PlaylistDAO {
         }
     }
 
-    private void addNewItemsFromDatabase(List<PlaylistBuilderDTO> playlists, PreparedStatement statement) throws SQLException {
+    private void addNewItemFromResultSet(List<TrackBuilderDTO> tracks, ResultSet resultSet) throws SQLException {
+        TrackBuilderDTO trackBuilderDTO = new TrackBuilderDTO();
+      // trackBuilderDTO.set
+        // hier moet alles geset worden met data uit de database
+        tracks.add(trackBuilderDTO);
+
+    }
+
+    private void addNewItemsFromDatabase(List<TrackBuilderDTO> tracks, PreparedStatement statement) throws SQLException {
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
-            addNewItemFromResultSet(playlists, resultSet);
+            addNewItemFromResultSet(tracks, resultSet);
         }
     }
 
-    private void addNewItemFromResultSet(List<PlaylistBuilderDTO> playlists, ResultSet resultSet) throws SQLException {
-        PlaylistBuilderDTO playlist = new PlaylistBuilderDTO();
-        playlist.setId(resultSet.getInt("id"));
-        playlist.setName(resultSet.getString("name"));
-        playlist.setOwner(resultSet.getBoolean("owner"));
-
-        playlists.add(playlist);
-    }
 }

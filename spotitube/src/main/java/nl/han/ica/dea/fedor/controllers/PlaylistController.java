@@ -1,6 +1,7 @@
 package nl.han.ica.dea.fedor.controllers;
 
 import nl.han.ica.dea.fedor.datasources.PlaylistDAO;
+import nl.han.ica.dea.fedor.dto.PlaylistBuilderDTO;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
