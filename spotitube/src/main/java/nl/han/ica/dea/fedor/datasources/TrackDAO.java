@@ -65,7 +65,7 @@ public class TrackDAO {
         trackBuilderDTO.setAlbum(resultSet.getString("album"));
         trackBuilderDTO.setPlaycount(resultSet.getInt("playcount"));
         trackBuilderDTO.setPublication_date(resultSet.getString("publication_date"));
-        trackBuilderDTO.setDescription(resultSet.getString("descritption"));
+        trackBuilderDTO.setDescription(resultSet.getString("description"));
         trackBuilderDTO.setOffline_available(resultSet.getBoolean("offline_available"));
 
         tracks.add(trackBuilderDTO);

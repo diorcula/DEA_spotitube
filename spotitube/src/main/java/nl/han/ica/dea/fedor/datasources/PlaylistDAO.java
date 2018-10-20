@@ -66,4 +66,8 @@ public class PlaylistDAO {
 
         playlists.add(playlist);
     }
+
+    public Object editPlaylist(PlaylistBuilderDTO playlistBuilderDTO, int id) {
+        
+    }
 }
