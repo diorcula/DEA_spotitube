@@ -20,13 +20,13 @@ public class PlaylistDAO {
 
     public List<PlaylistBuilderDTO> findAll() {
         List<PlaylistBuilderDTO> playlists = new ArrayList<>();
-        tryFindAll(playlists,"SELECT * from playlists");
+        tryFindAll(playlists, "SELECT * from playlists");
         return playlists;
     }
 
-    public PlaylistBuilderDTO findOne(int id){
+    public PlaylistBuilderDTO findOne(int id) {
         List<PlaylistBuilderDTO> playlists = new ArrayList<>();
-        tryFindAll(playlists,"SELECT * from playlists WHERE id = " + id );
+        tryFindAll(playlists, "SELECT * from playlists WHERE id = " + id);
 
         return playlists.get(0);
     }
@@ -41,7 +41,7 @@ public class PlaylistDAO {
 
     private void tryFindAll(List<PlaylistBuilderDTO> playlists, String query) {
         try {
-            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(),databaseProperties.connectionUSER(),databaseProperties.connectionPASS());
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
             addNewItemsFromDatabase(playlists, statement);
             statement.close();
@@ -68,6 +68,21 @@ public class PlaylistDAO {
     }
 
     public Object editPlaylist(PlaylistBuilderDTO playlistBuilderDTO, int id) {
-        
+
+        String playlistnaam = playlistBuilderDTO.getName();
+        String query = "UPDATE playlists SET name = '" + playlistnaam + "'WHERE id = " + id;
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+            PreparedStatement statement = connection.prepareStatement(query);
+            //ResultSet resultSet = statement.executeQuery();
+            //playlistBuilderDTO.setName(resultSet.getString("name"));
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
+
+        return playlistBuilderDTO;
     }
 }
