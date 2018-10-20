@@ -75,8 +75,9 @@ public class PlaylistDAO {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
-            //ResultSet resultSet = statement.executeQuery();
-            //playlistBuilderDTO.setName(resultSet.getString("name"));
+            ResultSet resultSet = statement.executeQuery();
+       //     playlistBuilderDTO.setName(resultSet.getString("name"));
+            playlistBuilderDTO.setName(playlistBuilderDTO.getName());
             statement.close();
             connection.close();
         } catch (SQLException e) {
