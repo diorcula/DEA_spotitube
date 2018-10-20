@@ -25,6 +25,9 @@ public class DatabaseProperties {
     public String connectionURL() {
         return properties.getProperty("connectionURL");
     }
+//    public String connectionDatabase() {
+//        return properties.getProperty("databaseName");
+//    }
     public String connectionUSER(){
         return properties.getProperty("user");
     }

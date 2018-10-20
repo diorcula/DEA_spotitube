@@ -16,15 +16,14 @@ public class PlaylistController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response Playlists() {
+    public Response allPlaylists() {
         return Response.ok(playlistDAO.findAll()).build();
     }
 
-//    @PUT
-//    @Path("{id}")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response EditPlaylist(PlaylistBuilderDTO playlistBuilderDTO, @PathParam("id") int id){
-//        return Response.ok(playlistService.editPlaylist(id, playlistBuilderDTO)).build();
-//    }
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response findPlaylist(@PathParam("id") int id){
+        return Response.ok(playlistDAO.findOne(id)).build();
+    }
 }

@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class UserDAO {
     private Logger logger = Logger.getLogger(getClass().getName());
-    private SQLDatabaseConnection dBconnection = null;
+  //  private SQLDatabaseConnection dBconnection = null;
     private DatabaseProperties databaseProperties;
 
     public UserDAO() {
@@ -26,7 +26,7 @@ public class UserDAO {
     }
 
     public UserDTO getUserDTO(String username) {
-        Connection connection = null;
+       // Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
 
@@ -34,7 +34,8 @@ public class UserDAO {
         String query = "USE Spotitube SELECT * FROM users WHERE username = '" + username + "'";
 
         try {
-            connection = dBconnection.createConnection();
+           // connection = dBconnection.createConnection();
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(),databaseProperties.connectionUSER(),databaseProperties.connectionPASS());
             preparedStatement = connection.prepareStatement(query);
             rs = preparedStatement.executeQuery();
 
@@ -45,7 +46,7 @@ public class UserDAO {
 
             return user;
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
 

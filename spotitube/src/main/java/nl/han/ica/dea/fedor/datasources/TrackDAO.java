@@ -33,15 +33,20 @@ public class TrackDAO {
         return tracks;
     }
 
-    public List<TrackBuilderDTO> findTracksFromPlaylist(int id){
+    public List<TrackBuilderDTO> findTracksFromPlaylist(int id) {
         List<TrackBuilderDTO> tracks = new ArrayList<>();
-        tryFindAll(tracks, "SELECT * from tracks ietsjes anders");
+        tryFindAll(
+                tracks, "SELECT *\n" +
+                        "FROM playlist_track\n" +
+                        "\tjoin tracks on playlist_track.track_id = tracks.id\n" +
+                        "WHERE playlist_track.playlist_id = " + id + ""
+        );
         return tracks;
     }
 
     private void tryFindAll(List<TrackBuilderDTO> tracks, String query) {
         try {
-            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(),databaseProperties.connectionUSER(),databaseProperties.connectionPASS());
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
             addNewItemsFromDatabase(tracks, statement);
             statement.close();
@@ -53,8 +58,16 @@ public class TrackDAO {
 
     private void addNewItemFromResultSet(List<TrackBuilderDTO> tracks, ResultSet resultSet) throws SQLException {
         TrackBuilderDTO trackBuilderDTO = new TrackBuilderDTO();
-      // trackBuilderDTO.set
-        // hier moet alles geset worden met data uit de database
+        trackBuilderDTO.setId(resultSet.getInt("track_id"));
+        trackBuilderDTO.setTitle(resultSet.getString("title"));
+        trackBuilderDTO.setPerformer(resultSet.getString("performer"));
+        trackBuilderDTO.setDuration(resultSet.getInt("duration"));
+        trackBuilderDTO.setAlbum(resultSet.getString("album"));
+        trackBuilderDTO.setPlaycount(resultSet.getInt("playcount"));
+        trackBuilderDTO.setPublication_date(resultSet.getString("publication_date"));
+        trackBuilderDTO.setDescription(resultSet.getString("descritption"));
+        trackBuilderDTO.setOffline_available(resultSet.getBoolean("offline_available"));
+
         tracks.add(trackBuilderDTO);
 
     }

@@ -20,8 +20,15 @@ public class PlaylistDAO {
 
     public List<PlaylistBuilderDTO> findAll() {
         List<PlaylistBuilderDTO> playlists = new ArrayList<>();
-        tryFindAll(playlists);
+        tryFindAll(playlists,"SELECT * from playlists");
         return playlists;
+    }
+
+    public PlaylistBuilderDTO findOne(int id){
+        List<PlaylistBuilderDTO> playlists = new ArrayList<>();
+        tryFindAll(playlists,"SELECT * from playlists WHERE id = " + id );
+
+        return playlists.get(0);
     }
 
     private void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
@@ -32,10 +39,10 @@ public class PlaylistDAO {
         }
     }
 
-    private void tryFindAll(List<PlaylistBuilderDTO> playlists) {
+    private void tryFindAll(List<PlaylistBuilderDTO> playlists, String query) {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(),databaseProperties.connectionUSER(),databaseProperties.connectionPASS());
-            PreparedStatement statement = connection.prepareStatement("SELECT * from playlists");
+            PreparedStatement statement = connection.prepareStatement(query);
             addNewItemsFromDatabase(playlists, statement);
             statement.close();
             connection.close();
