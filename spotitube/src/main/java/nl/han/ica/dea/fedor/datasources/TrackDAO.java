@@ -35,12 +35,13 @@ public class TrackDAO {
 
     public List<TrackBuilderDTO> findTracksFromPlaylist(int id) {
         List<TrackBuilderDTO> tracks = new ArrayList<>();
-        tryFindAll(
-                tracks, "SELECT *\n" +
-                        "FROM playlist_track\n" +
-                        "\tjoin tracks on playlist_track.track_id = tracks.id\n" +
-                        "WHERE playlist_track.playlist_id = " + id + ""
-        );
+//        tryFindAll(
+//                tracks, "SELECT *\n" +
+//                        "FROM playlist_track\n" +
+//                        "\tjoin tracks on playlist_track.track_id = tracks.id\n" +
+//                        "WHERE playlist_track.playlist_id = " + id + ""
+//        );
+        tryFindAll(tracks, "EXEC SelectTracksFromPlaylist @Id =" + id);
         return tracks;
     }
 

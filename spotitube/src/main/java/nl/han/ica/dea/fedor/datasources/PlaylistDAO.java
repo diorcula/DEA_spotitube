@@ -20,7 +20,7 @@ public class PlaylistDAO {
 
     public List<PlaylistBuilderDTO> findAll() {
         List<PlaylistBuilderDTO> playlists = new ArrayList<>();
-        tryFindAll(playlists, "SELECT * from playlists");
+        tryFindAll(playlists, "EXEC SelectAllPlaylists");
         return playlists;
     }
 
@@ -70,14 +70,20 @@ public class PlaylistDAO {
     public Object editPlaylist(PlaylistBuilderDTO playlistBuilderDTO, int id) {
 
         String playlistnaam = playlistBuilderDTO.getName();
-        String query = "UPDATE playlists SET name = '" + playlistnaam + "'WHERE id = " + id;
+        boolean playlistowner = playlistBuilderDTO.isOwner();
+//        String query = "UPDATE playlists SET name = '" + playlistnaam + "'WHERE id = " + id;
+        String query = "EXEC UpdatePlaylist @Id =" +id +" ,@Name = '" + playlistnaam + "' ,@Owner = " + playlistowner;
+//        javax.ws.rs.ClientErrorException: HTTP 405 Method Not Allowed
+//        Mag niet van de client?
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
-       //     playlistBuilderDTO.setName(resultSet.getString("name"));
-            playlistBuilderDTO.setName(playlistBuilderDTO.getName());
+
+            playlistBuilderDTO.setName(resultSet.getString("name"));
+            playlistBuilderDTO.setOwner(resultSet.getBoolean("owner"));
+//            playlistBuilderDTO.setName(playlistBuilderDTO.getName());
             statement.close();
             connection.close();
         } catch (SQLException e) {

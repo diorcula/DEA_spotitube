@@ -28,13 +28,13 @@ public class PlaylistController {
         return Response.ok(playlistDAO.findOne(id)).build();
     }
 
-    @PUT
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path("{id}")
-    public Response editPlaylist(PlaylistBuilderDTO playlistBuilderDTO, @PathParam("id") int id) {
-        return Response.ok(playlistDAO.editPlaylist(playlistBuilderDTO, id)).build();
-    }
+//    @PUT
+//    @Produces(MediaType.APPLICATION_JSON)
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    @Path("{id}")
+//    public Response editPlaylist(PlaylistBuilderDTO playlistBuilderDTO, @PathParam("id") int id) {
+//        return Response.ok(playlistDAO.editPlaylist(playlistBuilderDTO, id)).build();
+//    }
 
     @GET
     @Path("{id}/tracks")
