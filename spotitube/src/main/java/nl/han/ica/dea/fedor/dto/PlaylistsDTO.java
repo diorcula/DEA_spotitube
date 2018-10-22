@@ -3,21 +3,19 @@ package nl.han.ica.dea.fedor.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaylistCollectionDTO {
+public class PlaylistsDTO {
     private int length;
+    private List<PlaylistDTO> playlists = new ArrayList<>();
 
-    private List<PlaylistBuilderDTO> playlists = new ArrayList<>();
-
-    public void addPlaylist(PlaylistBuilderDTO koek) {
-        playlists.add(koek);
+    public void addPlaylist(PlaylistDTO playlistDTO) {
+        playlists.add(playlistDTO);
     }
 
-    public List<PlaylistBuilderDTO> getPlaylists() {
+    public List<PlaylistDTO> getPlaylists() {
         return playlists;
     }
 
     public int getLength() {
-
         return length;
     }
 

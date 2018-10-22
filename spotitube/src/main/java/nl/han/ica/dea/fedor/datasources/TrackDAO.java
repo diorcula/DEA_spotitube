@@ -1,7 +1,6 @@
 package nl.han.ica.dea.fedor.datasources;
 
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
-import nl.han.ica.dea.fedor.dto.PlaylistBuilderDTO;
 import nl.han.ica.dea.fedor.dto.TrackBuilderDTO;
 
 import java.sql.*;
@@ -28,36 +27,37 @@ public class TrackDAO {
     }
 
     public List<TrackBuilderDTO> findAll() {
-        List<TrackBuilderDTO> tracks = new ArrayList<>();
-        tryFindAll(tracks, "SELECT * from tracks");
+        List<TrackBuilderDTO> tracks = tryFindAll("SELECT * from tracks");
         return tracks;
     }
 
     public List<TrackBuilderDTO> findTracksFromPlaylist(int id) {
-        List<TrackBuilderDTO> tracks = new ArrayList<>();
-//        tryFindAll(
-//                tracks, "SELECT *\n" +
-//                        "FROM playlist_track\n" +
-//                        "\tjoin tracks on playlist_track.track_id = tracks.id\n" +
-//                        "WHERE playlist_track.playlist_id = " + id + ""
-//        );
-        tryFindAll(tracks, "EXEC SelectTracksFromPlaylist @Id =" + id);
+        List<TrackBuilderDTO> tracks = tryFindAll(
+                "SELECT * " +
+                        "FROM playlist_track " +
+                        "JOIN tracks ON playlist_track.track_id = tracks.id " +
+                        "WHERE playlist_track.playlist_id = " + id);
+
         return tracks;
     }
 
-    private void tryFindAll(List<TrackBuilderDTO> tracks, String query) {
+    private List<TrackBuilderDTO> tryFindAll(String query) {
+        List<TrackBuilderDTO> allTracks;
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
-            addNewItemsFromDatabase(tracks, statement);
+            allTracks = getAllTracks(statement);
             statement.close();
             connection.close();
+
         } catch (SQLException e) {
+            allTracks = new ArrayList<>();
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
+        return allTracks;
     }
 
-    private void addNewItemFromResultSet(List<TrackBuilderDTO> tracks, ResultSet resultSet) throws SQLException {
+    private TrackBuilderDTO mapToTrackDTO(ResultSet resultSet) throws SQLException {
         TrackBuilderDTO trackBuilderDTO = new TrackBuilderDTO();
         trackBuilderDTO.setId(resultSet.getInt("track_id"));
         trackBuilderDTO.setTitle(resultSet.getString("title"));
@@ -69,15 +69,16 @@ public class TrackDAO {
         trackBuilderDTO.setDescription(resultSet.getString("description"));
         trackBuilderDTO.setOffline_available(resultSet.getBoolean("offline_available"));
 
-        tracks.add(trackBuilderDTO);
-
+        return trackBuilderDTO;
     }
 
-    private void addNewItemsFromDatabase(List<TrackBuilderDTO> tracks, PreparedStatement statement) throws SQLException {
+    private List<TrackBuilderDTO> getAllTracks(PreparedStatement statement) throws SQLException {
+        List<TrackBuilderDTO> tracks = new ArrayList<>();
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
-            addNewItemFromResultSet(tracks, resultSet);
+            tracks.add(mapToTrackDTO(resultSet));
         }
-    }
 
+        return tracks;
+    }
 }

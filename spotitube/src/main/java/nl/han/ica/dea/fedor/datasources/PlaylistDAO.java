@@ -1,7 +1,7 @@
 package nl.han.ica.dea.fedor.datasources;
 
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
-import nl.han.ica.dea.fedor.dto.PlaylistBuilderDTO;
+import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -18,14 +18,14 @@ public class PlaylistDAO {
         tryLoadJdbcDriver(databaseProperties);
     }
 
-    public List<PlaylistBuilderDTO> findAll() {
-        List<PlaylistBuilderDTO> playlists = new ArrayList<>();
-        tryFindAll(playlists, "EXEC SelectAllPlaylists");
+    public List<PlaylistDTO> findAll() {
+        List<PlaylistDTO> playlists = new ArrayList<>();
+        tryFindAll(playlists, "SELECT * FROM playlists");
         return playlists;
     }
 
-    public PlaylistBuilderDTO findOne(int id) {
-        List<PlaylistBuilderDTO> playlists = new ArrayList<>();
+    public PlaylistDTO findOne(int id) {
+        List<PlaylistDTO> playlists = new ArrayList<>();
         tryFindAll(playlists, "SELECT * from playlists WHERE id = " + id);
 
         return playlists.get(0);
@@ -39,7 +39,7 @@ public class PlaylistDAO {
         }
     }
 
-    private void tryFindAll(List<PlaylistBuilderDTO> playlists, String query) {
+    private void tryFindAll(List<PlaylistDTO> playlists, String query) {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
@@ -51,15 +51,15 @@ public class PlaylistDAO {
         }
     }
 
-    private void addNewItemsFromDatabase(List<PlaylistBuilderDTO> playlists, PreparedStatement statement) throws SQLException {
+    private void addNewItemsFromDatabase(List<PlaylistDTO> playlists, PreparedStatement statement) throws SQLException {
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
             addNewItemFromResultSet(playlists, resultSet);
         }
     }
 
-    private void addNewItemFromResultSet(List<PlaylistBuilderDTO> playlists, ResultSet resultSet) throws SQLException {
-        PlaylistBuilderDTO playlist = new PlaylistBuilderDTO();
+    private void addNewItemFromResultSet(List<PlaylistDTO> playlists, ResultSet resultSet) throws SQLException {
+        PlaylistDTO playlist = new PlaylistDTO();
         playlist.setId(resultSet.getInt("id"));
         playlist.setName(resultSet.getString("name"));
         playlist.setOwner(resultSet.getBoolean("owner"));
@@ -67,29 +67,25 @@ public class PlaylistDAO {
         playlists.add(playlist);
     }
 
-    public Object editPlaylist(PlaylistBuilderDTO playlistBuilderDTO, int id) {
+    public Object editPlaylist(PlaylistDTO playlistDTO, int id) {
 
-        String playlistnaam = playlistBuilderDTO.getName();
-        boolean playlistowner = playlistBuilderDTO.isOwner();
-//        String query = "UPDATE playlists SET name = '" + playlistnaam + "'WHERE id = " + id;
-        String query = "EXEC UpdatePlaylist @Id =" +id +" ,@Name = '" + playlistnaam + "' ,@Owner = " + playlistowner;
-//        javax.ws.rs.ClientErrorException: HTTP 405 Method Not Allowed
-//        Mag niet van de client?
+        String playlistnaam = playlistDTO.getName();
+        String query = "UPDATE playlists SET name = '" + playlistnaam + "' WHERE id = " + id;
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
 
-            playlistBuilderDTO.setName(resultSet.getString("name"));
-            playlistBuilderDTO.setOwner(resultSet.getBoolean("owner"));
-//            playlistBuilderDTO.setName(playlistBuilderDTO.getName());
+            playlistDTO.setName(resultSet.getString("name"));
+            playlistDTO.setOwner(resultSet.getBoolean("owner"));
+
             statement.close();
             connection.close();
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
 
-        return playlistBuilderDTO;
+        return playlistDTO;
     }
 }

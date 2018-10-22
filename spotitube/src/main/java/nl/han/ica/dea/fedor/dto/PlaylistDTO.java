@@ -1,6 +1,6 @@
 package nl.han.ica.dea.fedor.dto;
 
-public class PlaylistBuilderDTO {
+public class PlaylistDTO {
     private int id;
     private String name;
     private boolean owner;
