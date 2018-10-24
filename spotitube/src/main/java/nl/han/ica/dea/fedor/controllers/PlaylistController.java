@@ -19,7 +19,7 @@ public class PlaylistController {
 
     @Inject
     private PlaylistDAO playlistDAO;
-    private TrackDAO trackDAO = new TrackDAO();
+    private TrackDAO trackDAO;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -57,8 +57,22 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response allTracks(@PathParam("id") int id) {
         trackDAO = new TrackDAO();
-      //  List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
+        TracksDTO tracksDTO = new TracksDTO();
 
-        return Response.ok(trackDAO.findTracksFromPlaylist(id)).build();
+        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
+
+        tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
+
+        return Response.ok(tracksDTO).build();
     }
 }
+
+//    List<PlaylistDTO> all = playlistDAO.findAll();
+//
+//    PlaylistsDTO playlistsDTO = new PlaylistsDTO();
+//
+//    all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+//
+//                playlistsDTO.setLength(37);
+//
+//                return Response.ok(playlistsDTO).build();
