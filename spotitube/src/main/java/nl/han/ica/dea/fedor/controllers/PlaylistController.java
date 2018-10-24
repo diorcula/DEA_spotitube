@@ -4,11 +4,14 @@ import nl.han.ica.dea.fedor.datasources.PlaylistDAO;
 import nl.han.ica.dea.fedor.datasources.TrackDAO;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
+import nl.han.ica.dea.fedor.dto.TrackDTO;
+import nl.han.ica.dea.fedor.dto.TracksDTO;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 @Path("/playlists")
@@ -16,10 +19,12 @@ public class PlaylistController {
 
     @Inject
     private PlaylistDAO playlistDAO;
+    private TrackDAO trackDAO = new TrackDAO();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response allPlaylists() {
+
         List<PlaylistDTO> all = playlistDAO.findAll();
 
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
@@ -34,7 +39,7 @@ public class PlaylistController {
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findPlaylist(@PathParam("id") int id){
+    public Response findPlaylist(@PathParam("id") int id) {
         return Response.ok(playlistDAO.findOne(id)).build();
     }
 
@@ -43,6 +48,7 @@ public class PlaylistController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("{id}")
     public Response editPlaylist(PlaylistDTO playlistDTO, @PathParam("id") int id) {
+
         return Response.ok(playlistDAO.editPlaylist(playlistDTO, id)).build();
     }
 
@@ -50,7 +56,9 @@ public class PlaylistController {
     @Path("{id}/tracks")
     @Produces(MediaType.APPLICATION_JSON)
     public Response allTracks(@PathParam("id") int id) {
-        TrackDAO trackDAO = new TrackDAO();
+        trackDAO = new TrackDAO();
+      //  List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
+
         return Response.ok(trackDAO.findTracksFromPlaylist(id)).build();
     }
 }

@@ -1,13 +1,14 @@
 package nl.han.ica.dea.fedor.datasources;
 
-import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
-import nl.han.ica.dea.fedor.dto.TrackBuilderDTO;
+        import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
+        import nl.han.ica.dea.fedor.dto.TrackDTO;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+        import javax.inject.Inject;
+        import java.sql.*;
+        import java.util.ArrayList;
+        import java.util.List;
+        import java.util.logging.Level;
+        import java.util.logging.Logger;
 
 public class TrackDAO {
     private Logger logger = Logger.getLogger(getClass().getName());
@@ -26,27 +27,32 @@ public class TrackDAO {
         }
     }
 
-    public List<TrackBuilderDTO> findAll() {
-        List<TrackBuilderDTO> tracks = tryFindAll("SELECT * from tracks");
+    public List<TrackDTO> findAll() {
+        List<TrackDTO> tracks = tryFindAll("SELECT * from tracks");
         return tracks;
     }
 
-    public List<TrackBuilderDTO> findTracksFromPlaylist(int id) {
-        List<TrackBuilderDTO> tracks = tryFindAll(
+    public List<TrackDTO> findTracksFromPlaylist(int id) {
+       // List<TrackDTO> tracks = new ArrayList<>();
+
+       return tryFindAll(
                 "SELECT * " +
                         "FROM playlist_track " +
                         "JOIN tracks ON playlist_track.track_id = tracks.id " +
                         "WHERE playlist_track.playlist_id = " + id);
 
-        return tracks;
+
+      //  return tracks;
     }
 
-    private List<TrackBuilderDTO> tryFindAll(String query) {
-        List<TrackBuilderDTO> allTracks;
+    private List<TrackDTO> tryFindAll(String query) {
+        List<TrackDTO> allTracks;
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
+
             allTracks = getAllTracks(statement);
+
             statement.close();
             connection.close();
 
@@ -57,28 +63,30 @@ public class TrackDAO {
         return allTracks;
     }
 
-    private TrackBuilderDTO mapToTrackDTO(ResultSet resultSet) throws SQLException {
-        TrackBuilderDTO trackBuilderDTO = new TrackBuilderDTO();
-        trackBuilderDTO.setId(resultSet.getInt("track_id"));
-        trackBuilderDTO.setTitle(resultSet.getString("title"));
-        trackBuilderDTO.setPerformer(resultSet.getString("performer"));
-        trackBuilderDTO.setDuration(resultSet.getInt("duration"));
-        trackBuilderDTO.setAlbum(resultSet.getString("album"));
-        trackBuilderDTO.setPlaycount(resultSet.getInt("playcount"));
-        trackBuilderDTO.setPublication_date(resultSet.getString("publication_date"));
-        trackBuilderDTO.setDescription(resultSet.getString("description"));
-        trackBuilderDTO.setOffline_available(resultSet.getBoolean("offline_available"));
+    private TrackDTO mapToTrackDTO(ResultSet resultSet) throws SQLException {
+        TrackDTO trackDTO = new TrackDTO();
+        trackDTO.setId(resultSet.getInt("track_id"));
+        trackDTO.setTitle(resultSet.getString("title"));
+        trackDTO.setPerformer(resultSet.getString("performer"));
+        trackDTO.setDuration(resultSet.getInt("duration"));
+        trackDTO.setAlbum(resultSet.getString("album"));
+        trackDTO.setPlaycount(resultSet.getInt("playcount"));
+        trackDTO.setPublication_date(resultSet.getString("publication_date"));
+        trackDTO.setDescription(resultSet.getString("description"));
+        trackDTO.setOffline_available(resultSet.getBoolean("offline_available"));
 
-        return trackBuilderDTO;
+        return trackDTO;
     }
 
-    private List<TrackBuilderDTO> getAllTracks(PreparedStatement statement) throws SQLException {
-        List<TrackBuilderDTO> tracks = new ArrayList<>();
+    private List<TrackDTO> getAllTracks(PreparedStatement statement) throws SQLException {
+        List<TrackDTO> tracks = new ArrayList<>();
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
-            tracks.add(mapToTrackDTO(resultSet));
-        }
+            TrackDTO trackDTO = new TrackDTO();
+            trackDTO = mapToTrackDTO(resultSet);
 
+            tracks.add(trackDTO);
+        }
         return tracks;
     }
 }

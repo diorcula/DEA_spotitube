@@ -1,6 +1,6 @@
 package nl.han.ica.dea.fedor.dto;
 
-public class TrackBuilderDTO {
+public class TrackDTO {
     private int id;
     private String title;
     private String performer;
