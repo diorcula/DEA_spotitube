@@ -43,7 +43,9 @@ public class PlaylistDAO {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
+
             addNewItemsFromDatabase(playlists, statement);
+
             statement.close();
             connection.close();
         } catch (SQLException e) {
@@ -67,25 +69,56 @@ public class PlaylistDAO {
         playlists.add(playlist);
     }
 
-    public Object editPlaylist(PlaylistDTO playlistDTO, int id) {
+    public PlaylistDTO editPlaylist(PlaylistDTO playlistDTO, int id) {
 
         String playlistnaam = playlistDTO.getName();
         String query = "UPDATE playlists SET name = '" + playlistnaam + "' WHERE id = " + id;
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
-            PreparedStatement statement = connection.prepareStatement(query);
-            ResultSet resultSet = statement.executeQuery();
 
-            playlistDTO.setName(resultSet.getString("name"));
-            playlistDTO.setOwner(resultSet.getBoolean("owner"));
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.executeUpdate();
 
             statement.close();
             connection.close();
+
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
 
         return playlistDTO;
+    }
+
+    public void deletePlaylist(int id) {
+        String query = "DELETE FROM playlists WHERE id = " + id;
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.executeUpdate();
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
+    }
+
+    public void addPlaylist(String name) {
+        String query = "INSET INTO playlists(name, owner) VALUES('" + name + "',1)";
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.executeQuery();
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
     }
 }

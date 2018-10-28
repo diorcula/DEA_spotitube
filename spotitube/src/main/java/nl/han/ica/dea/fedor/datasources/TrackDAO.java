@@ -1,14 +1,14 @@
 package nl.han.ica.dea.fedor.datasources;
 
-        import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
-        import nl.han.ica.dea.fedor.dto.TrackDTO;
+import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
+import nl.han.ica.dea.fedor.dto.TrackDTO;
 
-        import javax.inject.Inject;
-        import java.sql.*;
-        import java.util.ArrayList;
-        import java.util.List;
-        import java.util.logging.Level;
-        import java.util.logging.Logger;
+import javax.inject.Inject;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TrackDAO {
     private Logger logger = Logger.getLogger(getClass().getName());
@@ -33,16 +33,13 @@ public class TrackDAO {
     }
 
     public List<TrackDTO> findTracksFromPlaylist(int id) {
-       // List<TrackDTO> tracks = new ArrayList<>();
 
-       return tryFindAll(
+        return tryFindAll(
                 "SELECT * " +
                         "FROM playlist_track " +
                         "JOIN tracks ON playlist_track.track_id = tracks.id " +
                         "WHERE playlist_track.playlist_id = " + id);
 
-
-      //  return tracks;
     }
 
     private List<TrackDTO> tryFindAll(String query) {

@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TracksDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TrackBuilderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TrackDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,31 +24,34 @@
     <session id="-1984690430">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
-          <entry key="project.open.time.14" value="3" />
+          <entry key="project.closed" value="20" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="4" />
           <entry key="project.open.time.15" value="3" />
-          <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.27" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.52" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="147" />
+          <entry key="java" value="148" />
           <entry key="properties" value="7" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="147" />
+          <entry key="JAVA" value="148" />
           <entry key="Properties" value="7" />
           <entry key="XML" value="5" />
         </counts>
@@ -57,16 +59,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="java" value="9352" />
+          <entry key="java" value="10108" />
           <entry key="properties" value="245" />
-          <entry key="txt" value="666" />
+          <entry key="txt" value="787" />
           <entry key="xml" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9352" />
-          <entry key="PLAIN_TEXT" value="684" />
+          <entry key="JAVA" value="10108" />
+          <entry key="PLAIN_TEXT" value="805" />
           <entry key="Properties" value="245" />
           <entry key="XML" value="64" />
         </counts>
@@ -75,48 +77,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1239">
-              <caret line="61" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="462">
+              <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1132#1133#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="426">
+              <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TrackDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TracksDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#213#214#0" expanded="true" />
-                <element signature="e#249#250#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,11 +142,11 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/PlaylistDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TrackDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TracksDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" />
       </list>
     </option>
   </component>
@@ -190,8 +171,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="171" />
-    <option name="height" value="87" />
+    <option name="width" value="172" />
+    <option name="height" value="88" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -201,7 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,59 +231,20 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fedor" type="462c0819:PsiDirectoryNode" />
-              <item name="datasources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotitube" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotitube" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fedor" type="462c0819:PsiDirectoryNode" />
               <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotitube" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotitube" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fedor" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotitube" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotitube" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotitube" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotitube" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="spotitube" type="b2602c69:ProjectViewProjectNode" />
-              <item name="spotitube" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540302885119" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540726209873" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/toets2/toetspatterns" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -531,7 +472,12 @@
       <workItem from="1540127399634" duration="4064000" />
       <workItem from="1540201105150" duration="19128000" />
       <workItem from="1540287488489" duration="8823000" />
-      <workItem from="1540378815357" duration="382000" />
+      <workItem from="1540378815357" duration="3280000" />
+      <workItem from="1540456027310" duration="1053000" />
+      <workItem from="1540495216780" duration="424000" />
+      <workItem from="1540554911643" duration="650000" />
+      <workItem from="1540639953671" duration="4687000" />
+      <workItem from="1540719886697" duration="2716000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -645,7 +591,21 @@
       <option name="project" value="LOCAL" />
       <updated>1540219797259</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Tracks zijn te zien op playlists/1/tracks&#10;Nu nog de client in">
+      <created>1540380267891</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1540380267891</updated>
+    </task>
+    <task id="LOCAL-00018" summary="tracks zijn ook in de client te zien,&#10;&#10;MAJOR WIN">
+      <created>1540380784688</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1540380784688</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -654,10 +614,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124757000" />
+    <option name="totallyTimeSpent" value="137185000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -666,12 +627,12 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" weight="0.22024292" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.15031983" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.17310664" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32740214" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" visible="true" weight="0.31316727" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3394794" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.104982205" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -702,12 +663,12 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.22024292" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.16044776" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.17310664" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.32740214" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.36767897" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3394794" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.104982205" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -753,7 +714,9 @@
     <MESSAGE value="editPlaylist is mogelijk,&#10;&#10;welk nog exception, geen resultset terug gegeven oid.." />
     <MESSAGE value="stored procedures toegevoegd&#10;exec ook,&#10;&#10;Alleen de client side geeft nu nog een error 405, Method not allowed" />
     <MESSAGE value="playlist(s)DTO aangepast, TrackDTO moet nu net zo" />
-    <option name="LAST_COMMIT_MESSAGE" value="playlist(s)DTO aangepast, TrackDTO moet nu net zo" />
+    <MESSAGE value="Tracks zijn te zien op playlists/1/tracks&#10;Nu nog de client in" />
+    <MESSAGE value="tracks zijn ook in de client te zien,&#10;&#10;MAJOR WIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="tracks zijn ook in de client te zien,&#10;&#10;MAJOR WIN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -766,15 +729,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java</url>
-          <line>83</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -896,13 +853,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TracksDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -913,22 +867,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TracksDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#213#214#0" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="840">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -937,8 +879,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1239">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="462">
+          <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
