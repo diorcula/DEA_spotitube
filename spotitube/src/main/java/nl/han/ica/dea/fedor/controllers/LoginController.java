@@ -20,7 +20,7 @@ public class LoginController {
     public Response Login(UserDTO userDTO) {
 
         if (userService.isValidLogin(userDTO.user, userDTO.password)) {
-            LoginResponseDTO loginResponseDTO = new LoginResponseDTO("1234-1234-1234", "Meron Brouwer");
+            LoginResponseDTO loginResponseDTO = new LoginResponseDTO("1234-1234-1234", "Fedor Soffers");
 
             return Response.ok(loginResponseDTO).build();
 

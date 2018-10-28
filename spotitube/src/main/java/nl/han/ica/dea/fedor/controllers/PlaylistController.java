@@ -20,6 +20,7 @@ public class PlaylistController {
 
     @Inject
     private PlaylistDAO playlistDAO;
+    @Inject
     private TrackDAO trackDAO;
 
     @GET
@@ -45,11 +46,9 @@ public class PlaylistController {
     @Path("{id}/tracks")
     @Produces(MediaType.APPLICATION_JSON)
     public Response allTracks(@PathParam("id") int id) {
-        trackDAO = new TrackDAO();
+        // trackDAO = new TrackDAO();
         TracksDTO tracksDTO = new TracksDTO();
-
         List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-
         tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
 
         return Response.ok(tracksDTO).build();
@@ -66,18 +65,42 @@ public class PlaylistController {
 
     @DELETE
     @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response deletePlaylist(@PathParam("id") int id) {
+
         playlistDAO.deletePlaylist(id);
-        return Response.ok(playlistDAO.findAll()).build();
+
+        List<PlaylistDTO> all = playlistDAO.findAll();
+        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
+        all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+
+        return Response.ok(playlistsDTO).build();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces (MediaType.APPLICATION_JSON)
-    public Response addPlaylist(PlaylistDTO playlistDTO){
-
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addPlaylist(PlaylistDTO playlistDTO) {
         playlistDAO.addPlaylist(playlistDTO);
 
-        return Response.ok(playlistDAO.findAll()).build();
+        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
+        List<PlaylistDTO> all = playlistDAO.findAll();
+        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO));
+
+        return Response.ok(playlistsDTO).build();
+    }
+
+    @DELETE
+    @Path("{id}/tracks/{track_id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteTrack(@PathParam("id") int id, @PathParam("track_id") int track_id) {
+
+        trackDAO.deleteTrack(id, track_id);
+
+        TracksDTO tracksDTO = new TracksDTO();
+        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
+        tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
+
+        return Response.ok(tracksDTO).build();
     }
 }

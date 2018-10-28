@@ -2,12 +2,13 @@ C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\contro
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\services\UserService.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\datasources\UserDAO.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\controllers\PlaylistController.java
+C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\PlaylistsDTO.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\datasources\TrackDAO.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\datasources\SQLDatabaseConnection.java
-C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\PlaylistCollectionDTO.java
+C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\PlaylistDTO.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\datasources\Properties\DatabaseProperties.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\UserDTO.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\LoginResponseDTO.java
 C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\datasources\PlaylistDAO.java
-C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\PlaylistBuilderDTO.java
-C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\TrackBuilderDTO.java
+C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\TracksDTO.java
+C:\Users\soffe\DEA-spotitube\spotitube\src\main\java\nl\han\ica\dea\fedor\dto\TrackDTO.java

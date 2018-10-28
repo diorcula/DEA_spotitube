@@ -8,8 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,14 +48,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="148" />
+          <entry key="java" value="153" />
           <entry key="properties" value="7" />
           <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="148" />
+          <entry key="JAVA" value="153" />
           <entry key="Properties" value="7" />
           <entry key="XML" value="5" />
         </counts>
@@ -57,16 +63,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="java" value="10237" />
+          <entry key="java" value="10789" />
           <entry key="properties" value="245" />
-          <entry key="txt" value="858" />
+          <entry key="txt" value="975" />
           <entry key="xml" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10237" />
-          <entry key="PLAIN_TEXT" value="876" />
+          <entry key="JAVA" value="10789" />
+          <entry key="PLAIN_TEXT" value="993" />
           <entry key="Properties" value="245" />
           <entry key="XML" value="64" />
         </counts>
@@ -74,34 +80,66 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="77" column="7" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1132#1133#0" expanded="true" />
-                <element signature="e#1199#1200#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1317">
-              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="630">
+                  <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1132#1133#0" expanded="true" />
+                    <element signature="e#1199#1200#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="380">
+                  <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="582">
+                  <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -139,9 +177,9 @@
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/PlaylistsDTO.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/PlaylistDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TrackDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/TracksDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" />
@@ -229,6 +267,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fedor" type="462c0819:PsiDirectoryNode" />
+              <item name="datasources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="spotitube" type="b2602c69:ProjectViewProjectNode" />
+              <item name="spotitube" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fedor" type="462c0819:PsiDirectoryNode" />
               <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -242,7 +289,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540736886207" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540744834943" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/toets2/toetspatterns" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -475,7 +522,7 @@
       <workItem from="1540495216780" duration="424000" />
       <workItem from="1540554911643" duration="650000" />
       <workItem from="1540639953671" duration="4687000" />
-      <workItem from="1540719886697" duration="6067000" />
+      <workItem from="1540719886697" duration="12654000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -610,7 +657,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540726292178</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="- deletePlaylist werkt&#10;- addPlaylist werkt&#10;&#10;(wordt alleen nog geen gebruik gemaakt van een ArrayList">
+      <created>1540736995391</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1540736995391</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -619,7 +673,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140536000" />
+    <option name="totallyTimeSpent" value="147123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -632,12 +686,12 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.15031983" />
+      <window_info content_ui="combo" id="Project" order="7" weight="0.114072494" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.17310664" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.34164858" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.104982205" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.0" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.35683298" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -668,12 +722,12 @@
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.15031983" />
+      <window_info content_ui="combo" id="Project" order="7" weight="0.114072494" />
       <window_info anchor="bottom" id="Application Servers" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.17310664" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.3394794" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.104982205" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.44577006" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.35683298" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -722,7 +776,8 @@
     <MESSAGE value="Tracks zijn te zien op playlists/1/tracks&#10;Nu nog de client in" />
     <MESSAGE value="tracks zijn ook in de client te zien,&#10;&#10;MAJOR WIN" />
     <MESSAGE value="delete playlist werkt, alleen moet nu steeds refreshen voor de changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete playlist werkt, alleen moet nu steeds refreshen voor de changes" />
+    <MESSAGE value="- deletePlaylist werkt&#10;- addPlaylist werkt&#10;&#10;(wordt alleen nog geen gebruik gemaakt van een ArrayList" />
+    <option name="LAST_COMMIT_MESSAGE" value="- deletePlaylist werkt&#10;- addPlaylist werkt&#10;&#10;(wordt alleen nog geen gebruik gemaakt van een ArrayList" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -734,10 +789,10 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java</url>
-          <line>80</line>
+          <url>file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java</url>
+          <line>97</line>
           <properties />
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -831,13 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -873,20 +921,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="352">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1317">
-          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+        <state relative-caret-position="380">
+          <caret line="92" column="13" lean-forward="true" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -895,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="77" column="7" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
+        <state relative-caret-position="630">
+          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1132#1133#0" expanded="true" />

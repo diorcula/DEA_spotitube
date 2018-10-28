@@ -78,7 +78,7 @@ public class PlaylistDAO {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.executeUpdate();
+            statement.execute();
 
             statement.close();
             connection.close();
@@ -97,7 +97,7 @@ public class PlaylistDAO {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.executeUpdate();
+            statement.execute();
             statement.close();
             connection.close();
 
@@ -113,7 +113,7 @@ public class PlaylistDAO {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.executeUpdate();
+            statement.execute();
 
             statement.close();
             connection.close();

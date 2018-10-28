@@ -2,12 +2,13 @@ nl\han\ica\dea\fedor\dto\UserDTO.class
 nl\han\ica\dea\fedor\datasources\PlaylistDAO.class
 nl\han\ica\dea\fedor\dto\LoginResponseDTO.class
 nl\han\ica\dea\fedor\datasources\Properties\DatabaseProperties.class
-nl\han\ica\dea\fedor\dto\TrackBuilderDTO.class
 nl\han\ica\dea\fedor\datasources\SQLDatabaseConnection.class
-nl\han\ica\dea\fedor\dto\PlaylistCollectionDTO.class
+nl\han\ica\dea\fedor\dto\PlaylistsDTO.class
+nl\han\ica\dea\fedor\dto\TrackDTO.class
+nl\han\ica\dea\fedor\dto\TracksDTO.class
 nl\han\ica\dea\fedor\controllers\LoginController.class
 nl\han\ica\dea\fedor\datasources\TrackDAO.class
 nl\han\ica\dea\fedor\services\UserService.class
-nl\han\ica\dea\fedor\dto\PlaylistBuilderDTO.class
 nl\han\ica\dea\fedor\datasources\UserDAO.class
 nl\han\ica\dea\fedor\controllers\PlaylistController.class
+nl\han\ica\dea\fedor\dto\PlaylistDTO.class

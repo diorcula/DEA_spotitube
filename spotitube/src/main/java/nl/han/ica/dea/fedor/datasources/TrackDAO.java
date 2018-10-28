@@ -86,4 +86,20 @@ public class TrackDAO {
         }
         return tracks;
     }
+
+    public void deleteTrack(int id, int track_id){
+        String query = "DELETE FROM playlist_track WHERE playlist_id = " + id + " AND track_id = " + track_id;
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.execute();
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
+    }
 }
