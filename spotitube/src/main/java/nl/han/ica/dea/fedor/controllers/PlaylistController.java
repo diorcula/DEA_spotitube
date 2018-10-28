@@ -25,14 +25,11 @@ public class PlaylistController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response allPlaylists() {
-
         List<PlaylistDTO> all = playlistDAO.findAll();
-
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-
         all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
 
-        playlistsDTO.setLength(12345);
+        playlistsDTO.setLength(123445);
 
         return Response.ok(playlistsDTO).build();
     }
@@ -75,10 +72,12 @@ public class PlaylistController {
     }
 
     @POST
-    //@Produces (MediaType.APPLICATION_JSON);
-    @Path("{name}")
-    public Response addPlaylist(@PathParam("name") String name){
-        playlistDAO.addPlaylist(name);
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces (MediaType.APPLICATION_JSON)
+    public Response addPlaylist(PlaylistDTO playlistDTO){
+
+        playlistDAO.addPlaylist(playlistDTO);
+
         return Response.ok(playlistDAO.findAll()).build();
     }
 }

@@ -106,14 +106,15 @@ public class PlaylistDAO {
         }
     }
 
-    public void addPlaylist(String name) {
-        String query = "INSET INTO playlists(name, owner) VALUES('" + name + "',1)";
+    public void addPlaylist(PlaylistDTO playlistDTO) {
+        String query = "INSERT INTO playlists(name, owner) VALUES('" + playlistDTO.getName() + "',1)";
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
             PreparedStatement statement = connection.prepareStatement(query);
-            statement.executeQuery();
+            statement.executeUpdate();
+
             statement.close();
             connection.close();
 
