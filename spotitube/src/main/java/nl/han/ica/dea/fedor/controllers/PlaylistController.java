@@ -103,4 +103,18 @@ public class PlaylistController {
 
         return Response.ok(tracksDTO).build();
     }
+
+    @POST
+    @Path("{id}/tracks")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addTrack(TrackDTO trackDTO, @PathParam("id") int id){
+        trackDAO.addTrack(id,trackDTO);
+
+        TracksDTO tracksDTO = new TracksDTO();
+        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
+        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO));
+
+        return Response.ok(trackDTO).build();
+    }
 }

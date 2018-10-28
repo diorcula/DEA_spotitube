@@ -87,7 +87,7 @@ public class TrackDAO {
         return tracks;
     }
 
-    public void deleteTrack(int id, int track_id){
+    public void deleteTrack(int id, int track_id) {
         String query = "DELETE FROM playlist_track WHERE playlist_id = " + id + " AND track_id = " + track_id;
 
         try {
@@ -102,4 +102,30 @@ public class TrackDAO {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
     }
+
+    public void addTrack(int id, TrackDTO trackDTO) {
+        String title = trackDTO.getTitle();
+        String performer = trackDTO.getPerformer();
+        int duration = trackDTO.getDuration();
+        String album = trackDTO.getAlbum();
+        int count = trackDTO.getPlaycount();
+        String date = trackDTO.getPublication_date();
+        String desc = trackDTO.getDescription();
+        boolean offline = trackDTO.isOffline_available();
+
+        String query = "INSERT INTO tracks(title,performer,duration, album, playcount, publication_date, description, offline_available) VALUES('" + title + "','" + performer + "'," + duration + ", '" + album + "', "+ count + ", ' " + date + "' ,' " + desc + " '," + offline + ") INSERT INTO playlist_track VALUES(" + id + ", (SELECT TOP 1 tracks.id FROM tracks ORDER BY id DESC))";
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.execute();
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
+    }
+
 }
