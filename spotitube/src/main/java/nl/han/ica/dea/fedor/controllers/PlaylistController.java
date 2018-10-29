@@ -8,11 +8,9 @@ import nl.han.ica.dea.fedor.dto.TrackDTO;
 import nl.han.ica.dea.fedor.dto.TracksDTO;
 
 import javax.inject.Inject;
-import javax.print.attribute.standard.Media;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
 import java.util.List;
 
 @Path("/playlists")
@@ -42,17 +40,6 @@ public class PlaylistController {
         return Response.ok(playlistDAO.findOne(id)).build();
     }
 
-    @GET
-    @Path("{id}/tracks")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response allTracks(@PathParam("id") int id) {
-        // trackDAO = new TrackDAO();
-        TracksDTO tracksDTO = new TracksDTO();
-        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-        tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
-
-        return Response.ok(tracksDTO).build();
-    }
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
@@ -90,10 +77,22 @@ public class PlaylistController {
         return Response.ok(playlistsDTO).build();
     }
 
+    @GET
+    @Path("/{id}/tracks")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response allTracksFromPlaylist(@PathParam("id") int id) {
+        // trackDAO = new TrackDAO();
+        TracksDTO tracksDTO = new TracksDTO();
+        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
+        tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
+
+        return Response.ok(tracksDTO).build();
+    }
+
     @DELETE
     @Path("{id}/tracks/{track_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteTrack(@PathParam("id") int id, @PathParam("track_id") int track_id) {
+    public Response deleteTrackFromPlaylist(@PathParam("id") int id, @PathParam("track_id") int track_id) {
 
         trackDAO.deleteTrack(id, track_id);
 
@@ -108,8 +107,8 @@ public class PlaylistController {
     @Path("{id}/tracks")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addTrack(TrackDTO trackDTO, @PathParam("id") int id){
-        trackDAO.addTrack(id,trackDTO);
+    public Response addTrack(TrackDTO trackDTO, @PathParam("id") int id) {
+        trackDAO.addTrack(id, trackDTO);
 
         TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);

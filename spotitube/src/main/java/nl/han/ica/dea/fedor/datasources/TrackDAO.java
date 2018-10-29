@@ -28,7 +28,26 @@ public class TrackDAO {
     }
 
     public List<TrackDTO> findAll() {
-        List<TrackDTO> tracks = tryFindAll("SELECT * from tracks");
+
+        List<TrackDTO> tracks;
+        String query = "SELECT * \n" +
+                "FROM tracks \n" +
+                "LEFT JOIN playlist_track ON playlist_track.track_id = tracks.id\n" +
+                "WHERE tracks.id NOT IN \n" +
+                "(SELECT track_id FROM playlist_track WHERE playlist_id = 1)";
+        tracks = tryFindAll(query);
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.executeQuery();
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
         return tracks;
     }
 
@@ -113,7 +132,7 @@ public class TrackDAO {
         String desc = trackDTO.getDescription();
         boolean offline = trackDTO.isOffline_available();
 
-        String query = "INSERT INTO tracks(title,performer,duration, album, playcount, publication_date, description, offline_available) VALUES('" + title + "','" + performer + "'," + duration + ", '" + album + "', "+ count + ", ' " + date + "' ,' " + desc + " '," + offline + ") INSERT INTO playlist_track VALUES(" + id + ", (SELECT TOP 1 tracks.id FROM tracks ORDER BY id DESC))";
+        String query = "INSERT INTO tracks(title,performer,duration, album, playcount, publication_date, description, offline_available) VALUES('" + title + "','" + performer + "'," + duration + ", '" + album + "', " + count + ", ' " + date + "' ,' " + desc + " '," + offline + ") INSERT INTO playlist_track VALUES(" + id + ", (SELECT TOP 1 tracks.id FROM tracks ORDER BY id DESC))";
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
