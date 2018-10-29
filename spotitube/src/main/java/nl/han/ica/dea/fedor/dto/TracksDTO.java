@@ -13,7 +13,6 @@ public class TracksDTO {
         this.tracks = tracks;
     }
 
-
     public void addTrack(TrackDTO trackDTO) {
         tracks.add(trackDTO);
     }
@@ -21,7 +20,6 @@ public class TracksDTO {
     public List<TrackDTO> getTracks() {
         return tracks;
     }
-
 
 
 }

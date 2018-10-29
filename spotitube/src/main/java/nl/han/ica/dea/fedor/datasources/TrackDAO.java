@@ -30,11 +30,6 @@ public class TrackDAO {
     public List<TrackDTO> findAll(int id) {
 
         List<TrackDTO> tracks;
-//        String query = "SELECT * \n" +
-//                "FROM tracks \n" +
-//                "LEFT JOIN playlist_track ON playlist_track.track_id = tracks.id\n" +
-//                "WHERE tracks.id NOT IN \n" +
-//                "(SELECT track_id FROM playlist_track WHERE playlist_id = " + id + ")";
         String query = "select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playlist_track WHERE playlist_id = "+ id +")";
         tracks = tryFindAll(query);
 
