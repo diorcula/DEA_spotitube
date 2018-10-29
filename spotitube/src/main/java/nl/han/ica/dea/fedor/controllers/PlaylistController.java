@@ -81,7 +81,7 @@ public class PlaylistController {
     @Path("/{id}/tracks")
     @Produces(MediaType.APPLICATION_JSON)
     public Response allTracksFromPlaylist(@PathParam("id") int id) {
-        // trackDAO = new TrackDAO();
+
         TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
         tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
@@ -108,12 +108,14 @@ public class PlaylistController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addTrack(TrackDTO trackDTO, @PathParam("id") int id) {
+
         trackDAO.addTrack(id, trackDTO);
 
         TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO));
+        tracksDTO.setTracks(tracks);
+//        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO));
 
-        return Response.ok(trackDTO).build();
+        return Response.ok(tracksDTO).build();
     }
 }

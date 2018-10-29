@@ -27,14 +27,15 @@ public class TrackDAO {
         }
     }
 
-    public List<TrackDTO> findAll() {
+    public List<TrackDTO> findAll(int id) {
 
         List<TrackDTO> tracks;
-        String query = "SELECT * \n" +
-                "FROM tracks \n" +
-                "LEFT JOIN playlist_track ON playlist_track.track_id = tracks.id\n" +
-                "WHERE tracks.id NOT IN \n" +
-                "(SELECT track_id FROM playlist_track WHERE playlist_id = 1)";
+//        String query = "SELECT * \n" +
+//                "FROM tracks \n" +
+//                "LEFT JOIN playlist_track ON playlist_track.track_id = tracks.id\n" +
+//                "WHERE tracks.id NOT IN \n" +
+//                "(SELECT track_id FROM playlist_track WHERE playlist_id = " + id + ")";
+        String query = "select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playlist_track WHERE playlist_id = "+ id +")";
         tracks = tryFindAll(query);
 
         try {
@@ -62,7 +63,7 @@ public class TrackDAO {
     }
 
     private List<TrackDTO> tryFindAll(String query) {
-        List<TrackDTO> allTracks;
+        List<TrackDTO> allTracks = null;
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
@@ -73,7 +74,6 @@ public class TrackDAO {
             connection.close();
 
         } catch (SQLException e) {
-            allTracks = new ArrayList<>();
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
         return allTracks;
@@ -81,7 +81,7 @@ public class TrackDAO {
 
     private TrackDTO mapToTrackDTO(ResultSet resultSet) throws SQLException {
         TrackDTO trackDTO = new TrackDTO();
-        trackDTO.setId(resultSet.getInt("track_id"));
+        trackDTO.setId(resultSet.getInt("id"));
         trackDTO.setTitle(resultSet.getString("title"));
         trackDTO.setPerformer(resultSet.getString("performer"));
         trackDTO.setDuration(resultSet.getInt("duration"));
@@ -98,10 +98,7 @@ public class TrackDAO {
         List<TrackDTO> tracks = new ArrayList<>();
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
-            TrackDTO trackDTO = new TrackDTO();
-            trackDTO = mapToTrackDTO(resultSet);
-
-            tracks.add(trackDTO);
+            tracks.add(mapToTrackDTO(resultSet));
         }
         return tracks;
     }
@@ -123,17 +120,12 @@ public class TrackDAO {
     }
 
     public void addTrack(int id, TrackDTO trackDTO) {
-        String title = trackDTO.getTitle();
-        String performer = trackDTO.getPerformer();
-        int duration = trackDTO.getDuration();
-        String album = trackDTO.getAlbum();
-        int count = trackDTO.getPlaycount();
-        String date = trackDTO.getPublication_date();
-        String desc = trackDTO.getDescription();
-        boolean offline = trackDTO.isOffline_available();
 
-        String query = "INSERT INTO tracks(title,performer,duration, album, playcount, publication_date, description, offline_available) VALUES('" + title + "','" + performer + "'," + duration + ", '" + album + "', " + count + ", ' " + date + "' ,' " + desc + " '," + offline + ") INSERT INTO playlist_track VALUES(" + id + ", (SELECT TOP 1 tracks.id FROM tracks ORDER BY id DESC))";
+        int track_id = trackDTO.getId();
 
+        String query = "INSERT INTO playlist_track(playlist_id, track_id)\n" +
+                "VALUES\n" +
+                "(" + id + "," + track_id + ")";
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 

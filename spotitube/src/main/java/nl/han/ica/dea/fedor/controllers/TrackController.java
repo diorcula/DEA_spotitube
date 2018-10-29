@@ -18,9 +18,9 @@ public class TrackController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response allTracks(@QueryParam("forPlaylist") int forPlaylist, @QueryParam("token") String token) {
+    public Response allTracks(@QueryParam("forPlaylist") int forPlaylist) {
 
-        List<TrackDTO> all = trackDAO.findAll();
+        List<TrackDTO> all = trackDAO.findAll(forPlaylist);
         TracksDTO tracksDTO = new TracksDTO();
         all.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
 
