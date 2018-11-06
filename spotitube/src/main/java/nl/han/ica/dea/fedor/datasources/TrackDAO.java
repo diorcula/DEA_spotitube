@@ -121,17 +121,7 @@ public class TrackDAO {
         String query = "INSERT INTO playlist_track(playlist_id, track_id)\n" +
                 "VALUES\n" +
                 "(" + id + "," + track_id + ")";
-        try {
-            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.execute();
-            statement.close();
-            connection.close();
-
-        } catch (SQLException e) {
-            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
-        }
     }
 
 }

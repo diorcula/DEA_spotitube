@@ -19,6 +19,5 @@ public class UserServiceTest {
         UserService userService = Mockito.mock(UserService.class);
         Mockito.when(userService.isValidLogin("Test", "password")).thenReturn(true);
         Assert.assertNotEquals(true, userService.isValidLogin("Test2", "password2"));
-    }
-}
+    }}
 

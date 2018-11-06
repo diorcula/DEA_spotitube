@@ -27,8 +27,9 @@ public class PlaylistController {
         List<PlaylistDTO> all = playlistDAO.findAll();
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
         all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+        all.forEach(playlistDTO -> playlistsDTO.setLength(playlistDAO.findLength(playlistDTO)));
 
-        playlistsDTO.setLength(123445);
+       // playlistsDTO.setLength(1269);
 
         return Response.ok(playlistsDTO).build();
     }

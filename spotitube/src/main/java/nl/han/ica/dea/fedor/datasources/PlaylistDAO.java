@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.datasources;
 
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
+import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -121,5 +122,28 @@ public class PlaylistDAO {
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
+    }
+
+    public int findLength(PlaylistDTO playlistDTO) {
+        String query = "SELECT SUM(duration) FROM tracks\n" +
+                "INNER JOIN playlist_track on playlist_track.track_id = tracks.id\n" +
+                "WHERE playlist_id = "+ playlistDTO.getId();
+
+        int lengte = 0;
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet rs = statement.executeQuery();
+           while(rs.next()){
+               lengte = rs.getInt(1);
+           }
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
+    return lengte;
     }
 }
