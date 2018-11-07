@@ -9,7 +9,6 @@
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,16 +64,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="java" value="13597" />
+          <entry key="java" value="13608" />
           <entry key="properties" value="245" />
-          <entry key="txt" value="1210" />
+          <entry key="txt" value="1267" />
           <entry key="xml" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13597" />
-          <entry key="PLAIN_TEXT" value="1228" />
+          <entry key="JAVA" value="13608" />
+          <entry key="PLAIN_TEXT" value="1285" />
           <entry key="Properties" value="245" />
           <entry key="XML" value="67" />
         </counts>
@@ -86,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="54" column="87" selection-start-line="54" selection-start-column="87" selection-end-line="54" selection-end-column="87" />
+            <state relative-caret-position="722">
+              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1187#1188#0" expanded="true" />
@@ -322,7 +321,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541616305502" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541618564511" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/toets2/toetspatterns" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -625,7 +624,7 @@
       <workItem from="1541432381995" duration="3554000" />
       <workItem from="1541495640643" duration="4320000" />
       <workItem from="1541512225090" duration="1408000" />
-      <workItem from="1541584255768" duration="15525000" />
+      <workItem from="1541584255768" duration="16283000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -816,7 +815,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541499789625</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="editPlaylist gemaakt, lambda expressie werkt correct nu.">
+      <created>1541617270988</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1541617270988</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -852,7 +858,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195716000" />
+    <option name="totallyTimeSpent" value="196474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -939,7 +945,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="toch weer meron" />
     <MESSAGE value="Database connectie toegevoegd" />
     <MESSAGE value="DatabaseConnection kan gegevens ophalen uit de Database" />
     <MESSAGE value="DB conn. werkt, beter, via meron.&#10;&#10;Hierop verder werken." />
@@ -964,7 +969,8 @@
     <MESSAGE value="Unit tests voor LoginResponseDTO toegevoegd" />
     <MESSAGE value="meer tests + Mockito" />
     <MESSAGE value="+ ownership erbij&#10;&#10;setLength van alle afspeellijsten bij elkaar werkt" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ ownership erbij&#10;&#10;setLength van alle afspeellijsten bij elkaar werkt" />
+    <MESSAGE value="editPlaylist gemaakt, lambda expressie werkt correct nu." />
+    <option name="LAST_COMMIT_MESSAGE" value="editPlaylist gemaakt, lambda expressie werkt correct nu." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1171,8 +1177,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="54" column="87" selection-start-line="54" selection-start-column="87" selection-end-line="54" selection-end-column="87" />
+        <state relative-caret-position="722">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1187#1188#0" expanded="true" />

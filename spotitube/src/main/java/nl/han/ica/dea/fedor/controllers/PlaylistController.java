@@ -22,13 +22,12 @@ public class PlaylistController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response allPlaylists() {
+
         List<PlaylistDTO> all = playlistDAO.findAll();
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
         all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
 
         all.forEach(playlistDTO -> playlistsDTO.setLength(playlistDAO.findLength(playlistDTO)));
-
-       // playlistsDTO.setLength(1269);
 
         return Response.ok(playlistsDTO).build();
     }
@@ -66,7 +65,7 @@ public class PlaylistController {
 
         List<PlaylistDTO> all = playlistDAO.findAll();
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-        all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
 
         return Response.ok(playlistsDTO).build();
     }
@@ -80,7 +79,7 @@ public class PlaylistController {
 
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
         List<PlaylistDTO> all = playlistDAO.findAll();
-        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO));
+        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
 
         return Response.ok(playlistsDTO).build();
     }
@@ -106,7 +105,7 @@ public class PlaylistController {
 
         TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-        tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
+        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO1));
 
         return Response.ok(tracksDTO).build();
     }
@@ -121,8 +120,8 @@ public class PlaylistController {
 
         TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-        tracksDTO.setTracks(tracks);
-//        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO));
+       // tracksDTO.setTracks(tracks);
+       tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO1));
 
         return Response.ok(tracksDTO).build();
     }
