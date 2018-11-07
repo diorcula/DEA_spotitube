@@ -16,9 +16,7 @@ import java.util.List;
 @Path("/playlists")
 public class PlaylistController {
 
-    @Inject
     private PlaylistDAO playlistDAO;
-    @Inject
     private TrackDAO trackDAO;
 
     @GET
@@ -27,6 +25,7 @@ public class PlaylistController {
         List<PlaylistDTO> all = playlistDAO.findAll();
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
         all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+
         all.forEach(playlistDTO -> playlistsDTO.setLength(playlistDAO.findLength(playlistDTO)));
 
        // playlistsDTO.setLength(1269);
@@ -48,7 +47,14 @@ public class PlaylistController {
     @Path("{id}")
     public Response editPlaylist(PlaylistDTO playlistDTO, @PathParam("id") int id) {
 
-        return Response.ok(playlistDAO.editPlaylist(playlistDTO, id)).build();
+        playlistDAO.editPlaylist(playlistDTO, id);
+
+        List<PlaylistDTO> all = playlistDAO.findAll();
+        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
+        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
+        // De eerste parameter van de Lambda moet ook meegegeven worden aan de functie!
+
+        return Response.ok(playlistsDTO).build();
     }
 
     @DELETE
@@ -69,6 +75,7 @@ public class PlaylistController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addPlaylist(PlaylistDTO playlistDTO) {
+
         playlistDAO.addPlaylist(playlistDTO);
 
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
@@ -118,5 +125,15 @@ public class PlaylistController {
 //        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO));
 
         return Response.ok(tracksDTO).build();
+    }
+
+    @Inject
+    public void setPlaylistDAO(PlaylistDAO playlistDAO) {
+        this.playlistDAO = playlistDAO;
+    }
+
+    @Inject
+    public void setTrackDAO(TrackDAO trackDAO) {
+        this.trackDAO = trackDAO;
     }
 }

@@ -70,7 +70,7 @@ public class PlaylistDAO {
         playlists.add(playlist);
     }
 
-    public PlaylistDTO editPlaylist(PlaylistDTO playlistDTO, int id) {
+    public void editPlaylist(PlaylistDTO playlistDTO, int id) {
 
         String playlistnaam = playlistDTO.getName();
         String query = "UPDATE playlists SET name = '" + playlistnaam + "' WHERE id = " + id;
@@ -88,7 +88,7 @@ public class PlaylistDAO {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
 
-        return playlistDTO;
+        //return playlistDTO;
     }
 
     public void deletePlaylist(int id) {
@@ -108,7 +108,8 @@ public class PlaylistDAO {
     }
 
     public void addPlaylist(PlaylistDTO playlistDTO) {
-        String query = "INSERT INTO playlists(name, owner) VALUES('" + playlistDTO.getName() + "',1)";
+        String naam = playlistDTO.getName();
+        String query = "INSERT INTO playlists(name, owner) VALUES('" + naam + "',1)";
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
