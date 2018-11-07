@@ -5,7 +5,6 @@ import java.util.List;
 
 public class TracksDTO {
 
-
     private List<TrackDTO> tracks = new ArrayList<>();
 
 

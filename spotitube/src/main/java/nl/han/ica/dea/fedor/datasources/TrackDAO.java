@@ -30,7 +30,7 @@ public class TrackDAO {
     public List<TrackDTO> findAll(int id) {
 
         List<TrackDTO> tracks;
-        String query = "select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playlist_track WHERE playlist_id = "+ id +")";
+        String query = "select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playlist_track WHERE playlist_id = " + id + ")";
         tracks = tryFindAll(query);
 
         try {
@@ -122,6 +122,18 @@ public class TrackDAO {
                 "VALUES\n" +
                 "(" + id + "," + track_id + ")";
 
-    }
 
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.execute();
+
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
+    }
 }

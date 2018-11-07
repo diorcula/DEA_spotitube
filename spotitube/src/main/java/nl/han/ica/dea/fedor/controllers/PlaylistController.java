@@ -120,8 +120,7 @@ public class PlaylistController {
 
         TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-       // tracksDTO.setTracks(tracks);
-       tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO1));
+        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO1));
 
         return Response.ok(tracksDTO).build();
     }
