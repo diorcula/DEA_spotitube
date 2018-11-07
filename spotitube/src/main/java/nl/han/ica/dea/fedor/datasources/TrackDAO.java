@@ -122,7 +122,6 @@ public class TrackDAO {
                 "VALUES\n" +
                 "(" + id + "," + track_id + ")";
 
-
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 

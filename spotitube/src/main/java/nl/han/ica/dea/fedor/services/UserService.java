@@ -14,7 +14,6 @@ public class UserService {
 
     public boolean isValidLogin(String userName, String password) {
        // String passwordForUser = userDAO.getPasswordForUser(userName);
-
         UserDTO user = userDAO.getUserDTO(userName);
 
         if (password.equals(user.getPassword())) {
@@ -23,4 +22,10 @@ public class UserService {
             return false;
         }
     }
+
+//    public boolean isValidToken(String userName, String token){
+//
+//        UserDTO userDTO = userDAO.getUserDTO(userName);
+//        return true;
+//    }
 }

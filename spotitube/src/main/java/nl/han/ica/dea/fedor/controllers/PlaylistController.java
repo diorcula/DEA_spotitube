@@ -21,7 +21,7 @@ public class PlaylistController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response allPlaylists() {
+    public Response allPlaylists(@QueryParam("token") String token) {
 
         List<PlaylistDTO> all = playlistDAO.findAll();
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();

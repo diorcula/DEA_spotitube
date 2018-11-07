@@ -26,7 +26,7 @@ public class UserDAO {
     }
 
     public UserDTO getUserDTO(String username) {
-       // Connection connection = null;
+
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
 
