@@ -14,14 +14,17 @@ public class LoginController {
 
     private UserService userService;
 
+    @Path("")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response Login(UserDTO userDTO) {
-
+        System.out.println("voor if" );
         if (userService.isValidLogin(userDTO.user, userDTO.password)) {
+            System.out.println("in if");
             String token = "1234-1234-1234";
             userDTO.setToken(token);
+            System.out.println("na set token");
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO(userDTO.getToken(), userDTO.getUser());
 
             return Response.ok(loginResponseDTO).build();
