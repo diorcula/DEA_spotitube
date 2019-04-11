@@ -122,8 +122,9 @@ public class TrackDAO {
                 "VALUES\n" +
                 "(" + id + "," + track_id + ")";
 
-        try {
-            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+        try (
+                Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+        ) {
 
             PreparedStatement statement = connection.prepareStatement(query);
             statement.execute();
@@ -133,6 +134,8 @@ public class TrackDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        } finally {
+
         }
     }
 }

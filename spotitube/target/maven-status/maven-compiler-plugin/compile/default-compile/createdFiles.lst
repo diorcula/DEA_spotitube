@@ -9,6 +9,7 @@ nl\han\ica\dea\fedor\dto\TracksDTO.class
 nl\han\ica\dea\fedor\controllers\LoginController.class
 nl\han\ica\dea\fedor\datasources\TrackDAO.class
 nl\han\ica\dea\fedor\services\UserService.class
+nl\han\ica\dea\fedor\controllers\TrackController.class
 nl\han\ica\dea\fedor\datasources\UserDAO.class
 nl\han\ica\dea\fedor\controllers\PlaylistController.class
 nl\han\ica\dea\fedor\dto\PlaylistDTO.class

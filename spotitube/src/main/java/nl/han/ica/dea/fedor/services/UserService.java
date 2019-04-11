@@ -9,7 +9,7 @@ import javax.inject.Inject;
 public class UserService {
 
     @Inject
-    UserDAO userDAO;
+    private UserDAO userDAO;
 
 
     public boolean isValidLogin(String userName, String password) {
