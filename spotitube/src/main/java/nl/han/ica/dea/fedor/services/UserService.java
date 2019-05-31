@@ -8,9 +8,12 @@ import javax.inject.Inject;
 
 public class UserService {
 
-    @Inject
     private UserDAO userDAO;
 
+    @Inject
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     public boolean isValidLogin(String userName, String password) {
        // String passwordForUser = userDAO.getPasswordForUser(userName);

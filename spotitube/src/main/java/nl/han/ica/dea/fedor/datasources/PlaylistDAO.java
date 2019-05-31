@@ -3,6 +3,7 @@ package nl.han.ica.dea.fedor.datasources;
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
+import nl.han.ica.dea.fedor.dto.UserDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -27,8 +28,20 @@ public class PlaylistDAO {
 
     public PlaylistDTO findOne(int id) {
         List<PlaylistDTO> playlists = new ArrayList<>();
-        tryFindAll(playlists, "SELECT * from playlists WHERE id = " + id);
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
+            PreparedStatement statement=connection.prepareStatement("select * from playlists where id=?");
+            statement.setInt(1,id);
+
+            addNewItemsFromDatabase(playlists, statement);
+
+            statement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+        }
         return playlists.get(0);
     }
 
@@ -73,12 +86,14 @@ public class PlaylistDAO {
     public void editPlaylist(PlaylistDTO playlistDTO, int id) {
 
         String playlistnaam = playlistDTO.getName();
-        String query = "UPDATE playlists SET name = '" + playlistnaam + "' WHERE id = " + id;
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement=connection.prepareStatement("update playlists set name=? where id=?");
+            statement.setString(1,playlistnaam);    //1 specifies the first parameter in the query i.e. name
+            statement.setInt(2,id);
+
             statement.execute();
 
             statement.close();
@@ -92,12 +107,12 @@ public class PlaylistDAO {
     }
 
     public void deletePlaylist(int id) {
-        String query = "DELETE FROM playlists WHERE id = " + id;
-
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement=connection.prepareStatement("delete from playlists where id=?");
+            statement.setInt(1,id);//1 specifies the first parameter in the query i.e. name
+
             statement.execute();
             statement.close();
             connection.close();
@@ -109,12 +124,13 @@ public class PlaylistDAO {
 
     public void addPlaylist(PlaylistDTO playlistDTO) {
         String naam = playlistDTO.getName();
-        String query = "INSERT INTO playlists(name, owner) VALUES('" + naam + "',1)";
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement=connection.prepareStatement("insert into playlists(name, owner) values(?, 1)");
+            statement.setString(1,naam);//1 specifies the first parameter in the query i.e. name
+
             statement.execute();
 
             statement.close();
@@ -126,15 +142,16 @@ public class PlaylistDAO {
     }
 
     public int findLength(PlaylistDTO playlistDTO) {
-        String query = "SELECT SUM(duration) FROM tracks\n" +
-                "INNER JOIN playlist_track on playlist_track.track_id = tracks.id\n" +
-                "WHERE playlist_id = "+ playlistDTO.getId();
+        int playlist_id = playlistDTO.getId();
 
         int lengte = 0;
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement(query);
+//            PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement=connection.prepareStatement("select sum(duration) from tracks inner join playliststracks on playliststracks.track_id = tracks.id where playliststracks.playlist_id = ?");
+            statement.setInt(1,playlist_id);
+
             ResultSet rs = statement.executeQuery();
            while(rs.next()){
                lengte = rs.getInt(1);

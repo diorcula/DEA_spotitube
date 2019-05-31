@@ -3,7 +3,6 @@ package nl.han.ica.dea.fedor.datasources;
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.TrackDTO;
 
-import javax.inject.Inject;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,15 +28,20 @@ public class TrackDAO {
 
     public List<TrackDTO> findAll(int id) {
 
-        List<TrackDTO> tracks;
-        String query = "select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playlist_track WHERE playlist_id = " + id + ")";
-        tracks = tryFindAll(query);
+        List<TrackDTO> tracks = null;
+//        String query = "select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playliststracks WHERE playlist_id = " + id + ")";
+//        tracks = tryFindAll(query);
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement(query);
+            //          PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement = connection.prepareStatement("select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playliststracks WHERE playlist_id =?)");
+            statement.setInt(1, id);
+
             statement.executeQuery();
+            tracks = getAllTracks(statement);
+
             statement.close();
             connection.close();
 
@@ -48,22 +52,14 @@ public class TrackDAO {
     }
 
     public List<TrackDTO> findTracksFromPlaylist(int id) {
+        List<TrackDTO> tracksFromPlaylist = null;
 
-        return tryFindAll(
-                "SELECT * " +
-                        "FROM playlist_track " +
-                        "JOIN tracks ON playlist_track.track_id = tracks.id " +
-                        "WHERE playlist_track.playlist_id = " + id);
-
-    }
-
-    private List<TrackDTO> tryFindAll(String query) {
-        List<TrackDTO> allTracks = null;
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
-            PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement = connection.prepareStatement("select * from playliststracks join tracks on playliststracks.track_id = tracks.id where playliststracks.playlist_id =?");
+            statement.setInt(1, id);
 
-            allTracks = getAllTracks(statement);
+            tracksFromPlaylist = getAllTracks(statement);
 
             statement.close();
             connection.close();
@@ -71,7 +67,8 @@ public class TrackDAO {
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
-        return allTracks;
+        return tracksFromPlaylist;
+
     }
 
     private TrackDTO mapToTrackDTO(ResultSet resultSet) throws SQLException {
@@ -99,12 +96,13 @@ public class TrackDAO {
     }
 
     public void deleteTrack(int id, int track_id) {
-        String query = "DELETE FROM playlist_track WHERE playlist_id = " + id + " AND track_id = " + track_id;
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement = connection.prepareStatement("delete from playliststracks where playlist_id = ? and track_id = ?");
+            statement.setInt(1, id);
+            statement.setInt(2, track_id);
             statement.execute();
             statement.close();
             connection.close();
@@ -115,27 +113,21 @@ public class TrackDAO {
     }
 
     public void addTrack(int id, TrackDTO trackDTO) {
-
         int track_id = trackDTO.getId();
 
-        String query = "INSERT INTO playlist_track(playlist_id, track_id)\n" +
-                "VALUES\n" +
-                "(" + id + "," + track_id + ")";
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-        try (
-                Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
-        ) {
+            PreparedStatement statement = connection.prepareStatement("insert into playliststracks(playlist_id, track_id) values (?,?)");
+            statement.setInt(1, id);//1 specifies the first parameter in the query i.e. name
+            statement.setInt(2, track_id);
 
-            PreparedStatement statement = connection.prepareStatement(query);
             statement.execute();
-
             statement.close();
             connection.close();
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
-        } finally {
-
         }
     }
 }

@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 
 public class UserDAO {
     private Logger logger = Logger.getLogger(getClass().getName());
-  //  private SQLDatabaseConnection dBconnection = null;
     private DatabaseProperties databaseProperties;
 
     public UserDAO() {
@@ -27,31 +26,28 @@ public class UserDAO {
 
     public UserDTO getUserDTO(String username) {
 
-        PreparedStatement preparedStatement = null;
-        ResultSet rs = null;
-
-        // Prepared statement
-        String query = "USE Spotitube SELECT * FROM users WHERE username = '" + username + "'";
+        ResultSet rs;
 
         try {
-           // connection = dBconnection.createConnection();
-            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(),databaseProperties.connectionUSER(),databaseProperties.connectionPASS());
-            preparedStatement = connection.prepareStatement(query);
-            rs = preparedStatement.executeQuery();
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            rs.next();
-            UserDTO user = new UserDTO();
-            user.setUser(rs.getString("username"));
-            user.setPassword(rs.getString("password"));
+            PreparedStatement statement = connection.prepareStatement("USE Spotitube SELECT * FROM users WHERE username = ?");
+            statement.setString(1, username);//1 specifies the first parameter in the query i.e. name
+            rs = statement.executeQuery();
 
-            return user;
-
+            while (rs.next()) {
+                UserDTO user = new UserDTO();
+                user.setUser(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setToken(rs.getString("token"));
+                statement.close();
+                connection.close();
+                return user;
+            }
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
-
         return null;
-
     }
 
 }
