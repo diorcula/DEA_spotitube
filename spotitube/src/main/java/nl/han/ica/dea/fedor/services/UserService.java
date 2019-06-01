@@ -2,9 +2,11 @@ package nl.han.ica.dea.fedor.services;
 
 import nl.han.ica.dea.fedor.datasources.UserDAO;
 import nl.han.ica.dea.fedor.dto.UserDTO;
+import nl.han.ica.dea.fedor.exceptionMapper.NotFoundExceptionMapper;
 
 
 import javax.inject.Inject;
+import javax.ws.rs.NotFoundException;
 
 public class UserService {
 
@@ -16,13 +18,12 @@ public class UserService {
     }
 
     public boolean isValidLogin(String userName, String password) {
-       // String passwordForUser = userDAO.getPasswordForUser(userName);
         UserDTO user = userDAO.getUserDTO(userName);
 
         if (password.equals(user.getPassword())) {
             return true;
         } else {
-            return false;
+            throw new NotFoundException();
         }
     }
 

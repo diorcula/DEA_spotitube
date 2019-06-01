@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.controllers;
 
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.dto.LoginResponseDTO;
+import nl.han.ica.dea.fedor.exceptionMapper.NotFoundExceptionMapper;
 import nl.han.ica.dea.fedor.services.UserService;
 
 import javax.inject.Inject;
@@ -18,12 +19,9 @@ public class LoginController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response Login(UserDTO userDTO) {
-        System.out.println("voor if" );
         if (userService.isValidLogin(userDTO.user, userDTO.password)) {
-            System.out.println("in if");
             String token = "1234-1234-1234";
             userDTO.setToken(token);
-            System.out.println("na set token");
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO(userDTO.getToken(), userDTO.getUser());
 
             return Response.ok(loginResponseDTO).build();
