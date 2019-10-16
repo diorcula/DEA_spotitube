@@ -37,9 +37,9 @@ public class UserDAO {
 
             while (rs.next()) {
                 UserDTO user = new UserDTO();
-                    user.setUser(rs.getString("username"));
-                    user.setPassword(rs.getString("password"));
-                    user.setToken(rs.getString("token"));
+                user.setUser(rs.getString("username"));
+                user.setPassword(rs.getString("password"));
+                user.setToken(rs.getString("token"));
 
                 statement.close();
                 connection.close();

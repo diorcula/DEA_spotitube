@@ -22,10 +22,11 @@ public class UserDTO {
         this.password = password;
     }
 
-    public void setToken(String token){
+    public void setToken(String token) {
         this.token = token;
     }
-    public String getToken(){
+
+    public String getToken() {
         return token;
     }
 

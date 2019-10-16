@@ -8,6 +8,7 @@ import nl.han.ica.dea.fedor.services.UserService;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 
 @Path("/login")
@@ -22,7 +23,9 @@ public class LoginController {
         if (userService.isValidLogin(userDTO.user, userDTO.password)) {
             String token = "1234-1234-1234";
             userDTO.setToken(token);
+
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO(userDTO.getToken(), userDTO.getUser());
+            System.out.println(userDTO.getToken());
 
             return Response.ok(loginResponseDTO).build();
 
