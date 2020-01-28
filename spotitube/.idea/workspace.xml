@@ -7,16 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/DEA-spotitube.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/LoginResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/PlaylistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/PlaylistDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/PlaylistDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/datasources/PlaylistDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/datasources/PlaylistDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/dto/PlaylistDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/dto/PlaylistDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/dto/UserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/PlaylistController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/PlaylistDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/PlaylistDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/dto/PlaylistDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/dto/PlaylistDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/dto/UserDTO.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,15 +82,14 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="130" />
-    <option name="width" value="1440" />
-    <option name="height" value="780" />
-  </component>
   <component name="ProjectId" id="1SHddzILkHba3dvx9EHIeZHNzeg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlserver" />
@@ -104,18 +110,6 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="nl.han.ica.dea.fedor.dto" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="TomEE Server.Uwe">
     <configuration name="SQLDatabaseConnection" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -498,6 +492,29 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <option name="contentProportion" value="0.10660173" />
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="TomEE Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -561,6 +578,11 @@
       <workItem from="1559296952172" duration="11009000" />
       <workItem from="1559386205113" duration="4009000" />
       <workItem from="1571224549162" duration="4903000" />
+      <workItem from="1579611872203" duration="5643000" />
+      <workItem from="1579638460614" duration="302000" />
+      <workItem from="1580210609906" duration="1005000" />
+      <workItem from="1580212403597" duration="2843000" />
+      <workItem from="1580215485091" duration="674000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -850,7 +872,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -883,6 +907,97 @@
     <MESSAGE value="Enkele veranderingen door Uwe van Heesch doorgevoerd" />
     <MESSAGE value="- database aangepast, owner en token toegevoegd.&#10;- alle prepared statements aangepast zodat het nu echt prepared statements zijn." />
     <option name="LAST_COMMIT_MESSAGE" value="- database aangepast, owner en token toegevoegd.&#10;- alle prepared statements aangepast zodat het nu echt prepared statements zijn." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="444" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580215530731">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="96" y="16" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.720@0.0.1280.720" timestamp="1579611960127" />
+    <state x="444" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580215530731" />
+    <state width="1650" height="414" key="GridCell.Tab.0.bottom" timestamp="1580215821916">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1579618668967" />
+    <state width="1650" height="414" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821916" />
+    <state width="1650" height="414" key="GridCell.Tab.0.center" timestamp="1580215821916">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1579618668967" />
+    <state width="1650" height="414" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821916" />
+    <state width="1650" height="414" key="GridCell.Tab.0.left" timestamp="1580215821916">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1579618668967" />
+    <state width="1650" height="414" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821916" />
+    <state width="1650" height="414" key="GridCell.Tab.0.right" timestamp="1580215821916">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1579618668967" />
+    <state width="1650" height="414" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821916" />
+    <state width="1650" height="414" key="GridCell.Tab.1.bottom" timestamp="1580215821765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821765" />
+    <state width="1650" height="414" key="GridCell.Tab.1.center" timestamp="1580215821765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821765" />
+    <state width="1650" height="414" key="GridCell.Tab.1.left" timestamp="1580215821765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821765" />
+    <state width="1650" height="414" key="GridCell.Tab.1.right" timestamp="1580215821765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821765" />
+    <state width="1650" height="414" key="GridCell.Tab.2.bottom" timestamp="1580215821766">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.2.bottom/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821766" />
+    <state width="1650" height="414" key="GridCell.Tab.2.center" timestamp="1580215821765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.2.center/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821765" />
+    <state width="1650" height="414" key="GridCell.Tab.2.left" timestamp="1580215821765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.2.left/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821765" />
+    <state width="1650" height="414" key="GridCell.Tab.2.right" timestamp="1580215821765">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="224" key="GridCell.Tab.2.right/0.0.1280.720@0.0.1280.720" timestamp="1579618668975" />
+    <state width="1650" height="414" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580215821765" />
+    <state width="1526" height="367" key="GridCell.Tab.3.bottom" timestamp="1580215113027">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="251" key="GridCell.Tab.3.bottom/0.0.1280.720@0.0.1280.720" timestamp="1579616868611" />
+    <state width="1526" height="367" key="GridCell.Tab.3.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1580215113027" />
+    <state width="1526" height="367" key="GridCell.Tab.3.center" timestamp="1580215113026">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="251" key="GridCell.Tab.3.center/0.0.1280.720@0.0.1280.720" timestamp="1579616868611" />
+    <state width="1526" height="367" key="GridCell.Tab.3.center/0.0.1920.1080@0.0.1920.1080" timestamp="1580215113026" />
+    <state width="1526" height="367" key="GridCell.Tab.3.left" timestamp="1580215113026">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="251" key="GridCell.Tab.3.left/0.0.1280.720@0.0.1280.720" timestamp="1579616868611" />
+    <state width="1526" height="367" key="GridCell.Tab.3.left/0.0.1920.1080@0.0.1920.1080" timestamp="1580215113026" />
+    <state width="1526" height="367" key="GridCell.Tab.3.right" timestamp="1580215113027">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="997" height="251" key="GridCell.Tab.3.right/0.0.1280.720@0.0.1280.720" timestamp="1579616868611" />
+    <state width="1526" height="367" key="GridCell.Tab.3.right/0.0.1920.1080@0.0.1920.1080" timestamp="1580215113027" />
+    <state x="282" y="87" width="700" height="530" key="recent.locations.popup" timestamp="1579616568475">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="282" y="87" width="700" height="530" key="recent.locations.popup/0.0.1280.720@0.0.1280.720" timestamp="1579616568475" />
   </component>
   <component name="masterDetails">
     <states>

@@ -1,5 +1,7 @@
 package nl.han.ica.dea.fedor.dto;
 
+import java.sql.Array;
+
 public class PlaylistDTO {
     private int id;
     private String name;
@@ -37,7 +39,7 @@ public class PlaylistDTO {
         this.owner = owner;
     }
 
-    public int[] getTracks() {
+    public int[] getTracks(Array title) {
         return tracks;
     }
 

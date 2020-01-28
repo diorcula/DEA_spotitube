@@ -23,6 +23,10 @@ public class PlaylistDAO {
     public List<PlaylistDTO> findAll() {
         List<PlaylistDTO> playlists = new ArrayList<>();
         tryFindAll(playlists, "SELECT * FROM playlists");
+//        tryFindAll(playlists, "SELECT * \n" +
+//                "FROM playlists\n" +
+//                "LEFT OUTER JOIN playliststracks ON playlists.id = playliststracks.playlist_id\n" +
+//                "LEFT OUTER JOIN tracks ON playliststracks.track_id = tracks.id");
         return playlists;
     }
 
@@ -79,6 +83,8 @@ public class PlaylistDAO {
         playlist.setId(resultSet.getInt("id"));
         playlist.setName(resultSet.getString("name"));
         playlist.setOwner(resultSet.getBoolean("owner"));
+        // hier gaat het dus helemaal mis:
+//        playlist.getTracks(resultSet.getArray("id"));
 
         playlists.add(playlist);
     }
