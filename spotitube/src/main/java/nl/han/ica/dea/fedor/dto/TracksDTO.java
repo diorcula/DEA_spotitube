@@ -19,6 +19,4 @@ public class TracksDTO {
     public List<TrackDTO> getTracks() {
         return tracks;
     }
-
-
 }

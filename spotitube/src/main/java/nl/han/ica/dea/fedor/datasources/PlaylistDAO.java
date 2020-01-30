@@ -1,9 +1,7 @@
 package nl.han.ica.dea.fedor.datasources;
 
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
-import nl.han.ica.dea.fedor.dto.PlaylistDTO;
-import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
-import nl.han.ica.dea.fedor.dto.UserDTO;
+import nl.han.ica.dea.fedor.dto.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -23,10 +21,6 @@ public class PlaylistDAO {
     public List<PlaylistDTO> findAll() {
         List<PlaylistDTO> playlists = new ArrayList<>();
         tryFindAll(playlists, "SELECT * FROM playlists");
-//        tryFindAll(playlists, "SELECT * \n" +
-//                "FROM playlists\n" +
-//                "LEFT OUTER JOIN playliststracks ON playlists.id = playliststracks.playlist_id\n" +
-//                "LEFT OUTER JOIN tracks ON playliststracks.track_id = tracks.id");
         return playlists;
     }
 
@@ -35,8 +29,8 @@ public class PlaylistDAO {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement=connection.prepareStatement("select * from playlists where id=?");
-            statement.setInt(1,id);
+            PreparedStatement statement = connection.prepareStatement("select * from playlists where id=?");
+            statement.setInt(1, id);
 
             addNewItemsFromDatabase(playlists, statement);
 
@@ -83,8 +77,10 @@ public class PlaylistDAO {
         playlist.setId(resultSet.getInt("id"));
         playlist.setName(resultSet.getString("name"));
         playlist.setOwner(resultSet.getBoolean("owner"));
-        // hier gaat het dus helemaal mis:
-//        playlist.getTracks(resultSet.getArray("id"));
+
+        TrackDAO trackDAO = new TrackDAO();
+        playlist.setTracks(trackDAO.findTracksFromPlaylist(playlist.getId()));
+        System.out.println(playlist.getTracks());
 
         playlists.add(playlist);
     }
@@ -96,9 +92,9 @@ public class PlaylistDAO {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement=connection.prepareStatement("update playlists set name=? where id=?");
-            statement.setString(1,playlistnaam);    //1 specifies the first parameter in the query i.e. name
-            statement.setInt(2,id);
+            PreparedStatement statement = connection.prepareStatement("update playlists set name=? where id=?");
+            statement.setString(1, playlistnaam);    //1 specifies the first parameter in the query i.e. name
+            statement.setInt(2, id);
 
             statement.execute();
 
@@ -116,8 +112,8 @@ public class PlaylistDAO {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement=connection.prepareStatement("delete from playlists where id=?");
-            statement.setInt(1,id);//1 specifies the first parameter in the query i.e. name
+            PreparedStatement statement = connection.prepareStatement("delete from playlists where id=?");
+            statement.setInt(1, id);//1 specifies the first parameter in the query i.e. name
 
             statement.execute();
             statement.close();
@@ -134,8 +130,8 @@ public class PlaylistDAO {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement=connection.prepareStatement("insert into playlists(name, owner) values(?, 1)");
-            statement.setString(1,naam);//1 specifies the first parameter in the query i.e. name
+            PreparedStatement statement = connection.prepareStatement("insert into playlists(name, owner) values(?, 1)");
+            statement.setString(1, naam);//1 specifies the first parameter in the query i.e. name
 
             statement.execute();
 
@@ -155,19 +151,19 @@ public class PlaylistDAO {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
 //            PreparedStatement statement = connection.prepareStatement(query);
-            PreparedStatement statement=connection.prepareStatement("select sum(duration) from tracks inner join playliststracks on playliststracks.track_id = tracks.id where playliststracks.playlist_id = ?");
-            statement.setInt(1,playlist_id);
+            PreparedStatement statement = connection.prepareStatement("select sum(duration) from tracks inner join playliststracks on playliststracks.track_id = tracks.id where playliststracks.playlist_id = ?");
+            statement.setInt(1, playlist_id);
 
             ResultSet rs = statement.executeQuery();
-           while(rs.next()){
-               lengte = rs.getInt(1);
-           }
+            while (rs.next()) {
+                lengte = rs.getInt(1);
+            }
             statement.close();
             connection.close();
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
-    return lengte;
+        return lengte;
     }
 }
