@@ -7,6 +7,7 @@ public class PlaylistDTO {
     private String name;
     private boolean owner;
     private List<TrackDTO> tracks;
+    private int duration;
 
 
 //    public void setPlaylist(int id, String name, boolean owner) {
@@ -48,4 +49,11 @@ public class PlaylistDTO {
         this.tracks = tracks;
     }
 
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getDuration(){
+        return duration;
+    }
 }

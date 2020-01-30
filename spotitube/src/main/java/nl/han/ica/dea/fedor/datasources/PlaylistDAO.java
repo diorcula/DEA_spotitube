@@ -78,9 +78,11 @@ public class PlaylistDAO {
         playlist.setName(resultSet.getString("name"));
         playlist.setOwner(resultSet.getBoolean("owner"));
 
+        playlist.setDuration(findLength(playlist.getId()));
+        System.out.println("lengte van single playlist " + playlist.getDuration());
+
         TrackDAO trackDAO = new TrackDAO();
         playlist.setTracks(trackDAO.findTracksFromPlaylist(playlist.getId()));
-        System.out.println(playlist.getTracks());
 
         playlists.add(playlist);
     }
@@ -143,14 +145,13 @@ public class PlaylistDAO {
         }
     }
 
-    public int findLength(PlaylistDTO playlistDTO) {
-        int playlist_id = playlistDTO.getId();
+    public int findLength(int id) {
+        int playlist_id = id;
 
         int lengte = 0;
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-//            PreparedStatement statement = connection.prepareStatement(query);
             PreparedStatement statement = connection.prepareStatement("select sum(duration) from tracks inner join playliststracks on playliststracks.track_id = tracks.id where playliststracks.playlist_id = ?");
             statement.setInt(1, playlist_id);
 

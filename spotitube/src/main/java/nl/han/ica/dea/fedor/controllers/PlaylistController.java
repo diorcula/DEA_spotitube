@@ -26,8 +26,14 @@ public class PlaylistController {
         List<PlaylistDTO> all = playlistDAO.findAll();
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
         all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
-        all.forEach(playlistDTO -> playlistsDTO.setLength(playlistDAO.findLength(playlistDTO)));
 
+        int som = 0;
+        for (PlaylistDTO dto : all) {
+            som += dto.getDuration();
+        }
+
+        int finalSom = som;
+        all.forEach(playlistDTO -> playlistsDTO.setLength(finalSom));
         return Response.ok(playlistsDTO).build();
     }
 
@@ -50,7 +56,6 @@ public class PlaylistController {
         List<PlaylistDTO> all = playlistDAO.findAll();
         PlaylistsDTO playlistsDTO = new PlaylistsDTO();
         all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
-        // De eerste parameter van de Lambda moet ook meegegeven worden aan de functie!
 
         return Response.ok(playlistsDTO).build();
     }
