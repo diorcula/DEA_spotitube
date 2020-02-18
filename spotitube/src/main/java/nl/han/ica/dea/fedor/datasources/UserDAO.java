@@ -2,7 +2,6 @@ package nl.han.ica.dea.fedor.datasources;
 
 import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.UserDTO;
-
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +24,6 @@ public class UserDAO {
     }
 
     public UserDTO getUserDTO(String username) {
-
         ResultSet rs;
 
         try {

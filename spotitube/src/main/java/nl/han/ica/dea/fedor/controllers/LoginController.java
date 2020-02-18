@@ -2,13 +2,11 @@ package nl.han.ica.dea.fedor.controllers;
 
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.dto.LoginResponseDTO;
-import nl.han.ica.dea.fedor.exceptionMapper.NotFoundExceptionMapper;
 import nl.han.ica.dea.fedor.services.UserService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 
 @Path("/login")
