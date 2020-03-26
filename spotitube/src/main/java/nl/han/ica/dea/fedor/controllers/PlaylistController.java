@@ -6,6 +6,7 @@ import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
 import nl.han.ica.dea.fedor.dto.TrackDTO;
 import nl.han.ica.dea.fedor.dto.TracksDTO;
+import nl.han.ica.dea.fedor.services.PlaylistService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -16,6 +17,7 @@ import java.util.List;
 @Path("/playlists")
 public class PlaylistController {
 
+    private PlaylistService playlistService;
     private PlaylistDAO playlistDAO;
     private TrackDAO trackDAO;
 
@@ -23,18 +25,9 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response allPlaylists(@QueryParam("token") String token) {
 
-        List<PlaylistDTO> all = playlistDAO.findAll();
-        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-        all.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+        List<PlaylistDTO> all = playlistService.getAllPlaylists();
 
-        int som = 0;
-        for (PlaylistDTO dto : all) {
-            som += dto.getDuration();
-        }
-
-        int finalSom = som;
-        all.forEach(playlistDTO -> playlistsDTO.setLength(finalSom));
-        return Response.ok(playlistsDTO).build();
+        return Response.ok(all).build();
     }
 
     @GET
