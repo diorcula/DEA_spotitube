@@ -10,9 +10,10 @@ public class PlaylistService {
 
     public PlaylistDAO playlistDAO = new PlaylistDAO();
     public PlaylistsDTO playlistsDTO = new PlaylistsDTO();
+    public PlaylistDTO playlistDTO = new PlaylistDTO();
 
 
-    public PlaylistsDTO getAllPlaylists() {
+    public PlaylistsDTO serviceAllPlaylists() {
         List<PlaylistDTO> returnList = playlistDAO.findAll();
 
         setDuration(returnList);
@@ -24,9 +25,7 @@ public class PlaylistService {
     public void setDuration(List<PlaylistDTO> returnList) {
         int som = 0;
 
-        for (PlaylistDTO dto : returnList) {
-            som += dto.getDuration();
-        }
+        for (PlaylistDTO dto : returnList) { som += dto.getDuration(); }
         int finalSom = som;
 
         returnList.forEach(playlistDTO -> playlistsDTO.setLength(finalSom));
@@ -34,5 +33,11 @@ public class PlaylistService {
 
     public void setLists(List<PlaylistDTO> returnList) {
         returnList.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+    }
+
+
+    public PlaylistDTO serviceFindPlaylist(int id) {
+        playlistDTO = playlistDAO.findOne(id);
+        return playlistDTO;
     }
 }
