@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PlaylistService {
 
-    public PlaylistDAO playlistDAO;
+    public PlaylistDAO playlistDAO = new PlaylistDAO();
 
     public PlaylistsDTO getAllPlaylists() {
 
