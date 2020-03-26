@@ -1,4 +1,4 @@
-package nl.han.dea.test.dto.LOGIC;
-
-public class LoginLogicTest {
-}
+//package nl.han.dea.test.dto.LOGIC;
+//
+//public class LoginLogicTest {
+//}

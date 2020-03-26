@@ -25,7 +25,8 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response allPlaylists(@QueryParam("token") String token) {
 
-        List<PlaylistDTO> all = playlistService.getAllPlaylists();
+        System.out.println(playlistDAO.findAll());
+        PlaylistsDTO all = playlistService.getAllPlaylists();
 
         return Response.ok(all).build();
     }
@@ -36,7 +37,6 @@ public class PlaylistController {
     public Response findPlaylist(@PathParam("id") int id) {
         return Response.ok(playlistDAO.findOne(id)).build();
     }
-
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
@@ -120,6 +120,11 @@ public class PlaylistController {
         tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO1));
 
         return Response.ok(tracksDTO).build();
+    }
+
+    @Inject
+    public void setPlaylistService(PlaylistService playlistService) {
+        this.playlistService = playlistService;
     }
 
     @Inject

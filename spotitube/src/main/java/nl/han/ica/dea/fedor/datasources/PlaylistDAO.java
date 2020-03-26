@@ -79,8 +79,6 @@ public class PlaylistDAO {
         playlist.setOwner(resultSet.getBoolean("owner"));
 
         playlist.setDuration(findLength(playlist.getId()));
-        System.out.println("lengte van single playlist " + playlist.getDuration());
-
         TrackDAO trackDAO = new TrackDAO();
         playlist.setTracks(trackDAO.findTracksFromPlaylist(playlist.getId()));
 
@@ -88,7 +86,6 @@ public class PlaylistDAO {
     }
 
     public void editPlaylist(PlaylistDTO playlistDTO, int id) {
-
         String playlistnaam = playlistDTO.getName();
 
         try {
