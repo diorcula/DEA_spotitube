@@ -16,8 +16,8 @@ public class UserService {
         if (password.equals(user.getPassword())) {
             return true;
         } else {
-            System.out.println("fuck this shit");
-            throw new NotFoundException();
+            System.out.println("Login credentials do not match");
+            return false;
         }
     }
 
