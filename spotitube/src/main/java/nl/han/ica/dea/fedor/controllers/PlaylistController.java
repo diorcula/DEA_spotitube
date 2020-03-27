@@ -46,13 +46,16 @@ public class PlaylistController {
     @Path("{id}")
     public Response editPlaylist(PlaylistDTO playlistDTO, @PathParam("id") int id) {
 
-        playlistDAO.editPlaylist(playlistDTO, id);
+//        playlistDAO.editPlaylist(playlistDTO, id);
+//
+//        List<PlaylistDTO> all = playlistDAO.findAll();
+//        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
+//        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
 
-        List<PlaylistDTO> all = playlistDAO.findAll();
-        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
+        playlistService.serviceEditPlaylist(playlistDTO, id);
+        PlaylistsDTO all = playlistService.serviceAllPlaylists();
 
-        return Response.ok(playlistsDTO).build();
+        return Response.ok(all).build();
     }
 
     @DELETE

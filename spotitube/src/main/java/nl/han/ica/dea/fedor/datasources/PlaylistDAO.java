@@ -103,8 +103,6 @@ public class PlaylistDAO {
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
         }
-
-        //return playlistDTO;
     }
 
     public void deletePlaylist(int id) {
