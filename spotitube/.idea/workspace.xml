@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/PlaylistServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/PlaylistServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/PlaylistServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/LoginRequestDtoTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +108,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
@@ -120,8 +116,8 @@
       <recent name="nl.han.ica.dea.fedor.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="TomEE Server.TomEE">
-    <configuration name="LoginRequestDtoTest.testEqualsIsTrueForEqualObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlaylistServiceTest">
+    <configuration name="PlaylistServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotitube" />
       <extension name="coverage">
         <pattern>
@@ -130,8 +126,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.LoginRequestDtoTest" />
-      <option name="METHOD_NAME" value="testEqualsIsTrueForEqualObject" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.PlaylistServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaylistServiceTest.TESTserviceAllPlaylists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.dea.test.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.PlaylistServiceTest" />
+      <option name="METHOD_NAME" value="TESTserviceAllPlaylists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,22 +193,6 @@
       <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
       <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.UserServiceTest" />
       <option name="METHOD_NAME" value="testIsNotValidUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest.testIsValidLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.han.dea.test.dto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.UserServiceTest" />
-      <option name="METHOD_NAME" value="testIsValidLogin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -411,21 +406,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
       <item itemvalue="TomEE Server.TomEE" />
       <item itemvalue="TomEE Server.Uwe" />
-      <item itemvalue="JUnit.LoginRequestDtoTest.testEqualsIsTrueForEqualObject" />
       <item itemvalue="JUnit.UserServiceTest" />
       <item itemvalue="JUnit.UserServiceTest.testIsNotValidPassword" />
       <item itemvalue="JUnit.UserServiceTest.testIsNotValidUser" />
+      <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
+      <item itemvalue="JUnit.PlaylistServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlaylistServiceTest" />
+        <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
         <item itemvalue="JUnit.UserServiceTest.testIsNotValidUser" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserServiceTest.testIsNotValidPassword" />
-        <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
-        <item itemvalue="JUnit.LoginRequestDtoTest.testEqualsIsTrueForEqualObject" />
       </list>
     </recent_temporary>
   </component>
@@ -539,7 +534,7 @@
       <workItem from="1585141175012" duration="3154000" />
       <workItem from="1585219495821" duration="4796000" />
       <workItem from="1585230205783" duration="3163000" />
-      <workItem from="1585233400216" duration="25742000" />
+      <workItem from="1585233400216" duration="29453000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -885,59 +880,59 @@
     <state x="-1288" y="174" key="FileChooserDialogImpl/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1584448828231" />
     <state x="421" y="116" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1583836511029" />
     <state x="632" y="174" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584535301341" />
-    <state width="1316" height="380" key="GridCell.Tab.0.bottom" timestamp="1585319434056">
+    <state width="1489" height="405" key="GridCell.Tab.0.bottom" timestamp="1585323635421">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.0.bottom/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="405" key="GridCell.Tab.0.bottom/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323635421" />
     <state width="1078" height="445" key="GridCell.Tab.0.bottom/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516187" />
     <state width="1078" height="268" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580310165290" />
     <state width="1663" height="412" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1316" height="380" key="GridCell.Tab.0.center" timestamp="1585319434056">
+    <state width="1489" height="405" key="GridCell.Tab.0.center" timestamp="1585323635421">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.0.center/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="405" key="GridCell.Tab.0.center/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323635421" />
     <state width="1078" height="445" key="GridCell.Tab.0.center/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516186" />
     <state width="1078" height="268" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1580310165290" />
     <state width="1663" height="412" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931374" />
-    <state width="1316" height="380" key="GridCell.Tab.0.left" timestamp="1585319434056">
+    <state width="1489" height="405" key="GridCell.Tab.0.left" timestamp="1585323635421">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.0.left/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="405" key="GridCell.Tab.0.left/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323635421" />
     <state width="1078" height="445" key="GridCell.Tab.0.left/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516186" />
     <state width="1078" height="268" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1580310165289" />
     <state width="1663" height="412" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931374" />
-    <state width="1316" height="380" key="GridCell.Tab.0.right" timestamp="1585319434056">
+    <state width="1489" height="405" key="GridCell.Tab.0.right" timestamp="1585323635421">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.0.right/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="405" key="GridCell.Tab.0.right/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323635421" />
     <state width="1078" height="445" key="GridCell.Tab.0.right/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516186" />
     <state width="1078" height="268" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1580310165290" />
     <state width="1663" height="412" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931374" />
-    <state width="1316" height="380" key="GridCell.Tab.1.bottom" timestamp="1585319434056">
+    <state width="1489" height="185" key="GridCell.Tab.1.bottom" timestamp="1585323516940">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.1.bottom/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="185" key="GridCell.Tab.1.bottom/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323516940" />
     <state width="1078" height="445" key="GridCell.Tab.1.bottom/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516187" />
     <state width="1078" height="268" key="GridCell.Tab.1.bottom/0.0.1280.720@0.0.1280.720" timestamp="1580310165290" />
     <state width="1663" height="412" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1316" height="380" key="GridCell.Tab.1.center" timestamp="1585319434056">
+    <state width="1489" height="185" key="GridCell.Tab.1.center" timestamp="1585323516940">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.1.center/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="185" key="GridCell.Tab.1.center/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323516940" />
     <state width="1078" height="445" key="GridCell.Tab.1.center/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516187" />
     <state width="1078" height="268" key="GridCell.Tab.1.center/0.0.1280.720@0.0.1280.720" timestamp="1580310165290" />
     <state width="1663" height="412" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1316" height="380" key="GridCell.Tab.1.left" timestamp="1585319434056">
+    <state width="1489" height="185" key="GridCell.Tab.1.left" timestamp="1585323516940">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.1.left/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="185" key="GridCell.Tab.1.left/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323516940" />
     <state width="1078" height="445" key="GridCell.Tab.1.left/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516187" />
     <state width="1078" height="268" key="GridCell.Tab.1.left/0.0.1280.720@0.0.1280.720" timestamp="1580310165290" />
     <state width="1663" height="412" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1316" height="380" key="GridCell.Tab.1.right" timestamp="1585319434056">
+    <state width="1489" height="185" key="GridCell.Tab.1.right" timestamp="1585323516940">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1316" height="380" key="GridCell.Tab.1.right/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585319434056" />
+    <state width="1489" height="185" key="GridCell.Tab.1.right/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323516940" />
     <state width="1078" height="445" key="GridCell.Tab.1.right/0.0.1280.720/0.-1080.1920.1080@0.0.1280.720" timestamp="1582037516187" />
     <state width="1078" height="268" key="GridCell.Tab.1.right/0.0.1280.720@0.0.1280.720" timestamp="1580310165290" />
     <state width="1663" height="412" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
@@ -1027,22 +1022,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="669" y="165" key="refactoring.ChangeSignatureDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1580216657039" />
-    <state x="-1297" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1585224018309">
+    <state x="-1297" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1585323690001">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1297" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585224018309" />
+    <state x="-1297" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585323690001" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1584532551337" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/spotitube$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1585318998036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">

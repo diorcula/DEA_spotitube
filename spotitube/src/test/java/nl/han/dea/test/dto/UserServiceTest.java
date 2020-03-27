@@ -21,7 +21,6 @@ public class UserServiceTest {
     @InjectMocks
     private UserService sut; // system-under-test
 
-
     @Test
     public void testIsValidLogin() {
         //Arrange
