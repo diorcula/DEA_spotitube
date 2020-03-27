@@ -29,13 +29,10 @@ public class TrackDAO {
     public List<TrackDTO> findAll(int id) {
 
         List<TrackDTO> tracks = null;
-//        String query = "select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playliststracks WHERE playlist_id = " + id + ")";
-//        tracks = tryFindAll(query);
 
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            //          PreparedStatement statement = connection.prepareStatement(query);
             PreparedStatement statement = connection.prepareStatement("select * from tracks  WHERE tracks.id NOT IN (SELECT track_id FROM playliststracks WHERE playlist_id =?)");
             statement.setInt(1, id);
 

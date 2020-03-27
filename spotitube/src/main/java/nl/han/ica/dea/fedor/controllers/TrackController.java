@@ -1,30 +1,28 @@
 package nl.han.ica.dea.fedor.controllers;
 
-
-import nl.han.ica.dea.fedor.datasources.TrackDAO;
-import nl.han.ica.dea.fedor.dto.TrackDTO;
 import nl.han.ica.dea.fedor.dto.TracksDTO;
+import nl.han.ica.dea.fedor.services.TrackService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 @Path("/tracks")
 public class TrackController {
-
-    @Inject
-    private TrackDAO trackDAO;
+    private TrackService trackService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response allTracks(@QueryParam("forPlaylist") int forPlaylist) {
 
-        List<TrackDTO> all = trackDAO.findAll(forPlaylist);
-        TracksDTO tracksDTO = new TracksDTO();
-        all.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
+        TracksDTO all = trackService.serviceAllTracks(forPlaylist);
 
-        return Response.ok(tracksDTO).build();
+        return Response.ok(all).build();
+    }
+
+    @Inject
+    public void setTrackService(TrackService trackService) {
+        this.trackService = trackService;
     }
 }

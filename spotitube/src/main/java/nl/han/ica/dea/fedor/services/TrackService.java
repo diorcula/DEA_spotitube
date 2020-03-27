@@ -1,7 +1,6 @@
 package nl.han.ica.dea.fedor.services;
 
 import nl.han.ica.dea.fedor.datasources.TrackDAO;
-import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.TrackDTO;
 import nl.han.ica.dea.fedor.dto.TracksDTO;
 
@@ -33,5 +32,10 @@ public class TrackService {
         returnList.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
     }
 
+    public TracksDTO serviceAllTracks(int forPlaylist) {
+        List<TrackDTO> returnList = trackDAO.findAll(forPlaylist);
+        setTracks(returnList);
 
+        return tracksDTO;
+    }
 }
