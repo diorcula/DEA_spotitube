@@ -1,25 +1,21 @@
 package nl.han.ica.dea.fedor.controllers;
 
-import nl.han.ica.dea.fedor.datasources.PlaylistDAO;
-import nl.han.ica.dea.fedor.datasources.TrackDAO;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
 import nl.han.ica.dea.fedor.dto.TrackDTO;
 import nl.han.ica.dea.fedor.dto.TracksDTO;
 import nl.han.ica.dea.fedor.services.PlaylistService;
+import nl.han.ica.dea.fedor.services.TrackService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 @Path("/playlists")
 public class PlaylistController {
-
     private PlaylistService playlistService;
-    private PlaylistDAO playlistDAO;
-    private TrackDAO trackDAO;
+    private TrackService trackService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -46,12 +42,6 @@ public class PlaylistController {
     @Path("{id}")
     public Response editPlaylist(PlaylistDTO playlistDTO, @PathParam("id") int id) {
 
-//        playlistDAO.editPlaylist(playlistDTO, id);
-//
-//        List<PlaylistDTO> all = playlistDAO.findAll();
-//        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-//        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
-
         playlistService.serviceEditPlaylist(playlistDTO, id);
         PlaylistsDTO all = playlistService.serviceAllPlaylists();
 
@@ -63,13 +53,10 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response deletePlaylist(@PathParam("id") int id) {
 
-        playlistDAO.deletePlaylist(id);
+        playlistService.serviceDeletePlaylist(id);
+        PlaylistsDTO all = playlistService.serviceAllPlaylists();
 
-        List<PlaylistDTO> all = playlistDAO.findAll();
-        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
-
-        return Response.ok(playlistsDTO).build();
+        return Response.ok(all).build();
     }
 
     @POST
@@ -77,13 +64,10 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addPlaylist(PlaylistDTO playlistDTO) {
 
-        playlistDAO.addPlaylist(playlistDTO);
+        playlistService.serviceAddPlaylist(playlistDTO);
+        PlaylistsDTO all = playlistService.serviceAllPlaylists();
 
-        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-        List<PlaylistDTO> all = playlistDAO.findAll();
-        all.forEach(playlistDTO1 -> playlistsDTO.addPlaylist(playlistDTO1));
-
-        return Response.ok(playlistsDTO).build();
+        return Response.ok(all).build();
     }
 
     @GET
@@ -91,11 +75,9 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response allTracksFromPlaylist(@PathParam("id") int id) {
 
-        TracksDTO tracksDTO = new TracksDTO();
-        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-        tracks.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
+        TracksDTO all = trackService.serviceAllTracksFromPlaylist(id);
 
-        return Response.ok(tracksDTO).build();
+        return Response.ok(all).build();
     }
 
     @DELETE
@@ -103,13 +85,10 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteTrackFromPlaylist(@PathParam("id") int id, @PathParam("track_id") int track_id) {
 
-        trackDAO.deleteTrack(id, track_id);
+        trackService.serviceDeleteTrackFromPlaylist(id, track_id);
+        TracksDTO all = trackService.serviceAllTracksFromPlaylist(id);
 
-        TracksDTO tracksDTO = new TracksDTO();
-        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO1));
-
-        return Response.ok(tracksDTO).build();
+        return Response.ok(all).build();
     }
 
     @POST
@@ -118,13 +97,10 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addTrack(TrackDTO trackDTO, @PathParam("id") int id) {
 
-        trackDAO.addTrack(id, trackDTO);
+        trackService.serviceAddTrackToPlaylist(id, trackDTO);
+        TracksDTO all = trackService.serviceAllTracksFromPlaylist(id);
 
-        TracksDTO tracksDTO = new TracksDTO();
-        List<TrackDTO> tracks = trackDAO.findTracksFromPlaylist(id);
-        tracks.forEach(trackDTO1 -> tracksDTO.addTrack(trackDTO1));
-
-        return Response.ok(tracksDTO).build();
+        return Response.ok(all).build();
     }
 
     @Inject
@@ -133,12 +109,7 @@ public class PlaylistController {
     }
 
     @Inject
-    public void setPlaylistDAO(PlaylistDAO playlistDAO) {
-        this.playlistDAO = playlistDAO;
-    }
-
-    @Inject
-    public void setTrackDAO(TrackDAO trackDAO) {
-        this.trackDAO = trackDAO;
+    public void setTrackService(TrackService trackService) {
+        this.trackService = trackService;
     }
 }

@@ -4,14 +4,16 @@ import nl.han.ica.dea.fedor.datasources.PlaylistDAO;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
 
+import javax.inject.Inject;
 import java.util.List;
 
 public class PlaylistService {
-
-    public PlaylistDAO playlistDAO = new PlaylistDAO();
-    public PlaylistsDTO playlistsDTO = new PlaylistsDTO();
-    public PlaylistDTO playlistDTO = new PlaylistDTO();
-
+    @Inject
+    PlaylistDAO playlistDAO;
+    @Inject
+    PlaylistsDTO playlistsDTO;
+    @Inject
+    PlaylistDTO playlistDTO;
 
     public PlaylistsDTO serviceAllPlaylists() {
         List<PlaylistDTO> returnList = playlistDAO.findAll();
@@ -28,8 +30,15 @@ public class PlaylistService {
     }
 
     public void serviceEditPlaylist(PlaylistDTO playlistDTO, int id) {
-        //TODO
         playlistDAO.editPlaylist(playlistDTO, id);
+    }
+
+    public void serviceDeletePlaylist(int id) {
+        playlistDAO.deletePlaylist(id);
+    }
+
+    public void serviceAddPlaylist(PlaylistDTO playlistDTO) {
+        playlistDAO.addPlaylist(playlistDTO);
     }
 
     public void setDuration(List<PlaylistDTO> returnList) {
