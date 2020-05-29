@@ -9,22 +9,7 @@
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/PlaylistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/PlaylistService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/PlaylistServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/PlaylistServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/PlaylistDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/Properties/DatabaseProperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/TrackDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/TrackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/TrackService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/PlaylistServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/PlaylistServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/UserServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -537,7 +522,7 @@
       <workItem from="1585233400216" duration="29681000" />
       <workItem from="1585485691704" duration="647000" />
       <workItem from="1587734429222" duration="118000" />
-      <workItem from="1590741495451" duration="6367000" />
+      <workItem from="1590741495451" duration="6502000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>

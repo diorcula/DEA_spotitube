@@ -10,10 +10,15 @@ import java.util.List;
 public class PlaylistService {
     @Inject
     PlaylistDAO playlistDAO;
-    @Inject
-    PlaylistsDTO playlistsDTO;
+
+    private final PlaylistsDTO playlistsDTO;
+
     @Inject
     PlaylistDTO playlistDTO;
+
+    public PlaylistService() {
+        this.playlistsDTO = new PlaylistsDTO();
+    }
 
     public PlaylistsDTO serviceAllPlaylists() {
         List<PlaylistDTO> returnList = playlistDAO.findAll();

@@ -26,7 +26,6 @@ public class PlaylistServiceTest {
 
     @Before
     public void setUp(){
-   //     playlistsDTO.setLength(finalSom);
         doNothing().when(playlistDAOMock);
     }
 
