@@ -24,40 +24,42 @@ public class PlaylistServiceTest {
     @InjectMocks
     private PlaylistService sut; // system-under-test
 
+    private PlaylistDTO playlistDB;
+    private PlaylistDTO playlistDB2;
+    private PlaylistsDTO collectionPlaylists;
+
     @Before
-    public void setUp(){
-        doNothing().when(playlistDAOMock);
+    public void setUp() {
+        playlistDB = new PlaylistDTO();
+        playlistDB.setId(1);
+        playlistDB.setName("sut-name");
+        playlistDB.setOwner(true);
+        playlistDB.setTracks(null);
+        playlistDB.setDuration(5);
+
+        playlistDB2 = new PlaylistDTO();
+        playlistDB2.setId(2);
+        playlistDB2.setName("sut-name22222");
+        playlistDB2.setOwner(false);
+        playlistDB2.setTracks(null);
+        playlistDB2.setDuration(5);
     }
 
     @Test
     public void TESTserviceAllPlaylists() {
         //Arrange
-        PlaylistDTO playlistDB = new PlaylistDTO();
-        playlistDB.setId(1);
-        playlistDB.setName("sut-name");
-        playlistDB.setOwner(true);
-        playlistDB.setTracks(null);
-        playlistDB.setDuration(3141);
+        final int EXPECTED_LENGTH = 10;
 
-        PlaylistDTO playlistDB2 = new PlaylistDTO();
-        playlistDB2.setId(2);
-        playlistDB2.setName("sut-name22222");
-        playlistDB2.setOwner(false);
-        playlistDB2.setTracks(null);
-        playlistDB2.setDuration(666);
-
-        PlaylistsDTO collectionPlaylists = new PlaylistsDTO();
+        collectionPlaylists = new PlaylistsDTO();
         collectionPlaylists.addPlaylist(playlistDB);
         collectionPlaylists.addPlaylist(playlistDB2);
 
-        //TODO
-        System.out.println(collectionPlaylists.getPlaylists());
-        System.out.println(sut.serviceAllPlaylists());
-
-        //Act
         when(playlistDAOMock.findAll()).thenReturn(collectionPlaylists.getPlaylists());
 
+        //Act
+        int result = sut.serviceAllPlaylists().getLength();
+
         //Assert
-        assertEquals(collectionPlaylists.getPlaylists(), sut.serviceAllPlaylists());
+        assertEquals(EXPECTED_LENGTH, result);
     }
 }
