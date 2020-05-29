@@ -9,14 +9,6 @@ public class PlaylistDTO {
     private List<TrackDTO> tracks;
     private int duration;
 
-
-//    public void setPlaylist(int id, String name, boolean owner) {
-//        setId(id);
-//        setName(name);
-//        setOwner(owner);
-//        setTracks();
-//    }
-
     public int getId() {
         return id;
     }

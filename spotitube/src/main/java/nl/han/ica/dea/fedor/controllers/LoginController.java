@@ -23,7 +23,6 @@ public class LoginController {
             userDTO.setToken(token);
 
             LoginResponseDTO loginResponseDTO = new LoginResponseDTO(userDTO.getToken(), userDTO.getUser());
-            System.out.println(userDTO.getToken());
 
             return Response.ok(loginResponseDTO).build();
 
