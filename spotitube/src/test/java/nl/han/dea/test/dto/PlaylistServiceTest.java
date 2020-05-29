@@ -4,6 +4,7 @@ import nl.han.ica.dea.fedor.dao.PlaylistDAO;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
 import nl.han.ica.dea.fedor.services.PlaylistService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -11,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -21,6 +23,12 @@ public class PlaylistServiceTest {
 
     @InjectMocks
     private PlaylistService sut; // system-under-test
+
+    @Before
+    public void setUp(){
+   //     playlistsDTO.setLength(finalSom);
+        doNothing().when(playlistDAOMock);
+    }
 
     @Test
     public void TESTserviceAllPlaylists() {

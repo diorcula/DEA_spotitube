@@ -42,15 +42,19 @@ public class PlaylistService {
     }
 
     public void setDuration(List<PlaylistDTO> returnList) {
+        int finalSom = calculateDuration(returnList);
+
+        playlistsDTO.setLength(finalSom);
+    }
+
+    public int calculateDuration(List<PlaylistDTO> returnList) {
         int som = 0;
 
         for (PlaylistDTO dto : returnList) {
             som += dto.getDuration();
         }
 
-        int finalSom = som;
-
-        returnList.forEach(playlistDTO -> playlistsDTO.setLength(finalSom));
+        return som;
     }
 
     public void setLists(List<PlaylistDTO> returnList) {

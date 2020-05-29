@@ -20,9 +20,4 @@ public class UserService {
         }
     }
 
-//    public boolean isValidToken(String userName, String token){
-//
-//        UserDTO userDTO = userDAO.getUserDTO(userName);
-//        return true;
-//    }
 }

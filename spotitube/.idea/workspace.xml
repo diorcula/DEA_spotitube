@@ -7,28 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dao/PlaylistDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/Properties/DatabaseProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dao/Properties/DatabaseProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/TrackDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dao/TrackDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/datasources/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/PlaylistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/PlaylistService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/TrackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/TrackService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/PlaylistServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/PlaylistServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/dea/test/dto/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/datasources/PlaylistDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/datasources/Properties/DatabaseProperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/datasources/TrackDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/datasources/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/TrackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/TrackService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/ica/dea/fedor/services/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/spotitube.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/PlaylistDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/Properties/DatabaseProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/TrackDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/datasources/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/PlaylistService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/TrackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/TrackService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/services/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/PlaylistServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/PlaylistServiceTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/nl/han/dea/test/dto/UserServiceTest.class" afterDir="false" />
     </list>
@@ -42,6 +36,9 @@
       <FILTER>nl.han.dea.test.dto.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/spotitube$All_in_jee.ic" NAME="All in jee Coverage Results" MODIFIED="1541514585639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -123,7 +120,7 @@
       <recent name="nl.han.ica.dea.fedor.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlaylistServiceTest">
+  <component name="RunManager" selected="TomEE Server.TomEE">
     <configuration name="PlaylistServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotitube" />
       <useClassPathOnly />
@@ -142,6 +139,22 @@
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaylistServiceTest.TESTserviceAllPlaylists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.dea.test.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.PlaylistServiceTest" />
+      <option name="METHOD_NAME" value="TESTserviceAllPlaylists" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,7 +189,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.testIsNotValidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.testIsValidLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotitube" />
       <extension name="coverage">
         <pattern>
@@ -186,23 +199,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
       <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.UserServiceTest" />
-      <option name="METHOD_NAME" value="testIsNotValidPassword" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest.testIsNotValidUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.han.dea.test.dto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.UserServiceTest" />
-      <option name="METHOD_NAME" value="testIsNotValidUser" />
+      <option name="METHOD_NAME" value="testIsValidLogin" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -432,21 +429,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserServiceTest.testIsNotValidUser" />
       <item itemvalue="TomEE Server.TomEE" />
       <item itemvalue="TomEE Server.Uwe" />
-      <item itemvalue="JUnit.UserServiceTest.testIsNotValidPassword" />
       <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
       <item itemvalue="JUnit.UserServiceTest" />
       <item itemvalue="JUnit.PlaylistServiceTest" />
+      <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
+      <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlaylistServiceTest" />
+        <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
+        <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
         <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.PlaylistServiceTest" />
         <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
-        <item itemvalue="JUnit.UserServiceTest.testIsNotValidUser" />
-        <item itemvalue="JUnit.UserServiceTest.testIsNotValidPassword" />
       </list>
     </recent_temporary>
   </component>
@@ -540,7 +537,7 @@
       <workItem from="1585233400216" duration="29681000" />
       <workItem from="1585485691704" duration="647000" />
       <workItem from="1587734429222" duration="118000" />
-      <workItem from="1590741495451" duration="2244000" />
+      <workItem from="1590741495451" duration="6367000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -898,78 +895,78 @@
     <state x="-1288" y="174" key="FileChooserDialogImpl/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1584448828231" />
     <state x="421" y="116" key="FileChooserDialogImpl/0.0.1280.720@0.0.1280.720" timestamp="1583836511029" />
     <state x="632" y="174" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1584535301341" />
-    <state width="1877" height="432" key="GridCell.Tab.0.bottom" timestamp="1590745701539">
+    <state width="1666" height="375" key="GridCell.Tab.0.bottom" timestamp="1590749861728">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.0.bottom/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126345" />
     <state width="1663" height="412" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1877" height="432" key="GridCell.Tab.0.bottom/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590745701539" />
-    <state width="1877" height="432" key="GridCell.Tab.0.center" timestamp="1590745701539">
+    <state width="1666" height="375" key="GridCell.Tab.0.bottom/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861728" />
+    <state width="1666" height="375" key="GridCell.Tab.0.center" timestamp="1590749861727">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.0.center/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126345" />
     <state width="1663" height="412" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931374" />
-    <state width="1877" height="432" key="GridCell.Tab.0.center/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590745701539" />
-    <state width="1877" height="432" key="GridCell.Tab.0.left" timestamp="1590745701539">
+    <state width="1666" height="375" key="GridCell.Tab.0.center/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861727" />
+    <state width="1666" height="375" key="GridCell.Tab.0.left" timestamp="1590749861727">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.0.left/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126344" />
     <state width="1663" height="412" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931374" />
-    <state width="1877" height="432" key="GridCell.Tab.0.left/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590745701539" />
-    <state width="1877" height="432" key="GridCell.Tab.0.right" timestamp="1590745701539">
+    <state width="1666" height="375" key="GridCell.Tab.0.left/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861727" />
+    <state width="1666" height="375" key="GridCell.Tab.0.right" timestamp="1590749861728">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.0.right/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126345" />
     <state width="1663" height="412" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931374" />
-    <state width="1877" height="432" key="GridCell.Tab.0.right/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590745701539" />
-    <state width="1666" height="375" key="GridCell.Tab.1.bottom" timestamp="1590742168663">
+    <state width="1666" height="375" key="GridCell.Tab.0.right/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861728" />
+    <state width="1666" height="375" key="GridCell.Tab.1.bottom" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.1.bottom/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126345" />
     <state width="1663" height="412" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1666" height="375" key="GridCell.Tab.1.bottom/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168663" />
-    <state width="1666" height="375" key="GridCell.Tab.1.center" timestamp="1590742168662">
+    <state width="1666" height="375" key="GridCell.Tab.1.bottom/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
+    <state width="1666" height="375" key="GridCell.Tab.1.center" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.1.center/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126345" />
     <state width="1663" height="412" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1666" height="375" key="GridCell.Tab.1.center/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168662" />
-    <state width="1666" height="375" key="GridCell.Tab.1.left" timestamp="1590742168662">
+    <state width="1666" height="375" key="GridCell.Tab.1.center/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
+    <state width="1666" height="375" key="GridCell.Tab.1.left" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.1.left/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126345" />
     <state width="1663" height="412" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1666" height="375" key="GridCell.Tab.1.left/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168662" />
-    <state width="1666" height="375" key="GridCell.Tab.1.right" timestamp="1590742168663">
+    <state width="1666" height="375" key="GridCell.Tab.1.left/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
+    <state width="1666" height="375" key="GridCell.Tab.1.right" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1489" height="185" key="GridCell.Tab.1.right/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126345" />
     <state width="1663" height="412" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1666" height="375" key="GridCell.Tab.1.right/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168663" />
-    <state width="1666" height="375" key="GridCell.Tab.2.bottom" timestamp="1590742168663">
+    <state width="1666" height="375" key="GridCell.Tab.1.right/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
+    <state width="1666" height="375" key="GridCell.Tab.2.bottom" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1316" height="380" key="GridCell.Tab.2.bottom/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126334" />
     <state width="1663" height="412" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931376" />
-    <state width="1666" height="375" key="GridCell.Tab.2.bottom/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168663" />
-    <state width="1666" height="375" key="GridCell.Tab.2.center" timestamp="1590742168663">
+    <state width="1666" height="375" key="GridCell.Tab.2.bottom/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
+    <state width="1666" height="375" key="GridCell.Tab.2.center" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1316" height="380" key="GridCell.Tab.2.center/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126334" />
     <state width="1663" height="412" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1666" height="375" key="GridCell.Tab.2.center/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168663" />
-    <state width="1666" height="375" key="GridCell.Tab.2.left" timestamp="1590742168663">
+    <state width="1666" height="375" key="GridCell.Tab.2.center/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
+    <state width="1666" height="375" key="GridCell.Tab.2.left" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1316" height="380" key="GridCell.Tab.2.left/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126334" />
     <state width="1663" height="412" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931375" />
-    <state width="1666" height="375" key="GridCell.Tab.2.left/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168663" />
-    <state width="1666" height="375" key="GridCell.Tab.2.right" timestamp="1590742168663">
+    <state width="1666" height="375" key="GridCell.Tab.2.left/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
+    <state width="1666" height="375" key="GridCell.Tab.2.right" timestamp="1590749861510">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1316" height="380" key="GridCell.Tab.2.right/0.0.1280.720/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1585325126334" />
     <state width="1663" height="412" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1585051931376" />
-    <state width="1666" height="375" key="GridCell.Tab.2.right/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590742168663" />
+    <state width="1666" height="375" key="GridCell.Tab.2.right/1920.0.1280.720/0.0.1920.1080@0.0.1920.1080" timestamp="1590749861510" />
     <state width="1666" height="543" key="GridCell.Tab.3.bottom" timestamp="1585239406557">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
@@ -1016,7 +1013,7 @@
     <SUITE FILE_PATH="coverage/spotitube$UserServiceTest_testIsValidLogin.ic" NAME="UserServiceTest.testIsValidLogin Coverage Results" MODIFIED="1585318617694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.dea.test.dto.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/spotitube$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1590742883410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/spotitube$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1590748377092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.dea.test.dto.*</FILTER>
       <FILTER>nl.han.ica.dea.fedor.*</FILTER>
     </SUITE>

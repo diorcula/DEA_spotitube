@@ -3,6 +3,7 @@ package nl.han.dea.test.dto;
 import nl.han.ica.dea.fedor.dao.UserDAO;
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.services.UserService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,26 +22,32 @@ public class UserServiceTest {
     @InjectMocks
     private UserService sut; // system-under-test
 
+    private final String PASSWORD = "DATABASEPASSWORD";
+    private final String USER = "DATABASEUSER";
+    private UserDTO userDB;
+
+    @Before
+    public void setUp(){
+        userDB = new UserDTO();
+        userDB.setPassword(PASSWORD);
+        userDB.setUser(USER);
+    }
+
     @Test
     public void testIsValidLogin() {
         //Arrange
-        UserDTO userDB = new UserDTO();
-        userDB.setPassword("passDB");
-        userDB.setUser("userDB");
+        when(userDAOMock.getUserDTO(USER)).thenReturn(userDB);
 
         //Act
-        when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
+        boolean result = sut.isValidLogin(USER, PASSWORD);
 
         //Assert
-        assertTrue(sut.isValidLogin("userDB", "passDB"));
+        assertTrue(result);
     }
 
     @Test
     public void testIsNotValidPassword() {
         //Arrange
-        UserDTO userDB = new UserDTO();
-        userDB.setPassword("passDB");
-        userDB.setUser("userDB");
 
         //Act
         when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
@@ -52,9 +59,6 @@ public class UserServiceTest {
     @Test(expected = java.lang.NullPointerException.class)
     public void testIsNotValidUser() {
         //Arrange
-        UserDTO userDB = new UserDTO();
-        userDB.setPassword("passDB");
-        userDB.setUser("userDB");
 
         //Act
        // when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
