@@ -1,6 +1,6 @@
-package nl.han.ica.dea.fedor.datasources;
+package nl.han.ica.dea.fedor.dao;
 
-import nl.han.ica.dea.fedor.datasources.Properties.DatabaseProperties;
+import nl.han.ica.dea.fedor.dao.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import java.sql.*;
 import java.util.logging.Level;

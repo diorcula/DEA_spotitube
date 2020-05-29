@@ -1,10 +1,9 @@
 package nl.han.ica.dea.fedor.services;
 
-import nl.han.ica.dea.fedor.datasources.UserDAO;
+import nl.han.ica.dea.fedor.dao.UserDAO;
 import nl.han.ica.dea.fedor.dto.UserDTO;
 
 import javax.inject.Inject;
-import javax.ws.rs.NotFoundException;
 
 public class UserService {
     @Inject

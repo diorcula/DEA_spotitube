@@ -1,4 +1,4 @@
-package nl.han.ica.dea.fedor.datasources.Properties;
+package nl.han.ica.dea.fedor.dao.Properties;
 
 import java.io.IOException;
 import java.util.Properties;

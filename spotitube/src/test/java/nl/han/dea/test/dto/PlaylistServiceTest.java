@@ -1,6 +1,6 @@
 package nl.han.dea.test.dto;
 
-import nl.han.ica.dea.fedor.datasources.PlaylistDAO;
+import nl.han.ica.dea.fedor.dao.PlaylistDAO;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
 import nl.han.ica.dea.fedor.services.PlaylistService;

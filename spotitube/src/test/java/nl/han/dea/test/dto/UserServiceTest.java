@@ -1,6 +1,6 @@
 package nl.han.dea.test.dto;
 
-import nl.han.ica.dea.fedor.datasources.UserDAO;
+import nl.han.ica.dea.fedor.dao.UserDAO;
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.services.UserService;
 import org.junit.Test;
@@ -57,9 +57,23 @@ public class UserServiceTest {
         userDB.setUser("userDB");
 
         //Act
-        when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
+       // when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
 
         //Assert
         assertFalse(sut.isValidLogin("invalid-user", "passDB"));
     }
+
+//    @Test(expected = java.lang.NullPointerException.class)
+//    public void testNoPasswordApplied() {
+//        //Arrange
+//        UserDTO userDB = new UserDTO();
+//        userDB.setPassword("userPassword");
+//        userDB.setUser("userDB");
+//
+//        //Act
+//        when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
+//
+//        //Assert
+//        assertFalse(sut.isValidLogin("userDB", null));
+//    }
 }
