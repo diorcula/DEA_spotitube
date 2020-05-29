@@ -1,120 +1,128 @@
-# DEA-spotitube
-spotitube 5 weekse opdracht
+# Beroepsproduct DEA
 
-<span class="c17">DEA Spotitube</span><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 391.50px; height: 78.69px;">![](images/image3.png)</span><span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 157.34px; height: 79.00px;">![](images/image4.png)</span>
+### Opdracht: Spotitube, RESTFUL Applicatie
 
-<span class="c0"></span>
+Datum: Vrijdag 29 mei, 2020
+Auteur: F.K.A. Soffers
+Studentnummer: 567780
+Opleiding: HBO-ICT
+Profiel: Software Development
+Onderwijsinstelling: Hogeschool van Arnhem & Nijmegen
+Begeleider: Dhr. M. Brouwer
 
-<span class="c0">Door:                Fedor Soffers</span>
 
-<span class="c0">Klas:                OOSE-B</span>
+## Inhoudsopgave
 
-<span class="c0">Docent:        Meron Brouwer</span>
+## Inhoudsopgave
 
-<span>Uwe van Heesch</span>
+- Inhoudsopgave
+- Inleiding
+- Deployment Diagram
+   - Motivatie
+- Package Diagram
+   - Motivatie
+- Design Choices
 
-* * *
 
-# <span class="c7">Inhoudsopgave</span>
+## Inleiding
 
-<span class="c0"></span>
+Het doel van dit opleverdocument is een inzicht te geven in hoe de applicatie is opgebouwd
+door middel van bijvoorbeeld een package- en deployment diagrammen, bij deze
+diagrammen is natuurlijk een stuk motivatie meegeleverd over waarom ik gebruik heb
+gemaakt van bijvoorbeeld een Layered Architecture.
+Daarnaast zal in het hoofdstuk Design Choices ook een uitleg gegeven worden over een
+aantal ontwerpkeuzes die ik heb gemaakt tijdens het maken van de applicatie en waarmee
+ik aan wil tonen dat ik de applicatie geschreven heb met het boek Clean Code van Robert C.
+Martin. Dit hoofdstuk omvat alle ontwerpkeuzes die in voorgaande hoofdstukken niet
+genoemd zijn.
+Link naar de Github Repo (up-to-date):
+https://github.com/diorcula/OOSE--DEA_spotitube
 
-<span class="c5">[Inhoudsopgave](#h.4xwlbqmpnz6a)</span><span class="c5">        </span><span class="c5">[1](#h.4xwlbqmpnz6a)</span>
 
-<span class="c5">[Inleiding](#h.p115w0pm03f1)</span><span class="c5">        </span><span class="c5">[2](#h.p115w0pm03f1)</span>
+## Deployment Diagram
 
-<span class="c5">[Deployment Diagram](#h.1tniw6h9j04s)</span><span class="c5">        </span><span class="c5">[3](#h.1tniw6h9j04s)</span>
+### Motivatie
 
-<span>[Motivatie](#h.c2y24xmzo9dv)</span><span>        </span><span>[3](#h.c2y24xmzo9dv)</span>
+Enkele requirements waren dat er gebruik gemaakt moest worden van een database
+verbinding, zoals te zien is in bovenstaand diagram wordt er hier gebruik gemaakt van een
+zogeheten JDBC verbinding om de applicatie met de database te verbinden.
+Verder wordt er gebruik gemaakt van HTTP om alle requests af te handelen.
+Voor de database verbinding wordt er gebruik gemaakt van een Strategy Pattern, het is
+namelijk mogelijk om de database verbinding gemakkelijk te vervangen door een andere
+Database Connection. Op het moment wordt er gebruik gemaakt van SQL Server, maar
+wanneer bijvoorbeeld een klant een andere database provider gebruikt zoals Postgres, hoeft
+wanneer de database dezelfde kolommen etc. heeft alleen een andere Database
+Connection gemaakt te worden, de applicatie werkt nog steeds gewoon.
 
-<span class="c5">[Package Diagram](#h.fj8k4drkua5k)</span><span class="c5">        </span><span class="c5">[4](#h.fj8k4drkua5k)</span>
 
-<span>[Motivatie](#h.t817zs2e0mat)</span><span>        </span><span>[4](#h.t817zs2e0mat)</span>
+## Package Diagram
 
-<span class="c0"></span>
 
-<span class="c0"></span>
+### Motivatie
 
-<span class="c0"></span>
+Zoals in het Package Diagram hierboven te zien is, wordt er gebruik gemaakt van
+verschillende layers.
+Zo zijn er DTO’s (Data Transfer Objects) aanwezig, Controllers, Services en DAO’s (Data
+Access Object).
+Bij een Layered Architecture zijn de lagen wel met elkaar verbonden, maar niet afhankelijk
+van elkaar. Als ineens de DAO laag weg zou vallen valt niet de hele applicatie in duigen, de
+andere lagen werken nog steeds.
+Het Data Mapper Pattern is hiet toegepast door gebruik te maken van een DAO, dit is de
+layer die verbinding maakt met de database. Deze layer stuurt en vraagt data aan de
+database, en zo hoeven de andere lagen dat niet te doen. De DTO laag ‘mapt’ deze
+opgehaalde data daarna naar een voor de applicatie bruikbaar object.
+Zo hoeft er maar in één laag van de applicatie verbinding gemaakt te worden met een
+database, en wanneer er bijvoorbeeld van database verandert wordt, hoeft het niet overal in
+de database aangepast te worden maar enkel in de DAO laag. Dit draagt weer bij aan de
+‘onderhoudbaarheid’ van de code.
+Een alternatieve, doch slechtere, oplossing zou zijn geweest om geen gebruik te maken van
+deze layers, dat zou dan betekenen dat alle logica en code in een enkel bestand staan. Dat
+heeft als gevolg dat de code minder goed te lezen is, het is nagenoeg niet te vinden waar
+wat gebeurt. Dan zou dezelfde laag zorgen voor het communiceren met de database als het
+daadwerkelijk versturen van de database object als wel andere logica. Een laag heeft dan
+meerdere taken, en dit kan wel werken, maar een andere developer zou er bijvoorbeeld niet
+meer aan kunnen werken omdat het niet uit te vogelen is.
+Het gebruik van deze layers is good practice, om zo de verschillende soorten
+verantwoordelijkheden te scheiden van elkaar.
+Daarnaast is er ook gebruik gemaakt van het Singleton Pattern, waarbij elke methode maar
+1 verantwoordelijkheid heeft, het ‘doet/kan maar 1 ding’. Zo kan het bijvoorbeeld in de
+methode setDuration() enkel en alleen de duration vastleggen, het kan bijvoorbeeld deze
+niet terugsturen, het kan ook niet nog even de naam aanpassen van een afspeellijst.
+Zo is ook duidelijk wanneer er iets fout gaat waar het precies fout gaat.
+Als de duration niet goed vastgelegd wordt zal het niet in de functie editPlaylist() fout gaan,
+maar weten we dat het in de functie setDuration() fout gaat. Code is hierdoor duidelijker en
+beter te testen.
 
-<span class="c0"></span>
 
-* * *
+## Design Choices
 
-<span class="c0"></span>
+Enkele ontwerpkeuzes die ik gemaakt heb tijdens het schrijven van de code die voorkomen
+in het boek Clean Code van Robert C. Martin zijn:
 
-# <span class="c7">Inleiding</span>
+- Class names hebben de voorkeur zelfstandige naamwoorden te zijn zoals Playlist,
+    User etc. en hier geen werkwoorden te gebruiken.
+- Methode bestaan wel uit werkwoorden zoals editPlaylist, deletePlaylist.
+- Er wordt geen gebruik gemaakt van ​ **_cute_** ​ namen, dit om te voorkomen dat code
+    duidelijk wordt voor de lezers die dezelfde humor delen als de schrijver i.p.v.
+    iedereen. Namen moeten duidelijk zijn in wat ze betekenen.
+- Er wordt gebruik gemaakt van kleine functies en methoden die maar één ‘ding’ doen,
+    methoden moeten namelijk duidelijk en niet verwarrend zijn. Anders zijn ze moeilijk te
+    begrijpen en moeilijker te onderhouden/veranderen. Een voorbeeld hiervan is:
+    Hier heb ik ervoor gekozen om de Duration functies op te splitsen, het had net zo
+    goed allemaal in één functie kunnen staan maar dan wordt het onduidelijk.
 
-<span class="c0">Het doel van dit document is het laten zien van de motivatie voor de gebruikte Deployment en Package Diagrammen voor de casus Spotitube.</span>
 
-<span class="c0"></span>
+- Ook heb ik gebruik gemaakt van Dependency Injection, van het SOLID principe,
+    omdat het volgens dit principe belangrijk is dat een class zich focust op de taken die
+    het moet uitvoeren en niet ook nog het aanmaken van andere classes. Hiervoor
+    wordt er gekozen voor Dependency Injection. Bijvoorbeeld hier:
+- Waar comments geplaatst zijn heb ik er geprobeerd nuttige, waardevolle opmerking
+    van te maken die wat meer uitleggen wat er bedoeld wordt.
+- Voor de unit tests heb ik gebruik gemaakt van de @Before annotatie, om er zo voor
+    te zorgen dat er minder duplicate code in de tests komt te staan om ze zo duidelijker
+    leesbaar te maken.
+- Ik heb geprobeerd ervoor te zorgen dat er geen uitgecommente code meer staat, om
+    zo te zorgen dat alle code die er is een functie heeft en te zorgen dat het ‘schoon’
+    blijft. Als iets geen functie heeft hoort het er namelijk niet in.
 
-<span>Het doel van de casus was de back-end ontwikkelen voor de Spotitube Client met behulp van JEE 7.</span>
 
-* * *
-
-# <span class="c7">Deployment Diagram</span>
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 368.29px; height: 399.50px;">![](images/image1.png)</span>
-
-<span class="c0"></span>
-
-### <span class="c8">Motivatie</span>
-
-<span class="c0">Enkele requirements waren dat er gebruik gemaakt moest worden van een database verbinding, zoals te zien is in bovenstaand diagram wordt er hier gebruik gemaakt van een zogeheten JDBC verbinding om de database te verbinden.</span>
-
-<span class="c0">Verder wordt er gebruik gemaakt van HTTP om alle requests af te handelen.</span>
-
-<span class="c0"></span>
-
-<span class="c0">Voor de database verbinding wordt er gebruik gemaakt van een Strategy Pattern, het is namelijk mogelijk om de database verbinding gemakkelijk te vervangen door een ander soort verbinding/ een andere database te gebruiken.</span>
-
-<span class="c0"></span>
-
-<span class="c0">Een alternatieve oplossing voor de database verbinding zou zijn om gebruik te maken van een zogeheten PDO database verbinding.</span>
-
-<span class="c0">Voor de HTTP zou er gebruik gemaakt kunnen worden van HTTPS</span>
-
-<span class="c0"></span>
-
-<span class="c0"></span>
-
-* * *
-
-<span class="c0"></span>
-
-# <span class="c7">Package Diagram</span>
-
-<span style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 486.50px; height: 434.05px;">![](images/image2.png)</span>
-
-<span class="c0"></span>
-
-### <span class="c8">Motivatie</span>
-
-<span class="c0">Zoals in het Package Diagram hierboven te zien is, wordt er gebruik gemaakt van verschillende layers.</span>
-
-<span class="c0">Zo zijn er DTO’s aanwezig (Data Transfer Objects), Controllers, Services en Datasources.</span>
-
-<span class="c0">Het ontwerpprincipe is hier dan ook dat er gebruikt gemaakt wordt van deze layers.</span>
-
-<span class="c0"></span>
-
-<span class="c0">Een alternatieve, doch slechtere, oplossing zou zijn geweest om geen gebruik te maken van deze layers.</span>
-
-<span class="c0"></span>
-
-<span class="c0">Het gebruik van deze layers is goed, om zo de verschillende soorten functionaliteiten te scheiden van elkaar.</span>
-
-<span class="c0"></span>
-
-<span class="c0">De code wordt hierdoor leesbaarder en is beter te onderhouden.</span>
-
-<span class="c0"></span>
-
-# <span class="c7"></span>
-
-<div>
-
-<span class="c0"></span>
-
-</div>
