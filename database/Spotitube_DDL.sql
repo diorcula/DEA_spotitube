@@ -1,8 +1,11 @@
-Drop database Spotitube;
+DROP DATABASE IF EXISTS Spotitube;
+GO
 
 CREATE DATABASE Spotitube;
+GO
 
-use Spotitube;
+USE Spotitube;
+GO
 
 CREATE TABLE tracks(
 id int IDENTITY(1,1),

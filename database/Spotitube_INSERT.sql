@@ -1,3 +1,6 @@
+USE Spotitube;
+GO
+
 INSERT INTO tracks(title, performer, album, playcount, publication_date, description, offline_available, duration)
 VALUES('The Bomb', 'Pigeon', 'Super Album', 25, '12/06/1997', 'I am the bomb and about to blow up', 0, 193);
 
