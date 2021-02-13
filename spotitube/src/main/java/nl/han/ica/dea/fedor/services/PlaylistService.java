@@ -63,6 +63,6 @@ public class PlaylistService {
     }
 
     public void setLists(List<PlaylistDTO> returnList) {
-        returnList.forEach(playlistDTO -> playlistsDTO.addPlaylist(playlistDTO));
+        returnList.forEach(playlistsDTO::addPlaylist);
     }
 }
