@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/PlaylistsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dto/PlaylistsDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/PlaylistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/PlaylistService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube.war" afterDir="false" />
     </list>
@@ -110,28 +111,6 @@
     </key>
   </component>
   <component name="RunManager" selected="TomEE Server.Tomee 9.0.41">
-    <configuration name="PlaylistServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spotitube" />
-      <useClassPathOnly />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.han.dea.test.dto.*" />
-          <option name="ENABLED" value="false" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="nl.han.ica.dea.fedor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.PlaylistServiceTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PlaylistServiceTest.TESTserviceAllPlaylists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotitube" />
       <extension name="coverage">
@@ -210,18 +189,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="playlists" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/spotitube/playlists">
+      <method v="2" />
+    </configuration>
     <configuration name="Tomee 9.0.41" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Tomee 9.0.41" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/spotitube" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/spotitube_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="spotitube:war">
           <settings>
-            <option name="CONTEXT_PATH" value="" />
+            <option name="CONTEXT_PATH" value="/spotitube_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="4dd0e2a2-f256-4c08-8df7-b3f75d5b4f8b" />
+        <option name="BASE_DIRECTORY_NAME" value="4633ac87-be46-4dda-a4ca-0b805511a27b" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -373,20 +355,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
-      <item itemvalue="JUnit.UserServiceTest" />
-      <item itemvalue="JUnit.PlaylistServiceTest" />
-      <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
       <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
+      <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
+      <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
       <item itemvalue="TomEE Server.Tomee 9.0.41" />
+      <item itemvalue="JavaScript Debug.playlists" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
-        <item itemvalue="JUnit.PlaylistServiceTest" />
+        <item itemvalue="JavaScript Debug.playlists" />
+        <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
         <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
         <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
+        <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
       </list>
     </recent_temporary>
   </component>
@@ -488,7 +470,9 @@
       <workItem from="1613123845707" duration="31000" />
       <workItem from="1613131984654" duration="4074000" />
       <workItem from="1613136687278" duration="985000" />
-      <workItem from="1613221758321" duration="1317000" />
+      <workItem from="1613221758321" duration="2460000" />
+      <workItem from="1613899402258" duration="2167000" />
+      <workItem from="1614089278588" duration="10554000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>

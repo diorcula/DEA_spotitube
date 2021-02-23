@@ -5,33 +5,25 @@ import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
 
 import javax.inject.Inject;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class PlaylistService {
     @Inject
     PlaylistDAO playlistDAO;
 
-    private final PlaylistsDTO playlistsDTO;
-
-    @Inject
-    PlaylistDTO playlistDTO;
-
-    public PlaylistService() {
-        this.playlistsDTO = new PlaylistsDTO();
-    }
-
     public PlaylistsDTO serviceAllPlaylists() {
+        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
         List<PlaylistDTO> returnList = playlistDAO.findAll();
 
-        setDuration(returnList);
-        setLists(returnList);
+        setDuration(returnList, playlistsDTO);
+        setLists(returnList, playlistsDTO);
 
         return playlistsDTO;
     }
 
     public PlaylistDTO serviceFindPlaylist(int id) {
-        playlistDTO = playlistDAO.findOne(id);
-        return playlistDTO;
+        return playlistDAO.findOne(id);
     }
 
     public void serviceEditPlaylist(PlaylistDTO playlistDTO, int id) {
@@ -46,7 +38,7 @@ public class PlaylistService {
         playlistDAO.addPlaylist(playlistDTO);
     }
 
-    public void setDuration(List<PlaylistDTO> returnList) {
+    public void setDuration(List<PlaylistDTO> returnList, PlaylistsDTO playlistsDTO) {
         int finalSom = calculateDuration(returnList);
 
         playlistsDTO.setLength(finalSom);
@@ -62,7 +54,7 @@ public class PlaylistService {
         return som;
     }
 
-    public void setLists(List<PlaylistDTO> returnList) {
+    public void setLists(List<PlaylistDTO> returnList, PlaylistsDTO playlistsDTO) {
         returnList.forEach(playlistsDTO::addPlaylist);
     }
 }
