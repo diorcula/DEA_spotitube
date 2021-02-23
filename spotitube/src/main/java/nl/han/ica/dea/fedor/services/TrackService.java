@@ -10,12 +10,11 @@ import java.util.List;
 public class TrackService {
     @Inject
     TrackDAO trackDAO;
-    @Inject
-    TracksDTO tracksDTO;
 
     public TracksDTO serviceAllTracksFromPlaylist(int id) {
+        TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> returnList = trackDAO.findTracksFromPlaylist(id);
-        setTracks(returnList);
+        setTracks(returnList, tracksDTO);
 
         return tracksDTO;
     }
@@ -28,13 +27,14 @@ public class TrackService {
         trackDAO.addTrack(id, trackDTO);
     }
 
-    private void setTracks(List<TrackDTO> returnList) {
-        returnList.forEach(trackDTO -> tracksDTO.addTrack(trackDTO));
+    private void setTracks(List<TrackDTO> returnList, TracksDTO tracksDTO) {
+        returnList.forEach(tracksDTO::addTrack);
     }
 
     public TracksDTO serviceAllTracks(int forPlaylist) {
+        TracksDTO tracksDTO = new TracksDTO();
         List<TrackDTO> returnList = trackDAO.findAll(forPlaylist);
-        setTracks(returnList);
+        setTracks(returnList, tracksDTO);
 
         return tracksDTO;
     }
