@@ -5,10 +5,16 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * The type Database properties.
+ */
 public class DatabaseProperties {
     private Logger logger = Logger.getLogger(getClass().getName());
     private Properties properties;
 
+    /**
+     * Instantiates a new Database properties.
+     */
     public DatabaseProperties() {
         properties = new Properties();
         try {
@@ -18,16 +24,38 @@ public class DatabaseProperties {
         }
     }
 
+    /**
+     * Driver string.
+     *
+     * @return the string
+     */
     public String driver() {
         return properties.getProperty("driver");
     }
 
+    /**
+     * Connection url string.
+     *
+     * @return the string
+     */
     public String connectionURL() {
         return properties.getProperty("connectionURL");
     }
+
+    /**
+     * Connection user string.
+     *
+     * @return the string
+     */
     public String connectionUSER(){
         return properties.getProperty("user");
     }
+
+    /**
+     * Connection pass string.
+     *
+     * @return the string
+     */
     public String connectionPASS(){
         return properties.getProperty("pass");
     }

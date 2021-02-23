@@ -9,21 +9,38 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * The type Playlist dao.
+ */
 public class PlaylistDAO {
     private Logger logger = Logger.getLogger(getClass().getName());
     private DatabaseProperties databaseProperties;
 
+    /**
+     * Instantiates a new Playlist dao.
+     */
     public PlaylistDAO() {
         databaseProperties = new DatabaseProperties();
         tryLoadJdbcDriver(databaseProperties);
     }
 
+    /**
+     * Find all list.
+     *
+     * @return the list
+     */
     public List<PlaylistDTO> findAll() {
         List<PlaylistDTO> playlists = new ArrayList<>();
         tryFindAll(playlists, "SELECT * FROM playlists");
         return playlists;
     }
 
+    /**
+     * Find one playlist dto.
+     *
+     * @param id the id
+     * @return the playlist dto
+     */
     public PlaylistDTO findOne(int id) {
         List<PlaylistDTO> playlists = new ArrayList<>();
         try {
@@ -85,6 +102,12 @@ public class PlaylistDAO {
         playlists.add(playlist);
     }
 
+    /**
+     * Edit playlist.
+     *
+     * @param playlistDTO the playlist dto
+     * @param id          the id
+     */
     public void editPlaylist(PlaylistDTO playlistDTO, int id) {
         String playlistnaam = playlistDTO.getName();
 
@@ -105,6 +128,11 @@ public class PlaylistDAO {
         }
     }
 
+    /**
+     * Delete playlist.
+     *
+     * @param id the id
+     */
     public void deletePlaylist(int id) {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
@@ -121,6 +149,11 @@ public class PlaylistDAO {
         }
     }
 
+    /**
+     * Add playlist.
+     *
+     * @param playlistDTO the playlist dto
+     */
     public void addPlaylist(PlaylistDTO playlistDTO) {
         String naam = playlistDTO.getName();
 
@@ -140,15 +173,20 @@ public class PlaylistDAO {
         }
     }
 
+    /**
+     * Find length int.
+     *
+     * @param id the id
+     * @return the int
+     */
     public int findLength(int id) {
-        int playlist_id = id;
 
         int lengte = 0;
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
             PreparedStatement statement = connection.prepareStatement("select sum(duration) from tracks inner join playliststracks on playliststracks.track_id = tracks.id where playliststracks.playlist_id = ?");
-            statement.setInt(1, playlist_id);
+            statement.setInt(1, id);
 
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {

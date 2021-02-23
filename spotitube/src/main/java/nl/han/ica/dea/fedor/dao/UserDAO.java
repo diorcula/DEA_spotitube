@@ -7,8 +7,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UserDAO {
-    private Logger logger = Logger.getLogger(getClass().getName());
-    private DatabaseProperties databaseProperties;
+    private final Logger logger = Logger.getLogger(getClass().getName());
+    private final DatabaseProperties databaseProperties;
 
     public UserDAO() {
         databaseProperties = new DatabaseProperties();

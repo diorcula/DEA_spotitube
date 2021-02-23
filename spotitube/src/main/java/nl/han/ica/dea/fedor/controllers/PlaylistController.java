@@ -12,11 +12,20 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+/**
+ * The type Playlist controller.
+ */
 @Path("/playlists")
 public class PlaylistController {
     private PlaylistService playlistService;
     private TrackService trackService;
 
+    /**
+     * All playlists response.
+     *
+     * @param token the token
+     * @return the response
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response allPlaylists(@QueryParam("token") String token) {
@@ -26,6 +35,12 @@ public class PlaylistController {
         return Response.ok(all).build();
     }
 
+    /**
+     * Find playlist response.
+     *
+     * @param id the id
+     * @return the response
+     */
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -36,6 +51,13 @@ public class PlaylistController {
         return Response.ok(playlist).build();
     }
 
+    /**
+     * Edit playlist response.
+     *
+     * @param playlistDTO the playlist dto
+     * @param id          the id
+     * @return the response
+     */
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -48,6 +70,12 @@ public class PlaylistController {
         return Response.ok(all).build();
     }
 
+    /**
+     * Delete playlist response.
+     *
+     * @param id the id
+     * @return the response
+     */
     @DELETE
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -59,6 +87,12 @@ public class PlaylistController {
         return Response.ok(all).build();
     }
 
+    /**
+     * Add playlist response.
+     *
+     * @param playlistDTO the playlist dto
+     * @return the response
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -70,6 +104,12 @@ public class PlaylistController {
         return Response.ok(all).build();
     }
 
+    /**
+     * All tracks from playlist response.
+     *
+     * @param id the id
+     * @return the response
+     */
     @GET
     @Path("/{id}/tracks")
     @Produces(MediaType.APPLICATION_JSON)
@@ -80,6 +120,13 @@ public class PlaylistController {
         return Response.ok(all).build();
     }
 
+    /**
+     * Delete track from playlist response.
+     *
+     * @param id       the id
+     * @param track_id the track id
+     * @return the response
+     */
     @DELETE
     @Path("{id}/tracks/{track_id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -91,6 +138,13 @@ public class PlaylistController {
         return Response.ok(all).build();
     }
 
+    /**
+     * Add track response.
+     *
+     * @param trackDTO the track dto
+     * @param id       the id
+     * @return the response
+     */
     @POST
     @Path("{id}/tracks")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -103,11 +157,21 @@ public class PlaylistController {
         return Response.ok(all).build();
     }
 
+    /**
+     * Sets playlist service.
+     *
+     * @param playlistService the playlist service
+     */
     @Inject
     public void setPlaylistService(PlaylistService playlistService) {
         this.playlistService = playlistService;
     }
 
+    /**
+     * Sets track service.
+     *
+     * @param trackService the track service
+     */
     @Inject
     public void setTrackService(TrackService trackService) {
         this.trackService = trackService;

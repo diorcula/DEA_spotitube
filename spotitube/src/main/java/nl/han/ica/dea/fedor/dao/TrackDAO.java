@@ -9,10 +9,16 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * The type Track dao.
+ */
 public class TrackDAO {
-    private Logger logger = Logger.getLogger(getClass().getName());
-    private DatabaseProperties databaseProperties;
+    private final Logger logger = Logger.getLogger(getClass().getName());
+    private final DatabaseProperties databaseProperties;
 
+    /**
+     * Instantiates a new Track dao.
+     */
     public TrackDAO() {
         databaseProperties = new DatabaseProperties();
         tryLoadJdbcDriver(databaseProperties);
@@ -26,6 +32,12 @@ public class TrackDAO {
         }
     }
 
+    /**
+     * Find all list.
+     *
+     * @param id the id
+     * @return the list
+     */
     public List<TrackDTO> findAll(int id) {
 
         List<TrackDTO> tracks = null;
@@ -48,6 +60,12 @@ public class TrackDAO {
         return tracks;
     }
 
+    /**
+     * Find tracks from playlist list.
+     *
+     * @param id the id
+     * @return the list
+     */
     public List<TrackDTO> findTracksFromPlaylist(int id) {
         List<TrackDTO> tracksFromPlaylist = null;
 
@@ -92,6 +110,12 @@ public class TrackDAO {
         return tracks;
     }
 
+    /**
+     * Delete track.
+     *
+     * @param id       the id
+     * @param track_id the track id
+     */
     public void deleteTrack(int id, int track_id) {
 
         try {
@@ -109,6 +133,12 @@ public class TrackDAO {
         }
     }
 
+    /**
+     * Add track.
+     *
+     * @param id       the id
+     * @param trackDTO the track dto
+     */
     public void addTrack(int id, TrackDTO trackDTO) {
         int track_id = trackDTO.getId();
 

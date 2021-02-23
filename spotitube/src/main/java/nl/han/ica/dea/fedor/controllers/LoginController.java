@@ -9,11 +9,20 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+/**
+ * The type Login controller.
+ */
 @Path("/login")
 public class LoginController {
 
     private UserService userService;
 
+    /**
+     * Login response.
+     *
+     * @param userDTO the user dto
+     * @return the response
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -32,6 +41,11 @@ public class LoginController {
 
     }
 
+    /**
+     * Sets user service.
+     *
+     * @param userService the user service
+     */
     @Inject
     public void setUserService(UserService userService) {
         this.userService = userService;
