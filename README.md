@@ -2,7 +2,8 @@
 
 ### Opdracht: Spotitube, RESTFUL Applicatie
 
-
+Titel | Beschrijving
+----  | ----
 Datum | Vrijdag 29 mei, 2020 </br>
 Auteur | F.K.A. Soffers</br>
 Studentnummer | 567780</br>
