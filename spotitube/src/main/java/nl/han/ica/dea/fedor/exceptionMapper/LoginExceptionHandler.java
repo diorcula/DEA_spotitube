@@ -1,5 +1,6 @@
 package nl.han.ica.dea.fedor.exceptionMapper;
 
+import nl.han.ica.dea.fedor.exceptionMapper.exceptions.EmptyPasswordException;
 import nl.han.ica.dea.fedor.exceptionMapper.exceptions.UnauthorizedLoginException;
 
 import javax.ws.rs.core.Response;
