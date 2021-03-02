@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.controllers;
 
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.dto.LoginResponseDTO;
+import nl.han.ica.dea.fedor.exceptionMapper.exceptions.UnauthorizedLoginException;
 import nl.han.ica.dea.fedor.services.UserService;
 
 import javax.inject.Inject;
@@ -36,9 +37,8 @@ public class LoginController {
             return Response.ok(loginResponseDTO).build();
 
         } else {
-            return Response.status(401).build();
+            throw new UnauthorizedLoginException();
         }
-
     }
 
     /**
