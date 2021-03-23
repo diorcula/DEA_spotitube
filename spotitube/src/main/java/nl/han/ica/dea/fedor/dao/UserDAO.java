@@ -16,7 +16,7 @@ public class UserDAO {
         tryLoadJdbcDriver(databaseProperties);
     }
 
-    private void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
+    public void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
         try {
             Class.forName(databaseProperties.driver());
         } catch (ClassNotFoundException e) {
