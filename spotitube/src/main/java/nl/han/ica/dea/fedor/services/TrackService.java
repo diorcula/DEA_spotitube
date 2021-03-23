@@ -51,7 +51,7 @@ public class TrackService {
         trackDAO.addTrack(id, trackDTO);
     }
 
-    private void setTracks(List<TrackDTO> returnList, TracksDTO tracksDTO) {
+    public void setTracks(List<TrackDTO> returnList, TracksDTO tracksDTO) {
         returnList.forEach(tracksDTO::addTrack);
     }
 
