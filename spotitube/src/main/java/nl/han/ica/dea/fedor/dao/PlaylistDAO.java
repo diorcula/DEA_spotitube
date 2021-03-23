@@ -13,8 +13,8 @@ import java.util.logging.Logger;
  * The type Playlist dao.
  */
 public class PlaylistDAO {
-    private Logger logger = Logger.getLogger(getClass().getName());
-    private DatabaseProperties databaseProperties;
+    private final Logger logger = Logger.getLogger(getClass().getName());
+    private final DatabaseProperties databaseProperties;
 
     /**
      * Instantiates a new Playlist dao.
@@ -60,7 +60,7 @@ public class PlaylistDAO {
         return playlists.get(0);
     }
 
-    private void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
+    public void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
         try {
             Class.forName(databaseProperties.driver());
         } catch (ClassNotFoundException e) {
@@ -68,7 +68,7 @@ public class PlaylistDAO {
         }
     }
 
-    private void tryFindAll(List<PlaylistDTO> playlists, String query) {
+    public void tryFindAll(List<PlaylistDTO> playlists, String query) {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
             PreparedStatement statement = connection.prepareStatement(query);
@@ -82,14 +82,14 @@ public class PlaylistDAO {
         }
     }
 
-    private void addNewItemsFromDatabase(List<PlaylistDTO> playlists, PreparedStatement statement) throws SQLException {
+    public void addNewItemsFromDatabase(List<PlaylistDTO> playlists, PreparedStatement statement) throws SQLException {
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
             addNewItemFromResultSet(playlists, resultSet);
         }
     }
 
-    private void addNewItemFromResultSet(List<PlaylistDTO> playlists, ResultSet resultSet) throws SQLException {
+    public void addNewItemFromResultSet(List<PlaylistDTO> playlists, ResultSet resultSet) throws SQLException {
         PlaylistDTO playlist = new PlaylistDTO();
         playlist.setId(resultSet.getInt("id"));
         playlist.setName(resultSet.getString("name"));
