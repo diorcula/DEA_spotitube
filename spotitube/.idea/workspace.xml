@@ -127,19 +127,29 @@
       <recent name="nl.han.ica.dea.fedor.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="TomEE Server.Tomee 9.0.41">
-    <configuration name="PlaylistServiceTest.TESTserviceAllPlaylists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PlaylistServiceTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaylistServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotitube" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.han.dea.test.dto.*" />
+          <option name="PATTERN" value="nl.han.ica.dea.fedor.test.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.PlaylistServiceTest" />
-      <option name="METHOD_NAME" value="TESTserviceAllPlaylists" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="nl.han.ica.dea.fedor.test.dto" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.test.dto.PlaylistServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -372,20 +382,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
+      <item itemvalue="JavaScript Debug.playlists" />
       <item itemvalue="JUnit.UserServiceTest" />
       <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
       <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
-      <item itemvalue="JavaScript Debug.playlists" />
       <item itemvalue="TomEE Server.Tomee 9.0.41" />
+      <item itemvalue="JUnit.PlaylistServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlaylistServiceTest" />
         <item itemvalue="JavaScript Debug.playlists" />
         <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
         <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
         <item itemvalue="JUnit.UserServiceTest" />
-        <item itemvalue="JUnit.PlaylistServiceTest.TESTserviceAllPlaylists" />
       </list>
     </recent_temporary>
   </component>
