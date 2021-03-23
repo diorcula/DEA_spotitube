@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.dao;
 
 import nl.han.ica.dea.fedor.dao.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.UserDTO;
+
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,4 +50,24 @@ public class UserDAO {
         return null;
     }
 
+    public boolean userExists(String userName) {
+        ResultSet rs;
+
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
+
+            PreparedStatement statement = connection.prepareStatement("USE Spotitube SELECT COUNT(1) FROM users WHERE username = ?");
+//            PreparedStatement statement = connection.prepareStatement("SELECT CASE WHEN EXISTS (SELECT * FROM users WHERE username= ?) THEN 'TRUE' ELSE 'FALSE' END");
+            statement.setString(1, userName); //1 specifies the first parameter in the query i.e. name
+            rs = statement.executeQuery();
+
+            System.out.println("first " + rs);
+
+            return rs.next();
+
+        } catch (SQLException e) {
+            logger.log(Level.SEVERE, "user does not exist ");
+        }
+        return true;
+    }
 }

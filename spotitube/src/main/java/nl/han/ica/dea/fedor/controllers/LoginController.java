@@ -2,7 +2,6 @@ package nl.han.ica.dea.fedor.controllers;
 
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.dto.LoginResponseDTO;
-import nl.han.ica.dea.fedor.exceptionMapper.exceptions.EmptyPasswordException;
 import nl.han.ica.dea.fedor.exceptionMapper.exceptions.UnauthorizedLoginException;
 import nl.han.ica.dea.fedor.services.UserService;
 
@@ -29,10 +28,9 @@ public class LoginController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response Login(UserDTO userDTO) {
-        if (userDTO.password == null){
-            throw new EmptyPasswordException();
-        }
+
         if (userService.isValidLogin(userDTO.user, userDTO.password)) {
+
             String token = "1234-1234-1234";
             userDTO.setToken(token);
 
@@ -41,6 +39,7 @@ public class LoginController {
             return Response.ok(loginResponseDTO).build();
 
         } else {
+            System.out.println("invalid login");
             throw new UnauthorizedLoginException();
         }
     }

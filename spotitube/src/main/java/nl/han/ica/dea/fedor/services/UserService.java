@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.services;
 
 import nl.han.ica.dea.fedor.dao.UserDAO;
 import nl.han.ica.dea.fedor.dto.UserDTO;
+import nl.han.ica.dea.fedor.exceptionMapper.exceptions.UnauthorizedLoginException;
 
 import javax.inject.Inject;
 
@@ -23,10 +24,12 @@ public class UserService {
      * @return the boolean
      */
     public boolean isValidLogin(String userName, String password) {
-        UserDTO user = userDAO.getUserDTO(userName);
+        if (userDAO.userExists(userName)) {
 
-        if (password.equals(user.getPassword())) {
-            return true;
+            UserDTO user = userDAO.getUserDTO(userName);
+
+            return password.equals(user.getPassword());
+
         } else {
             System.out.println("Login credentials do not match");
             return false;
