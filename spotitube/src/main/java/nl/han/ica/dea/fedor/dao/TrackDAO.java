@@ -24,7 +24,7 @@ public class TrackDAO {
         tryLoadJdbcDriver(databaseProperties);
     }
 
-    private void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
+    public void tryLoadJdbcDriver(DatabaseProperties databaseProperties) {
         try {
             Class.forName(databaseProperties.driver());
         } catch (ClassNotFoundException e) {
@@ -86,7 +86,7 @@ public class TrackDAO {
 
     }
 
-    private TrackDTO mapToTrackDTO(ResultSet resultSet) throws SQLException {
+    public TrackDTO mapToTrackDTO(ResultSet resultSet) throws SQLException {
         TrackDTO trackDTO = new TrackDTO();
         trackDTO.setId(resultSet.getInt("id"));
         trackDTO.setTitle(resultSet.getString("title"));
@@ -101,7 +101,7 @@ public class TrackDAO {
         return trackDTO;
     }
 
-    private List<TrackDTO> getAllTracks(PreparedStatement statement) throws SQLException {
+    public List<TrackDTO> getAllTracks(PreparedStatement statement) throws SQLException {
         List<TrackDTO> tracks = new ArrayList<>();
         ResultSet resultSet = statement.executeQuery();
         while (resultSet.next()) {
