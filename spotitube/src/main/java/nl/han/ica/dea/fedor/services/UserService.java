@@ -31,8 +31,8 @@ public class UserService {
             return password.equals(user.getPassword());
 
         } else {
-            System.out.println("Login credentials do not match");
-            return false;
+            throw new UnauthorizedLoginException("invalid login");
+//            return false;
         }
     }
 

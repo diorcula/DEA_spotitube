@@ -10,12 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="- database aangepast, owner en token toegevoegd.&#10;- alle prepared statements aangepast zodat het nu echt prepared statements zijn.">
-      <change beforePath="$PROJECT_DIR$/.idea/spotitube.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/exceptionMapper/exceptions/UnauthorizedLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/exceptionMapper/exceptions/UnauthorizedLoginException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/ica/dea/fedor/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/ica/dea/fedor/test/dto/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/ica/dea/fedor/test/dto/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spotitube.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spotitube/WEB-INF/classes/nl/han/ica/dea/fedor/dao/UserDAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,52 +115,29 @@
       <recent name="nl.han.ica.dea.fedor.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="TomEE Server.Tomee">
-    <configuration name="helloworld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.helloworld" />
-      <module name="spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.han.ica.dea.fedor.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaylistServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.han.ica.dea.fedor.test.dto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.han.ica.dea.fedor.test.dto" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.test.dto.PlaylistServiceTest" />
+  <component name="RunManager" selected="JUnit.UserServiceTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.testNoPasswordApplied" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotitube" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.han.dea.test.dto.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.han.dea.test.dto" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.dea.test.dto.UserServiceTest" />
-      <option name="METHOD_NAME" value="testNoPasswordApplied" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="nl.han.ica.dea.fedor.test.dto" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.test.dto.UserServiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="nl.han.ica.dea.fedor.test.dto in spotitube" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest.testIsNotValidPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spotitube" />
       <extension name="coverage">
         <pattern>
@@ -168,13 +146,60 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="nl.han.ica.dea.fedor.test.dto" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.test.dto.UserServiceTest" />
+      <option name="METHOD_NAME" value="testIsNotValidPassword" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="playlists" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/spotitube/playlists">
-      <method v="2" />
+    <configuration name="UserServiceTest.testIsNotValidUSerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.dea.fedor.test.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.dea.fedor.test.dto" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.test.dto.UserServiceTest" />
+      <option name="METHOD_NAME" value="testIsNotValidUSerException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.testIsValidLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.dea.fedor.test.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.dea.fedor.test.dto" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.test.dto.UserServiceTest" />
+      <option name="METHOD_NAME" value="testIsValidLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.testNonExistingUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spotitube" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nl.han.ica.dea.fedor.test.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nl.han.ica.dea.fedor.test.dto" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.ica.dea.fedor.test.dto.UserServiceTest" />
+      <option name="METHOD_NAME" value="testNonExistingUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Tomee" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Tomee" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="https://jenkins.aimsites.nl/spotitube/" />
@@ -339,20 +364,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.helloworld" />
-      <item itemvalue="JavaScript Debug.playlists" />
-      <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
-      <item itemvalue="JUnit.PlaylistServiceTest" />
-      <item itemvalue="JUnit.nl.han.ica.dea.fedor.test.dto in spotitube" />
       <item itemvalue="TomEE Server.Tomee" />
+      <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
+      <item itemvalue="JUnit.UserServiceTest.testIsNotValidPassword" />
+      <item itemvalue="JUnit.UserServiceTest.testNonExistingUser" />
+      <item itemvalue="JUnit.UserServiceTest.testIsNotValidUSerException" />
+      <item itemvalue="JUnit.UserServiceTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.helloworld" />
-        <item itemvalue="JUnit.nl.han.ica.dea.fedor.test.dto in spotitube" />
-        <item itemvalue="JUnit.PlaylistServiceTest" />
-        <item itemvalue="JavaScript Debug.playlists" />
-        <item itemvalue="JUnit.UserServiceTest.testNoPasswordApplied" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.testNonExistingUser" />
+        <item itemvalue="JUnit.UserServiceTest.testIsNotValidUSerException" />
+        <item itemvalue="JUnit.UserServiceTest.testIsNotValidPassword" />
+        <item itemvalue="JUnit.UserServiceTest.testIsValidLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -468,7 +493,8 @@
       <workItem from="1616500171885" duration="7783000" />
       <workItem from="1621975775114" duration="1012000" />
       <workItem from="1621977018485" duration="643000" />
-      <workItem from="1621977944332" duration="876000" />
+      <workItem from="1621977944332" duration="1097000" />
+      <workItem from="1622053797526" duration="7179000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -772,10 +798,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/spotitube$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1590748377092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>nl.han.dea.test.dto.*</FILTER>
-      <FILTER>nl.han.ica.dea.fedor.*</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="coverage/spotitube$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1622060918077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/spotitube$PlaylistServiceTest.ic" NAME="PlaylistServiceTest Coverage Results" MODIFIED="1590742975355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.ica.dea.fedor.*</FILTER>
     </SUITE>

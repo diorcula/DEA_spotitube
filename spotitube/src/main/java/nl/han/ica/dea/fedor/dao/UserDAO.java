@@ -65,11 +65,11 @@ public class UserDAO {
                 return true;
             } else {
                 logger.log(Level.SEVERE, "user does not exist");
-                throw new UnauthorizedLoginException();
+                throw new UnauthorizedLoginException("invalid login");
             }
 
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "user does not exist ");
+            logger.log(Level.SEVERE, "user does not exist in database ");
         }
         return true;
     }

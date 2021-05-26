@@ -2,9 +2,13 @@ package nl.han.ica.dea.fedor.test.dto;
 
 import nl.han.ica.dea.fedor.dao.UserDAO;
 import nl.han.ica.dea.fedor.dto.UserDTO;
+import nl.han.ica.dea.fedor.exceptionMapper.exceptions.UnauthorizedLoginException;
 import nl.han.ica.dea.fedor.services.UserService;
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -27,15 +31,20 @@ public class UserServiceTest {
     private UserDTO userDB;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         userDB = new UserDTO();
         userDB.setPassword(PASSWORD);
         userDB.setUser(USER);
     }
 
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
+
     @Test
+    // valid user + valid password
     public void testIsValidLogin() {
         //Arrange
+        when(userDAOMock.userExists(USER)).thenReturn(true);
         when(userDAOMock.getUserDTO(USER)).thenReturn(userDB);
 
         //Act
@@ -46,38 +55,29 @@ public class UserServiceTest {
     }
 
     @Test
+    // valid user + invalid password
     public void testIsNotValidPassword() {
         //Arrange
+        when(userDAOMock.userExists(USER)).thenReturn(true);
+        when(userDAOMock.getUserDTO(USER)).thenReturn(userDB);
 
         //Act
-        when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
+        boolean result = sut.isValidLogin(USER, "FALSE-PASSWORD");
 
         //Assert
-        assertFalse(sut.isValidLogin("userDB", "false-password"));
+        assertFalse(result);
     }
 
-    @Test(expected = java.lang.NullPointerException.class)
-    public void testIsNotValidUser() {
-        //Arrange
+    @Test
+    // invalid user, tests if UnauthorizedLoginException is thrown
+    public void testIsNotValidUSerException() {
+        when(userDAOMock.userExists(USER)).thenReturn(false);
+
+        exception.expect(UnauthorizedLoginException.class);
+        exception.expectMessage("invalid login");
 
         //Act
-       // when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
-
-        //Assert
-        assertFalse(sut.isValidLogin("invalid-user", "passDB"));
+        sut.isValidLogin(USER, PASSWORD);
     }
 
-//    @Test(expected = java.lang.NullPointerException.class)
-//    public void testNoPasswordApplied() {
-//        //Arrange
-//        UserDTO userDB = new UserDTO();
-//        userDB.setPassword("userPassword");
-//        userDB.setUser("userDB");
-//
-//        //Act
-//        when(userDAOMock.getUserDTO("userDB")).thenReturn(userDB);
-//
-//        //Assert
-//        assertFalse(sut.isValidLogin("userDB", null));
-//    }
 }
