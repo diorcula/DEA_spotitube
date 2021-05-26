@@ -1,4 +1,4 @@
-package nl.han.ica.dea.fedor.test.dto;
+package nl.han.ica.dea.fedor.test;
 
 import nl.han.ica.dea.fedor.dao.UserDAO;
 import nl.han.ica.dea.fedor.dto.UserDTO;
