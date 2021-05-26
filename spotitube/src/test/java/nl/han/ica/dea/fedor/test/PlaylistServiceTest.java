@@ -77,19 +77,19 @@ public class PlaylistServiceTest {
 
         // Assert
         assertEquals(playlistDB,result);
-        assertNotEquals(playlistDB2, result);
     }
 
     @Test
     public void TestServiceEditPlaylist(){
         // Arrange
-        PlaylistDTO playlistDTO = new PlaylistDTO();
-        when(playlistDAOMock.editPlaylist(playlistDTO,1)).;
+        PlaylistDTO newPlaylist = new PlaylistDTO();
+        newPlaylist.setName("new-name");
+        playlistDB.setName("new-name");
 
         // Act
-        PlaylistDTO result = sut.serviceEditPlaylist(1);
+        sut.serviceEditPlaylist(playlistDB,1);
 
         // Assert
-        assertNotEquals(playlistDB2, result);
+        assertEquals(newPlaylist.getName(),playlistDB.getName());
     }
 }
