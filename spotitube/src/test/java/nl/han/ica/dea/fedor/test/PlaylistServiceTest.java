@@ -3,12 +3,15 @@ package nl.han.ica.dea.fedor.test;
 import nl.han.ica.dea.fedor.dao.PlaylistDAO;
 import nl.han.ica.dea.fedor.dto.PlaylistDTO;
 import nl.han.ica.dea.fedor.dto.PlaylistsDTO;
+import nl.han.ica.dea.fedor.dto.TrackDTO;
+import nl.han.ica.dea.fedor.dto.TracksDTO;
 import nl.han.ica.dea.fedor.services.PlaylistService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import javax.validation.constraints.AssertTrue;
@@ -16,8 +19,8 @@ import javax.validation.constraints.AssertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
+import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -50,25 +53,8 @@ public class PlaylistServiceTest {
         playlistDB2.setDuration(5);
     }
 
-//    @Test
-//    public void TESTserviceAllPlaylists() {
-//        //Arrange
-//        collectionPlaylists = new PlaylistsDTO();
-//        collectionPlaylists.addPlaylist(playlistDB);
-//        collectionPlaylists.addPlaylist(playlistDB2);
-//
-//        when(playlistDAOMock.findAll()).thenReturn(collectionPlaylists.getPlaylists());
-//
-//        //Act
-//        PlaylistsDTO playlistsDTO = sut.serviceAllPlaylists();
-//
-//        //Assert
-//        // test dat de playlistsDTO dezelfde playlists heeft als de returnList
-//        assertEquals(collectionPlaylists, playlistsDTO);
-//    }
-
     @Test
-    public void TestServiceFindPlaylist(){
+    public void TestServiceFindPlaylist() {
         // Arrange
         when(playlistDAOMock.findOne(1)).thenReturn(playlistDB);
 
@@ -76,20 +62,85 @@ public class PlaylistServiceTest {
         PlaylistDTO result = sut.serviceFindPlaylist(1);
 
         // Assert
-        assertEquals(playlistDB,result);
+        assertEquals(playlistDB, result);
     }
 
     @Test
-    public void TestServiceEditPlaylist(){
+    public void TestServiceEditPlaylist() {
         // Arrange
         PlaylistDTO newPlaylist = new PlaylistDTO();
         newPlaylist.setName("new-name");
         playlistDB.setName("new-name");
 
         // Act
-        sut.serviceEditPlaylist(playlistDB,1);
+        sut.serviceEditPlaylist(playlistDB, 1);
 
         // Assert
-        assertEquals(newPlaylist.getName(),playlistDB.getName());
+        assertEquals(newPlaylist.getName(), playlistDB.getName());
     }
+
+    @Test
+    public void TestServiceDeletePlaylist() {
+        // Arrange
+        collectionPlaylists = new PlaylistsDTO();
+        collectionPlaylists.addPlaylist(playlistDB);
+
+        // Act
+        sut.serviceDeletePlaylist(1);
+
+        // Assert
+        assertEquals(null, sut.serviceFindPlaylist(1));
+    }
+
+    @Test
+    public void TestCalculateDuration() {
+        // Arrange
+        List<PlaylistDTO> returnlist = new ArrayList<>();
+        playlistDB.setDuration(15);
+        returnlist.add(playlistDB);
+
+        // Act
+        int result = sut.calculateDuration(returnlist);
+
+        // Assert
+        assertEquals(15, result);
+    }
+
+    @Test
+    public void TestSetDuration() {
+        // Arrange
+        List<PlaylistDTO> returnList = new ArrayList<>();
+        PlaylistsDTO playlistsDTO = new PlaylistsDTO();
+
+        playlistDB.setDuration(300);
+        returnList.add(playlistDB);
+
+        // Act
+        sut.setDuration(returnList, playlistsDTO);
+        int result = playlistsDTO.getLength();
+
+        // Assert
+        assertEquals(300, result);
+    }
+
+    @Test
+    public void TestserviceAllPlaylists() {
+        // Arrange
+        List<PlaylistDTO> playlistDTOList = new ArrayList<>();
+        playlistDTOList.add(playlistDB);
+        playlistDTOList.add(playlistDB2);
+
+        PlaylistsDTO expected = new PlaylistsDTO();
+        expected.addPlaylist(playlistDB);
+        expected.addPlaylist(playlistDB2);
+
+        when(playlistDAOMock.findAll()).thenReturn(playlistDTOList);
+
+        // Act
+        PlaylistsDTO result = sut.serviceAllPlaylists();
+
+        // Assert
+        assertEquals(expected.getPlaylists(), result.getPlaylists());
+    }
+
 }
