@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="- database aangepast, owner en token toegevoegd.&#10;- alle prepared statements aangepast zodat het nu echt prepared statements zijn.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/nl/han/ica/dea/fedor/test/PlaylistServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nl/han/ica/dea/fedor/test/PlaylistServiceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="820f69e1-d6c2-4ac1-8f7a-8242d72fafdc" name="Default Changelist" comment="- database aangepast, owner en token toegevoegd.&#10;- alle prepared statements aangepast zodat het nu echt prepared statements zijn." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -500,7 +497,7 @@
       <workItem from="1621975775114" duration="1012000" />
       <workItem from="1621977018485" duration="643000" />
       <workItem from="1621977944332" duration="1097000" />
-      <workItem from="1622053797526" duration="14407000" />
+      <workItem from="1622053797526" duration="14862000" />
     </task>
     <task id="LOCAL-00001" summary="fedor #1">
       <created>1538648377697</created>
@@ -810,8 +807,9 @@
     <SUITE FILE_PATH="coverage/spotitube$PlaylistServiceTest_TESTserviceAllPlaylists.ic" NAME="PlaylistServiceTest.TESTserviceAllPlaylists Coverage Results" MODIFIED="1622063683686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.ica.dea.fedor.test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/spotitube$nl_han_ica_dea_fedor_test_in_spotitube.ic" NAME="nl.han.ica.dea.fedor.test in spotitube Coverage Results" MODIFIED="1622068171316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/spotitube$nl_han_ica_dea_fedor_test_in_spotitube.ic" NAME="nl.han.ica.dea.fedor.test in spotitube Coverage Results" MODIFIED="1622068247427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.ica.dea.fedor.test.*</FILTER>
+      <FILTER>nl.han.ica.dea.fedor.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/spotitube$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1622060918077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/spotitube$PlaylistServiceTest.ic" NAME="PlaylistServiceTest Coverage Results" MODIFIED="1622067972100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
