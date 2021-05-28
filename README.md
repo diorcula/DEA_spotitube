@@ -1,10 +1,7 @@
 # TODO:
 ---
 https://github.com/HANICA-DEA/spotitube 
-- [ ] Test coverage 80% at least
-- [ ] Exceptionmapper, and use it to form a HTPP Response
-- [ ] Error handling
-- [ ] When an error occurs throw a selfmade unchecked exception
+- [ ] Test coverage 80% at least (now 60%)
 - [ ] Rewrite documentation
 - [ ] Describe a serious alternative for the Layer Pattern
 - [ ] Might be able to use packages in a vertical layer
