@@ -14,7 +14,7 @@ https://github.com/HANICA-DEA/spotitube
 # Informatie
 Titel | Beschrijving
 ----  | ----
-Datum | Vrijdag 29 mei, 2020
+Datum | Vrijdag 28 mei, 2021
 Auteur | F.K.A. Soffers
 Studentnummer | 567780
 Opleiding | HBO-ICT
