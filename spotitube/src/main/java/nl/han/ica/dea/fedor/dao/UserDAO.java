@@ -69,7 +69,7 @@ public class UserDAO {
             }
 
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "user does not exist in database ");
+            logger.log(Level.SEVERE, "error retrieving data from database ");
         }
         return true;
     }

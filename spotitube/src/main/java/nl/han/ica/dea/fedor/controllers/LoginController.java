@@ -39,7 +39,7 @@ public class LoginController {
             return Response.ok(loginResponseDTO).build();
 
         } else {
-            throw new UnauthorizedLoginException("invalid login: controller");
+            throw new UnauthorizedLoginException("invalid login");
         }
     }
 
