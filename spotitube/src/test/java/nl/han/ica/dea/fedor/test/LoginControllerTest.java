@@ -1,46 +1,42 @@
 package nl.han.ica.dea.fedor.test;
 
+import nl.han.ica.dea.fedor.controllers.LoginController;
 import nl.han.ica.dea.fedor.dto.UserDTO;
 import nl.han.ica.dea.fedor.services.UserService;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+import org.mockito.Mockito;
 
-import javax.persistence.EntityNotFoundException;
 import javax.ws.rs.core.Response;
-import javax.xml.registry.infomodel.User;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class LoginControllerTest {
-        @Mock
-        private UserService userServiceMock;
+    @Mock
+    private UserDTO userDTO;
+    public LoginController sut;
 
-        @Before
-        public void setUp() throws Exception {
-            loginEndpoint = new LoginEndpoint();
-            MockitoAnnotations.initMocks(this);
-        }
+    @InjectMocks
+    private UserService userServiceMock;
 
-        @After
-        public void tearDown() throws Exception {
-        }
+    @BeforeEach
+    void setUp() {
+        this.userServiceMock = Mockito.mock(UserService.class);
+        sut.setUserService(userServiceMock);
+    }
 
-        @Test
-        public void testLogin() t {
-            UserDTO userDTO = mock(UserDTO.class);
-            when(userDTO.user).thenReturn("johndoe");
-            when(userDTO.password).thenReturn("hunter2");
-            when(userDTO.getToken()).thenReturn("1234");
+    @Test
+    public void testLogin() {
+        userDTO = new UserDTO();
+        userDTO.setUser("user");
+        userDTO.setPassword("password");
 
+        when(userServiceMock.isValidLogin(userDTO.user, userDTO.password)).thenReturn(true);
 
-            Response response = userServiceMock.
-            assertEquals(200, response.getStatus());
-        }
-        
+        Response response = sut.Login(userDTO);
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+    }
 }
