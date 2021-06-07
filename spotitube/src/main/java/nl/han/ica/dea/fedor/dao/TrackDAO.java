@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.dao;
 
 import nl.han.ica.dea.fedor.dao.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.TrackDTO;
+import nl.han.ica.dea.fedor.exceptionMapper.exceptions.DatabaseException;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class TrackDAO {
             Class.forName(databaseProperties.driver());
         } catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Can't load JDBC Driver " + databaseProperties.driver(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -56,6 +58,7 @@ public class TrackDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
         return tracks;
     }
@@ -81,6 +84,7 @@ public class TrackDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
         return tracksFromPlaylist;
 
@@ -130,6 +134,7 @@ public class TrackDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -155,6 +160,7 @@ public class TrackDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 }

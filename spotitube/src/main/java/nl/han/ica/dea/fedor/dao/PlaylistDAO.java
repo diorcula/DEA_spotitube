@@ -2,6 +2,7 @@ package nl.han.ica.dea.fedor.dao;
 
 import nl.han.ica.dea.fedor.dao.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.*;
+import nl.han.ica.dea.fedor.exceptionMapper.exceptions.DatabaseException;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -56,6 +57,7 @@ public class PlaylistDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
         return playlists.get(0);
     }
@@ -65,6 +67,7 @@ public class PlaylistDAO {
             Class.forName(databaseProperties.driver());
         } catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Can't load JDBC Driver " + databaseProperties.driver(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -79,6 +82,7 @@ public class PlaylistDAO {
             connection.close();
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -125,6 +129,7 @@ public class PlaylistDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -146,6 +151,7 @@ public class PlaylistDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -170,6 +176,7 @@ public class PlaylistDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -197,6 +204,7 @@ public class PlaylistDAO {
 
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
         return lengte;
     }

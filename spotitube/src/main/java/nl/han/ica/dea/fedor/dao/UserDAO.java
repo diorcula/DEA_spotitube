@@ -2,7 +2,7 @@ package nl.han.ica.dea.fedor.dao;
 
 import nl.han.ica.dea.fedor.dao.Properties.DatabaseProperties;
 import nl.han.ica.dea.fedor.dto.UserDTO;
-import nl.han.ica.dea.fedor.exceptionMapper.exceptions.UnauthorizedLoginException;
+import nl.han.ica.dea.fedor.exceptionMapper.exceptions.DatabaseException;
 
 import java.sql.*;
 import java.util.logging.Level;
@@ -22,6 +22,7 @@ public class UserDAO {
             Class.forName(databaseProperties.driver());
         } catch (ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Can't load JDBC Driver " + databaseProperties.driver(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
     }
 
@@ -47,6 +48,7 @@ public class UserDAO {
             }
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Error communicating with database " + databaseProperties.connectionURL(), e);
+            throw new DatabaseException("Error communicating with database ");
         }
         return null;
     }
@@ -57,20 +59,21 @@ public class UserDAO {
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionURL(), databaseProperties.connectionUSER(), databaseProperties.connectionPASS());
 
-            PreparedStatement statement = connection.prepareStatement("USE Spotitube SELECT COUNT(1) FROM users WHERE username = ?");
+            PreparedStatement statement = connection.prepareStatement("USE Spotitube SELECT * FROM users WHERE username = ?");
             statement.setString(1, userName); //1 specifies the first parameter in the query i.e. name
             rs = statement.executeQuery();
 
-            if (rs.getInt(1) == 1) {
+            if (rs.next()) {
                 return true;
-            } else {
-                logger.log(Level.SEVERE, "user does not exist");
-                throw new UnauthorizedLoginException("invalid login");
             }
 
         } catch (SQLException e) {
-            logger.log(Level.SEVERE, "error retrieving data from database ");
+            logger.log(Level.SEVERE, "error retrieving data from database " + e.getMessage());
+            throw new DatabaseException("Error communicating with database ");
         }
-        return true;
+        return false;
     }
+
 }
+
+
