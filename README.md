@@ -1,20 +1,13 @@
-# TODO:
----
-https://github.com/HANICA-DEA/spotitube 
-- [ ] Test coverage 80% at least (now 60%)
-- [ ] Rewrite documentation
-- [ ] Describe a serious alternative for the Layer Pattern
-- [ ] Might be able to use packages in a vertical layer
-
----
-# Beroepsproduct DEA
+# Beroepsproduct OOSE-DEA
 ## Opdracht: Spotitube, RESTFUL Applicatie
+https://github.com/HANICA-DEA/spotitube 
 ---
 
 # Informatie
+Cijfer| 6.3
 Titel | Beschrijving
 ----  | ----
-Datum | Vrijdag 28 mei, 2021
+Datum | Vrijdag 13 juni, 2021
 Auteur | F.K.A. Soffers
 Studentnummer | 567780
 Opleiding | HBO-ICT
